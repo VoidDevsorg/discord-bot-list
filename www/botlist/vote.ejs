@@ -1,0 +1,57 @@
+<%- include('../parts/head', {bot, user, path}) %>
+<% let bott = bot.users.cache.get(botdata.botID); %>
+<title>Vote | <%= bott.username %> | Discord Bots</title>
+<head>
+    <meta name="og:title" content="Vote | <%= bott.username %>">
+    <meta name="og:description" content="<%= botdata.shortDesc %>">
+</head>
+<div class="container px-3 mt-2 pt-5">
+    <center>
+    <div class="container px-3 content is-widescreen pt-5">
+        <div class="bg-vote-vcodes pt-5">
+            <div class="botImg-voteArea mt-5">
+                <img style="border-radius: 10px;" draggable="false" src="<%= botdata.avatar %>">
+            </div>
+            <h3 class="has-text-white is-size-3" style="margin-bottom: 10px;"><%= botdata.username %><span class="is-size-4" style="opacity: 0.7;">#<%= botdata.discrim %></span></h3>
+            <p class="has-text-white">You can support the bot by voting this bot.</p>
+            <p class="text-muted">You can vote every 12 hours.</p>
+            <form method="POST">
+            <button type="submit" class="btn btn-vote"><i class="fad fa-thumbs-up"></i>&nbsp;Confirm to Vote</button>
+            </form>
+            <br>
+            <br>
+        </div>
+    </div>
+    <button onclick="location.href='/bot/<%=bott.id%>'" class="btn btn-back"><i class="fad fa-chevron-left"></i >&nbsp;Back to <%= bott.username %></button>
+    </center>
+</div>
+
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('success') && urlParams.get('success')){
+    Swal.fire({
+     icon: 'success',
+     title: 'Successful...',
+     closeOnConfirm: false,
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = `/bot/<%= bott.id %>`;
+  }
+})
+    }
+    if(urlParams.has('error') && urlParams.get('error')){
+    Swal.fire({
+     icon: 'error',
+     title: 'Oops...',
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = `/bot/${req.params.botID}`;
+  }    
+})
+    }
+   </script>
+<%- include('../parts/foot') %>

@@ -1,0 +1,73 @@
+<%- include('static/head.ejs', { bot,user,path}) %>
+        <div id="content" class="main-content">
+            <div class="layout-px-spacing">
+
+                <div class="page-header">
+                    <nav class="breadcrumb-one" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
+                        </ol>
+                    </nav>
+                </div>
+
+                <div class="row layout-top-spacing">
+
+                    <div class="col-xl-4 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                        <div class="widget widget-one">
+                            <div class="widget-heading">
+                                <h6 class="">Statistics</h6>
+                                
+                            </div>
+                            <div class="w-chart">
+
+                                <div class="w-chart-section total-visits-content">
+                                    <div class="w-detail">
+                                        <p class="w-title">Total Codes</p>
+                                        <p class="w-stats"><%= codedata.length %></p>
+                                    </div>
+                                    <div class="w-chart-render-one">
+                                        <div id="total-users"></div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div class="w-chart-section paid-visits-content">
+                                    <div class="w-detail">
+                                        <p class="w-title">Total Bots</p>
+                                        <p class="w-stats"><%= botdata.length %></p>
+                                    </div>
+                                    <div class="w-chart-render-one">
+                                        <div id="paid-visits"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="w-chart-section paid-visits-content">
+                                    <div class="w-detail">
+                                        <p class="w-title">Total Uptime</p>
+                                        <p class="w-stats"><%= udata.length %></p>
+                                    </div>
+                                    <div class="w-chart-render-one">
+                                        <div id="total-users"></div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                    <div class="widget widget-chart-three">
+                        <div class="widget-heading">
+                            <div class="">
+                                <h5 class="">Discord Control </h5>
+                            </div>
+                        </div>
+    
+                        <div class="widget-content">
+                            <iframe src="https://e.widgetbot.io/channels/796048327024050176/824326273811218482" height="450" width="100%"></iframe>        </div>
+                        </div>
+                    </div>
+                </div>
+                <%- include('static/foot.ejs', { bot,user,path}) %>
+            </div>

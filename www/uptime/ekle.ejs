@@ -1,0 +1,45 @@
+<%- include('../parts/head', {bot, user, path}) %>
+<br><br><br><br>
+<div class="container">
+  <center>
+  <i style="color: #fff;" class="fad fa-sync-alt fa-5x"></i>
+  </center>
+  <br><br>
+  <form id="form-discord" method="POST" action="#" class="form-discorddark">
+  <div class="form-group">
+    <label for="komutlar">Your website link;</label>
+    <textarea type="text" class="form-control" id="link" name="link"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+<br><br><br><br><br><br>
+    <script>
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('success') && urlParams.get('success')){
+    Swal.fire({
+     icon: 'success',
+     title: 'Succesfull...',
+     closeOnConfirm: false,
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/uptime/links';
+  }
+})
+    }
+    if(urlParams.has('error') && urlParams.get('error')){
+    Swal.fire({
+     icon: 'error',
+     title: 'Oops...',
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/uptime/add';
+  }    
+})
+    }
+   </script>
+<%- include('../parts/foot') %>

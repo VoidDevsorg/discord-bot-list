@@ -1,0 +1,12 @@
+{
+  "token": "BOT TOKEN",
+  "prefix" : "BOT PREFIX",
+  "owner" : ["","",""],
+  "clientid" : "BOT ID",
+  "clientsecret" : "BOT SECRET",
+  "clientcallback" : "CALLBACK URL",
+  "mongoURL" : "MongoDB URL",
+  "serverID": "SERVER ID",
+  "footer": "GLOBAL FOOTER",
+  "tags": ["Moderation", "Fun", "Minecraft","Economy","Guard","NSFW","Anime","Invite","Music","Logging", "Web Dashboard", "Reddit", "Youtube", "Twitch", "Crypto", "Leveling", "Game", "Roleplay", "Utility", "Turkish"]
+}

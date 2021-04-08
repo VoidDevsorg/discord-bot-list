@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<%
+var url = new URL(`https://vcodes.xyz/error?code=${req.query.code}&message=${req.query.message}`);
+var params = new URLSearchParams(url.search);
+%>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="https://i.hizliresim.com/9CnPGj.png" type="image/x-icon" />
+<link rel="shortcut icon" href="https://i.hizliresim.com/9CnPGj.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569006288/BBBootstrap/choices.min.css?version=7.0.0">
+<script src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569006273/BBBootstrap/choices.min.js?version=7.0.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link href="https://pro.fontawesome.com/releases/v5.13.1/css/all.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <meta name='dmca-site-verification' content='MW1CZHIrT0FpWGRWaVB0WVJXVFpjQT090' />
+<script data-ad-client="ca-pub-1947780170606123" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css">
+<script src="../../js/style.js"></script>
+<link rel="stylesheet" href="https://codemirror.net/addon/hint/show-hint.css">
+<script src="https://codemirror.net/lib/codemirror.js"></script>
+<script src="https://codemirror.net/addon/hint/show-hint.js"></script>
+<script src="https://codemirror.net/addon/hint/javascript-hint.js"></script>
+<script src="https://codemirror.net/mode/javascript/javascript.js"></script>
+<script src="https://codemirror.net/mode/markdown/markdown.js"></script>
+<title>Error <%= params.get('code')%> - vCodes</title>
+</head>
+<style>
+    body {
+        background-color: #fff;
+    }
+.four_zero_four_bg{
+ 
+ background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+ }
+.link_404 {
+
+}
+
+</style>
+<center>
+<section class="page_404">
+	<div class="container">
+		<div class="row">	
+		<div class="col-sm-12 ">
+		<div class="col-sm-10 col-sm-offset-1  text-center">
+		<div class="four_zero_four_bg">
+		</div>
+		<div class="contant_box_404">
+        <h1 class="text-center "><%= params.get('code') %></h1>
+		<h3 class="h2">
+            <%= params.get('message') %>
+		</h3>		
+		<a href="/" class="btn btn-discord"><i class="fad fa-home"></i> Go to Home</a>
+		<a href="/dc" class="btn btn-discord"><i class="fab fa-discord"></i> Join our Discord</a>
+	</div>
+		</div>
+		</div>
+		</div>
+	</div>
+</section>
+</center>
+<br><br style.="margin-top: 5px;">
+
+<center>        <% if(params.get('code') == "200") {%>
+    <p>You are authorized? <a class="btn btn-discord" href="/login">Login</a></p>
+<% } %></center>
+
+<footer style="background-color: #fff">
+    <!-- Copyrights -->
+    <!-- WARNING -->
+    <!-- In our free themes, the word "by Temps City" must stop, in case of deletion, legal action will be initiated against you. -->
+    <div style="background-color: #fff; color: #000" class="py-4">
+      <div class="container text-center">
+        <p class="text-muted mb-0 py-2">Copyright &copy 2021 vCodes.xyz<br>All rights reserved. Not affiliated with Discord, Inc.</p>
+      </div>
+    </div>
+  </footer>
+<script>
+    console.log("%cBEKLE !!!","color: red; font-size: 60px");
+    console.log("%cNe yaptığını bilmiyorsan burayı hemen kapat!","color: green; font-size: 20px");
+    console.log("%cEğer ne yaptığını biliyorsan bizimle çalışman güzel olabilir, discord sunucumuza katıl!","color: green; font-size: 20px");
+</script>
+</body>
+</html>

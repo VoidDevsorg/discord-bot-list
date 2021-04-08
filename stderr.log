@@ -1,0 +1,840 @@
+(node:25374) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'toLowerCase' of undefined
+    at /home/vcodes/vcodes/app.js:313:131
+    at Array.filter (<anonymous>)
+    at /home/vcodes/vcodes/app.js:313:18
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:25374) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 4)
+(node:25374) UnhandledPromiseRejectionWarning: DiscordAPIError: 404: Not Found
+    at RequestHandler.execute (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/rest/RequestHandler.js:154:13)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async RequestHandler.push (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/rest/RequestHandler.js:39:14)
+    at async UserManager.fetch (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/managers/UserManager.js:67:18)
+(node:25374) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 5)
+(node:25374) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'toLowerCase' of undefined
+    at /home/vcodes/vcodes/app.js:313:131
+    at Array.filter (<anonymous>)
+    at /home/vcodes/vcodes/app.js:313:18
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:25374) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 6)
+(node:25374) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'toLowerCase' of undefined
+    at /home/vcodes/vcodes/app.js:313:131
+    at Array.filter (<anonymous>)
+    at /home/vcodes/vcodes/app.js:313:18
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:25374) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 7)
+(node:1538) DeprecationWarning: Listening to events on the Db class has been deprecated and will be removed in the next major version.
+InternalOAuthError: Failed to fetch user's guilds
+    at /home/vcodes/nodevenv/vcodes/12/lib/node_modules/passport-discord/lib/strategy.js:108:32
+    at passBackControl (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/oauth/lib/oauth2.js:132:9)
+    at IncomingMessage.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/oauth/lib/oauth2.js:157:7)
+    at IncomingMessage.emit (events.js:326:22)
+    at endReadableNT (_stream_readable.js:1223:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:1538) UnhandledPromiseRejectionWarning: DiscordAPIError: 404: Not Found
+    at RequestHandler.execute (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/rest/RequestHandler.js:154:13)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async RequestHandler.push (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/rest/RequestHandler.js:39:14)
+    at async UserManager.fetch (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/managers/UserManager.js:67:18)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:1538) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:1538) UnhandledPromiseRejectionWarning: DiscordAPIError: 404: Not Found
+    at RequestHandler.execute (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/rest/RequestHandler.js:154:13)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async RequestHandler.push (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/rest/RequestHandler.js:39:14)
+    at async UserManager.fetch (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/managers/UserManager.js:67:18)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+(node:1538) UnhandledPromiseRejectionWarning: DiscordAPIError: 404: Not Found
+    at RequestHandler.execute (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/rest/RequestHandler.js:154:13)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async RequestHandler.push (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/rest/RequestHandler.js:39:14)
+    at async UserManager.fetch (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/managers/UserManager.js:67:18)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 3)
+(node:1538) UnhandledPromiseRejectionWarning: DiscordAPIError: 404: Not Found
+    at RequestHandler.execute (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/rest/RequestHandler.js:154:13)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async RequestHandler.push (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/rest/RequestHandler.js:39:14)
+    at async UserManager.fetch (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/managers/UserManager.js:67:18)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 4)
+(node:17292) DeprecationWarning: Listening to events on the Db class has been deprecated and will be removed in the next major version.
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 5)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 6)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 7)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 8)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 9)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 10)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 11)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 12)
+(node:1538) UnhandledPromiseRejectionWarning: DiscordAPIError: 404: Not Found
+    at RequestHandler.execute (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/rest/RequestHandler.js:154:13)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async RequestHandler.push (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/rest/RequestHandler.js:39:14)
+    at async UserManager.fetch (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/managers/UserManager.js:67:18)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 13)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 14)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 15)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 16)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 17)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 18)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 19)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 20)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 21)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 22)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 23)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 24)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 25)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 26)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 27)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 28)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 30)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 31)
+(node:1538) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'id' of undefined
+    at checkAdmin (/home/vcodes/vcodes/app.js:485:80)
+    at Layer.handle [as handle_request] (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/router/route.js:137:13)
+    at checkMaintence (/home/vcodes/vcodes/app.js:95:9)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 32)
+(node:1538) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'id' of undefined
+    at checkAdmin (/home/vcodes/vcodes/app.js:485:80)
+    at Layer.handle [as handle_request] (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/router/route.js:137:13)
+    at checkMaintence (/home/vcodes/vcodes/app.js:95:9)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 33)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 34)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 35)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 36)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 37)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 38)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 39)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 40)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 41)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 42)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 43)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 44)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 45)
+(node:1538) UnhandledPromiseRejectionWarning: DiscordAPIError: 404: Not Found
+    at RequestHandler.execute (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/rest/RequestHandler.js:154:13)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async RequestHandler.push (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/rest/RequestHandler.js:39:14)
+    at async UserManager.fetch (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/managers/UserManager.js:67:18)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 46)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 47)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 48)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 49)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 50)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 51)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 52)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 53)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 54)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 55)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 56)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 57)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 58)
+(node:1538) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:1538) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 59)
+(node:30288) DeprecationWarning: Listening to events on the Db class has been deprecated and will be removed in the next major version.
+(node:30288) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at ServerResponse.location (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:888:15)
+    at ServerResponse.redirect (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:926:18)
+    at /home/vcodes/vcodes/app.js:395:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:30288) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://peppered-sticky-dahlia.glitch.me/ failed, reason: connect ETIMEDOUT 52.204.92.126:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+(node:17292) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://lyrox.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://kaplan-bot-test.glitch.me/ failed, reason: connect ETIMEDOUT 52.204.92.126:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 3)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://allegromusicbot.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 4)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://polished-hexagonal-boater.glitch.me/ failed, reason: connect ETIMEDOUT 52.45.1.20:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 5)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://peppered-sticky-dahlia.glitch.me/ failed, reason: connect ETIMEDOUT 52.204.92.126:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://lyrox.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 3)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://kaplan-bot-test.glitch.me/ failed, reason: connect ETIMEDOUT 52.204.92.126:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 4)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://allegromusicbot.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 5)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://polished-hexagonal-boater.glitch.me/ failed, reason: connect ETIMEDOUT 52.45.1.20:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 6)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://peppered-sticky-dahlia.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 6)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://lyrox.glitch.me/ failed, reason: connect ETIMEDOUT 52.204.92.126:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 7)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://kaplan-bot-test.glitch.me/ failed, reason: connect ETIMEDOUT 52.204.92.126:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 8)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://allegromusicbot.glitch.me/ failed, reason: connect ETIMEDOUT 52.45.1.20:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 9)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://polished-hexagonal-boater.glitch.me/ failed, reason: connect ETIMEDOUT 52.204.92.126:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 10)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://peppered-sticky-dahlia.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 7)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://lyrox.glitch.me/ failed, reason: connect ETIMEDOUT 52.204.92.126:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 8)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://kaplan-bot-test.glitch.me/ failed, reason: connect ETIMEDOUT 52.204.92.126:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 9)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://allegromusicbot.glitch.me/ failed, reason: connect ETIMEDOUT 52.45.1.20:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 10)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://polished-hexagonal-boater.glitch.me/ failed, reason: connect ETIMEDOUT 52.204.92.126:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 11)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://kaplan-bot-test.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 11)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://polished-hexagonal-boater.glitch.me/ failed, reason: connect ETIMEDOUT 52.204.92.126:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 12)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://kaplan-bot-test.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 12)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://polished-hexagonal-boater.glitch.me/ failed, reason: connect ETIMEDOUT 52.204.92.126:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 13)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://peppered-sticky-dahlia.glitch.me/ failed, reason: connect ETIMEDOUT 52.45.1.20:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 13)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://lyrox.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 14)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://kaplan-bot-test.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 15)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://allegromusicbot.glitch.me/ failed, reason: connect ETIMEDOUT 52.45.1.20:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 16)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://polished-hexagonal-boater.glitch.me/ failed, reason: connect ETIMEDOUT 52.204.92.126:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 17)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://peppered-sticky-dahlia.glitch.me/ failed, reason: connect ETIMEDOUT 52.45.1.20:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 14)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://lyrox.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 15)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://kaplan-bot-test.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 16)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://allegromusicbot.glitch.me/ failed, reason: connect ETIMEDOUT 52.45.1.20:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 17)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://polished-hexagonal-boater.glitch.me/ failed, reason: connect ETIMEDOUT 52.204.92.126:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 18)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://lyrox.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 18)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://kaplan-bot-test.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 19)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://polished-hexagonal-boater.glitch.me/ failed, reason: connect ETIMEDOUT 52.204.92.126:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 20)
+(node:17292) UnhandledPromiseRejectionWarning: FetchError: request to https://allegromusicbot.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:17292) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 21)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://lyrox.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 19)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://kaplan-bot-test.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 20)
+(node:30288) UnhandledPromiseRejectionWarning: FetchError: request to https://allegromusicbot.glitch.me/ failed, reason: connect ETIMEDOUT 54.208.158.184:443
+    at ClientRequest.<anonymous> (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/node-fetch/lib/index.js:1461:11)
+    at ClientRequest.emit (events.js:314:20)
+    at TLSSocket.socketErrorListener (_http_client.js:428:9)
+    at TLSSocket.emit (events.js:314:20)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 21)
+(node:30288) UnhandledPromiseRejectionWarning: DiscordAPIError: 404: Not Found
+    at RequestHandler.execute (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/rest/RequestHandler.js:154:13)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async RequestHandler.push (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/rest/RequestHandler.js:39:14)
+    at async UserManager.fetch (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/discord.js/src/managers/UserManager.js:67:18)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 22)
+(node:30288) UnhandledPromiseRejectionWarning: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (_http_outgoing.js:526:11)
+    at ServerResponse.header (/home/vcodes/nodevenv/vcodes/12/lib/node_modules/express/lib/response.js:771:10)
+    at /home/vcodes/vcodes/app.js:740:9
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+(node:30288) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 23)

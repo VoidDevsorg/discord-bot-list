@@ -1,0 +1,24 @@
+{
+  "yonetici": "ADMINISTRATOR ROLE ID",
+  "moderator": "MODERATOR ROLE ID",
+  "javascript": "JAVASCRIPT ROLE ID",
+  "html": "HTML ROLE ID",
+  "altyapilar": "SUBSTRUCTURE ROLE ID",
+  "besdavet": "5 INVITES ROLE ID",
+  "ondavet": "10 INVITES ROLE ID",
+  "onbesdavet": "15 INVITES ROLE ID",
+  "yirmidavet": "20 INVITES ROLE ID",
+  "bdfd": "BDFD ROLE ID",
+
+  "sitecreator" : "WEBSITE DEVELOPERS ROLE ID",
+  "booster": "SERVER BOOSTER ROLE ID",
+  "sponsor": "SPONSOR ROLE ID",
+  "supporter": "SUPPORTER ROLE ID",
+
+  "developer": "BOT DEVELOPER ROLE ID",
+  "certified_developer": "CERTIFIED BOT DEVELOPER ID",
+  "bot": "APPROVED BOT ROLE ID",
+  "certified_bot": "CERTIFIED BOT ROLE ID",
+  "premium_developer": "PREMIUM ROLE ID",
+  "premium_bot": "PREMIUM BOT ROLE ID"
+}

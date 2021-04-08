@@ -1,0 +1,49 @@
+<%- include('parts/head', {bot, user, path}) %>
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+<style>
+  h1 {
+    color: #fFf;
+  }
+  .background {
+    position: relative;
+}
+
+.layer {
+    background-color: rgba(248, 247, 216, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+<div class="columns is-multiline is-desktop is-variable is-7 mt-5 pt-5">
+            <div class="column is-3 mb-5">    
+                <div style="background-color: #23272a;" class="box cardvcodesbotCard">
+                  <div>
+                    <img draggable="false" onerror="imgError(this);" alt="" src="" class="is-pulled-left cardvcodesbotIMG z">
+                  </div>
+                  <div class="is-pulled-right is-inline-block">
+                     <span class="tag is-dark mt-1 w-100"><i class="fad fa-user-crown"></i> none</span>
+                     </div>
+                   <br><br><br>
+                  <p style="margin-top: 5px;" class="cardvcodesbotName has-text-white mt-5">
+                    ServerName
+                    <a data-tooltip="Verified Server"
+                    data-tooltip-location="top"><i class="fad fa-badge-check has-text-primary"></i></a>
+                </p>   
+                  <p style="margin-top: -10px;" class="cardvcodesbotDesc">Server Description</p>
+                  <center>
+
+                  <div class="cardvcodesbotButtons">
+                      <a href="#" class="btn btn-card"><i class="fad fa-eye"></i>&nbsp;View</a>
+                      <br><br>
+
+                     </div>
+                 </center>
+                </div>
+            </div>
+         </div>
+<br><br><br><br>
+<%- include('parts/foot') %>

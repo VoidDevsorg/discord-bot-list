@@ -1,0 +1,113 @@
+<%- include('../parts/head', {bot, user, path}) %>
+<title><%= docs.codeName %> | Discord Codes</title>
+<head>
+    <meta property="og:title" content="<%= docs.codeName %>">
+    <meta property="og:description" content="<%= docs.codeDesc %>">
+</head>
+<script>
+function copyFunction() {
+  const copyText = document.getElementById("myCommands").textContent;
+  const textArea = document.createElement('textarea');
+  textArea.textContent = copyText;
+  document.body.append(textArea);
+  textArea.select();
+  document.execCommand("copy");
+}
+
+document.getElementById('copybtn').addEventListener('click', copyFunction);
+</script>
+<div class="main-content">
+    <br><br><br><br><br>
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+      <div class="row">
+        <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+          <div class="card card-profile shadow">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                <div class="card-profile-image">
+                  <span class="avatar">
+                    <%if(docs.codeCategory.toLowerCase() === "html") {%>
+                        <img alt="Image placeholder" style="width: 130%;" class="rounded-circle" width="1200" src="https://img.devsforum.net/tr/img/o1G4A5.png">
+                    <% } else if(docs.codeCategory.toLowerCase() === "javascript") {%>
+                        <img alt="Image placeholder" style="width: 130%;" class="rounded-circle" src="https://img.devsforum.net/tr/img/r3K9J8.png">
+                    <% } else if(docs.codeCategory.toLowerCase() === "bdfd") {%>
+                        <img alt="Image placeholder" style="width: 130%;" class="rounded-circle" src="https://img.devsforum.net/tr/img/b1K4S9.png">
+                    <% } else if(docs.codeCategory.toLowerCase() === "substructure") {%>
+                        <img alt="Image placeholder" style="width: 130%;" class="rounded-circle" src="https://img.devsforum.net/tr/img/j7D4P9.png">
+                    <% } %>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+            </div>
+            <div class="card-body pt-0 pt-md-4">
+              <div class="row">
+                <div class="col">
+                  <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <h3>
+                  <%= docs.codeName %> 
+                </h3>
+                <div>
+                    <%= docs.codeDesc %>
+                </div>
+                <br>
+              </div>
+              <div class="h6 mt-4">
+                <i class="fad fa-question-circle"></i> Information
+              </div>
+
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fad fa-terminal"></i></div>
+                <p class="box-2">Code: <%= docs.code %> </p>
+              </div>
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fad fa-text"></i></div>
+                <p class="box-2">Code Name: <%= docs.codeName %> </p>
+              </div>
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fad fa-book"></i></div>
+                <p class="box-2">Code Category: <%= docs.codeCategory %> </p>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 order-xl-1">
+        <% if(docs.main) {%>
+            <h4 class="has-text-white">Main/<small>index.js, main.js, bot.js etc.</small></h4>
+            <div class="card bg-secondary shadow">
+              <div class="card-body">
+                <pre><%= docs.main %></pre>
+            </div>
+            <br><br>
+        <% } %>
+        <% if(docs.commands) {%>
+
+        <h4 class="has-text-white">Commands/<small>commandname.js</small></h4>
+        <div class="card bg-secondary shadow">
+          <div class="card-body">
+            <span style="float: right;cursor: pointer;transition: all 0.1s;" data-tooltip="Click to copy!" data-tooltip-location="top"> 
+            <button id="copybtn"><i class="fad fa-copy has-text-white"></i></button>
+            </span>
+            <pre id="myCommands"><%= docs.commands %></pre>
+        </div>
+        <% } %>
+      </div>
+  </div>
+  </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <script>
+    function copyElement(element) {
+      var copyText = document.getElementById(element);
+      copyText.select();
+      document.execCommand("Copy");
+      alert("Copied the text: " + copyText.value);
+    }
+    </script>
+<%- include('../parts/foot') %>
