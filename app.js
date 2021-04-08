@@ -735,8 +735,9 @@ await profiledata.findOneAndUpdate({userID: req.user.id}, {$set: {instagram: rBo
   });
   app.get("/api/:botID/voted/:userID", checkMaintence, async (req, res) => {
     const votedatas = require("./models/botlist/vote.js");
+    const bots = await botsdata.findOne({ botID: req.params.botID })
     const botdata = await votedatas.findOne({ bot: req.params.botID, user: req.params.userID })
-    if(!botdata) res.json({ error: true, message: "This bot id not a function", errorcode: 404})
+    if(!bots) return res.json({ error: true, message: "This bot id not a function", errorcode: 404});
     res.header("Content-Type",'application/json');
     if(botdata) {
     res.json({user: req.params.userID, hasvote: true});
