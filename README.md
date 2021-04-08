@@ -6,8 +6,15 @@
 > # Developers
 <a href="https://github.com/iClaudette">👤 Claudette</a><br>
 <a href="https://github.com/tunarjs">👤 Tunar</a>
+
+
+## English
 # Setup
-<a>Fill in the Json files, connect the necessary information and now it's ready, you can use our system as you wish, but remember, if you share without permission, please let us know after you share otherwise this will not be a good way for you!</a>
+<a>Fill in the json files, link the necessary information and now it's ready, you can use our system as you wish, but remember you can share but you have to mention us otherwise this will not be a good way for you</a>
+## Türkçe
+# Kurulum
+<a>Json dosyalarını doldurun, gerekli bilgileri bağlayın ve şimdi hazır, sistemimizi dilediğiniz gibi kullanabilirsiniz, ancak unutmayın paylaşabilirsiniz fakat bizden bahsetmek zorundasınız, aksi takdirde bu sizin için iyi bir yol olmayacaktır.</a>
+
 
 # Demo
 <a href="https://vcodes.xyz">vcodes.xyz</a>
