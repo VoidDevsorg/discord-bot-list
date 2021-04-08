@@ -5,7 +5,7 @@
 
 > # Developers
 <a href="https://github.com/iClaudette">👤 Claudette</a><br>
-<a href="https://github.com/MuZuR">👤 Tunar</a>
+<a href="https://github.com/tunarjs">👤 Tunar</a>
 # Setup
 <a>Fill in the Json files, connect the necessary information and now it's ready, you can use our system as you wish, but remember, if you share without permission, please let us know after you share otherwise this will not be a good way for you!</a>
 
