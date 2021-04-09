@@ -287,9 +287,6 @@ app.get("/error", (req, res) => {
     app.get("/bots", checkMaintence, async (req,res) => {
         let page = req.query.page || 1;
 	let data = await botsdata.find() || await botsdata.find().filter(b => b.status === "Approved")
-
-	// if (page < 1 || (page != Math.ceil(data.lesgth / 8) && data.length > 0)) page = 1;
-
 	if(page < 1) return res.redirect(`/bots`);
 	if(data.length <= 0) return res.redirect("/");
 	if((page > Math.ceil(data.length / 8)))return res.redirect(`/bots`);
@@ -307,9 +304,6 @@ app.get("/error", (req, res) => {
       app.get("/search", checkMaintence, async (req,res) => {
         let page = req.query.page || 1;
         let data = await botsdata.find() || await botsdata.find().filter(b => b.status === "Approved");
-
-        // if (page < 1 || (page != Math.ceil(data.lesgth / 8) && data.length > 0)) page = 1;
-    
        if(page < 1) return res.redirect(`/bots`);
        if(data.length <= 0) return res.redirect("/");
        if((page > Math.ceil(data.length / 8)))return res.redirect(`/bots`);
