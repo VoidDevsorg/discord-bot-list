@@ -14,7 +14,7 @@
 # Extra Terms of use
 <a>- You have the permission to shoot and share videos, but you have to mention us, our server, in the video.</a><br>
 <a>- You have the permission to share in writing, but you have to mention us, our server, in the article.</a><br>
-<a>- You have to include us in Footer. I would like to say that if you don't do this and we discover you, this is not a good choice for you.</a><br>
+<a>- - You are permitted to use and must include us in Footer accordingly. If you don't do this and we discover you, I would like to say that this is not a good choice for you.</a><br>
 <a>- You can't speak in a "we did it" way.</a>
 <br><br><br><br>
 ## Türkçe
@@ -23,7 +23,7 @@
 # Ekstra Kullanım Şartları
 <a>- Video çekerek paylaşma iznine sahipsiniz fakat video içerisinde bizden, sunucumuzdan bahsetmek zorundasınız.</a><br>
 <a>- Yazılı bir şekilde paylaşma iznine sahipsiniz fakat yazı içerisinden bizden, sunucumuzdan bahsetmek zorundasınız.</a><br>
-<a>- Bizi Footer'a dahil etmelisiniz. Bunu yapmazsanız ve sizi keşfedersek, bunun sizin için iyi bir seçim olmadığını söylemek isterim.</a><br>
+<a>- Kullanma iznine sahipsiniz ve bu doğrultuda bizi Footer'a dahil etmelisiniz. Bunu yapmazsanız ve sizi keşfedersek, bunun sizin için iyi bir seçim olmadığını söylemek isterim.</a><br>
 <a>- "Biz yaptık" şekilde konuşamazsın.</a>
 
 <br><br><br><br><br><br>
