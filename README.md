@@ -10,10 +10,10 @@
 
 ## English
 # Setup
-<a>Fill in the json files, link the necessary information and now it's ready, you can use our system as you wish, but remember you can share but you have to mention us otherwise this will not be a good way for you</a>
+<a>Json fill in the necessary information, the necessary information is in-depth ready, you can use our system as you wish, but you can use it, but you have to mention us, otherwise it will not be a good choice for you.</a>
 ## Türkçe
 # Kurulum
-<a>Json dosyalarını doldurun, gerekli bilgileri bağlayın ve şimdi hazır, sistemimizi dilediğiniz gibi kullanabilirsiniz, ancak unutmayın paylaşabilirsiniz fakat bizden bahsetmek zorundasınız, aksi takdirde bu sizin için iyi bir yol olmayacaktır.</a>
+<a>Json dosyalarını doldurun, gerekli bilgileri bağlayın ve şimdi hazır, sistemimizi dilediğiniz gibi kullanabilirsiniz, ancak unutmayın paylaşabilirsiniz, kullanabilirsiniz fakat bizden bahsetmek zorundasınız, aksi takdirde bu sizin için iyi bir seçim olmayacaktır.</a>
 
 
 # Demo
