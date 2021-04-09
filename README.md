@@ -10,11 +10,21 @@
 
 ## English
 # Setup
-<a>Json fill in the necessary information, the necessary information is in-depth ready, you can use our system as you wish, but you can use it, but you have to mention us, otherwise it will not be a good choice for you.</a>
+<a>Fill in the json files, link the required information and now it's ready.</a>
 ## Türkçe
 # Kurulum
-<a>Json dosyalarını doldurun, gerekli bilgileri bağlayın ve şimdi hazır, sistemimizi dilediğiniz gibi kullanabilirsiniz, ancak unutmayın paylaşabilirsiniz, kullanabilirsiniz fakat bizden bahsetmek zorundasınız, aksi takdirde bu sizin için iyi bir seçim olmayacaktır.</a>
+<a>Json dosyalarını doldurun, gerekli bilgileri bağlayın ve şimdi hazır.</a>
 
+## Terms
+# English
+# Extra Terms of use
+<a>- You have to include us in Footer. I would like to say that if you don't do this and we discover you, this is not a good choice for you.
+- You can't speak in a "we did it" way.</a>
+
+# Türkçe
+# Ekstra Kullanım Şartları
+<a>- Bizi Footer'a dahil etmelisiniz. Bunu yapmazsanız ve sizi keşfedersek, bunun sizin için iyi bir seçim olmadığını söylemek isterim.
+- "Biz yaptık" şekilde konuşamazsın.</a>
 
 # Demo
 <a href="https://vcodes.xyz">vcodes.xyz</a>
