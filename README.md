@@ -12,19 +12,15 @@
 # Setup
 <a>Fill in the json files, link the required information and now it's ready.</a>
 # Extra Terms of use
-<a>
-- You have to include us in Footer. I would like to say that if you don't do this and we discover you, this is not a good choice for you.
-<br>- You can't speak in a "we did it" way.
-</a>
+<a>- You have to include us in Footer. I would like to say that if you don't do this and we discover you, this is not a good choice for you.</a><br>
+<a>- You can't speak in a "we did it" way.</a>
 <br><br>
 ## Türkçe
 # Kurulum
 <a>Json dosyalarını doldurun, gerekli bilgileri bağlayın ve şimdi hazır.</a>
 # Ekstra Kullanım Şartları
-<a>
-- Bizi Footer'a dahil etmelisiniz. Bunu yapmazsanız ve sizi keşfedersek, bunun sizin için iyi bir seçim olmadığını söylemek isterim.
-<br>- "Biz yaptık" şekilde konuşamazsın.
-</a>
+<a>- Bizi Footer'a dahil etmelisiniz. Bunu yapmazsanız ve sizi keşfedersek, bunun sizin için iyi bir seçim olmadığını söylemek isterim.</a><br>
+<a>- "Biz yaptık" şekilde konuşamazsın.</a>
 <br><br>
 
 # Demo
