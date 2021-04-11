@@ -98,12 +98,12 @@
             <br>
             <% if(pdata) {%>
             <p class="UserDesc mt-1 has-text-white"> <%= pdata.biography || "Biography not setted." %></p>
+	    <% } %>
 	    <%if(req.user) {%>
             <% if(req.user.id === member.id) {%>
                 <a class="btn btn-primary" href="/user/<%=member.id%>/edit"><i class="fad fa-pencil"></i> Edit</a>
                 <% } %>
 		<% } %>
-            <% } %>
         </div>
         <div class="is-4 mt-1 column">
             <% if(pdata) {%>
