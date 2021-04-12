@@ -3,6 +3,9 @@
 **Support:** [https://vcodes.xyz/dc](https://voiddevs.org/dc) <br>
 **NPM:** [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
 
+  > <h3 style="background-color: #000;">Change Log</h3>
+  > <p class="subtitle"> Some errors fixed.</p>
+ <br><br>
 > # Developers
 <a href="https://github.com/iClaudette">👤 Claudette</a><br>
 <a href="https://github.com/tunarjs">👤 Tunar</a>
