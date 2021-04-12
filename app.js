@@ -588,8 +588,8 @@ app.get("/error", (req, res) => {
        }, function (err,docs) {})
        let botdata = await botsdata.findOne({ botID: req.params.botID });
 
-        client.users.fetch(botdata.botID).then(bot => {
-            client.channels.cache.get(channels.botlog).send(`<@${botdata.ownerID}>'s bot named **${bot.tag}** has been granted a certificate.`)
+        client.users.fetch(botdata.botID).then(bota => {
+            client.channels.cache.get(channels.botlog).send(`<@${botdata.ownerID}>'s bot named **${bota.tag}** has been granted a certificate.`)
             client.users.cache.get(botdata.ownerID).send(`Your bot named **${bota.tag}** has been certified.`)
         });
         await appsdata.deleteOne({ botID: req.params.botID })
@@ -607,9 +607,9 @@ app.get("/error", (req, res) => {
         }
        }, function (err,docs) {})
        let botdata = await botsdata.findOne({ botID: req.params.botID });
-        client.users.fetch(botdata.botID).then(bot => {
-            client.channels.cache.get(channels.botlog).send(`<@${botdata.ownerID}>'s bot named **${bot.tag}** has not been granted a certificate.`)
-            client.users.cache.get(botdata.ownerID).send(`Your bot named **${bot.tag}** certificate application has been declined.\nReason: **${rBody['reason']}**`)
+        client.users.fetch(botdata.botID).then(bota => {
+            client.channels.cache.get(channels.botlog).send(`<@${botdata.ownerID}>'s bot named **${bota.tag}** has not been granted a certificate.`)
+            client.users.cache.get(botdata.ownerID).send(`Your bot named **${bota.tag}** certificate application has been declined.\nReason: **${rBody['reason']}**`)
         });
         return res.redirect(`/admin/certificate-apps?success=true&message=Certificate deleted.`)
      });
