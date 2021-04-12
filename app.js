@@ -536,10 +536,8 @@ app.get("/error", (req, res) => {
         let rBody = req.body;
 	 let botadata = await botsdata.findOne({ botID: req.params.botID });
          client.users.fetch(botdata.ownerID).then(sahip => {
-         client.users.fetch(botdata.botID).then(bota => {
-             client.channels.cache.get(channels.botlog).send(`<@${botdata.ownerID}>'s bot named **${bota.tag}** has been declined. `)
-             client.users.cache.get(botdata.ownerID).send(`Your bot named **${bota.tag}** has been declined.\nReason: **${rBody['reason']}**\nAuthorized: **${req.user.username}**`)
-        })
+             client.channels.cache.get(channels.botlog).send(`<@${botdata.ownerID}>'s bot named **${botdata.username}** has been declined. `)
+             client.users.cache.get(botdata.ownerID).send(`Your bot named **${botdata.username}** has been declined.\nReason: **${rBody['reason']}**\nAuthorized: **${req.user.username}**`)
         })
         await botsdata.deleteOne({ botID: req.params.botID, ownerID: botdata.ownerID })
         return res.redirect(`/admin/unapproved?success=true&message=Bot declined.`)
