@@ -568,7 +568,7 @@ app.get("/error", (req, res) => {
             premium: "None",
         }
        }, function (err,docs) {})
-        client.users.fetch(botdata.botID).then(bot => {
+        client.users.fetch(botdata.botID).then(bota => {
         client.users.cache.get(botdata.ownerID).send(`The premium of your bot named **${bota.tag}** has been deleted.\nnAuthorized: **${req.user.username}**`)
         });
         return res.redirect(`/admin/premium?success=true&message=Premium deleted.`)
