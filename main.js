@@ -106,6 +106,7 @@ client.user.setPresence({ activity: { type: 'WATCHING', name: 'vcodes.xyz' }, st
 
 client.on('message', async message => {
 if(message.channel.id != channels.search) return;
+if(message.author.bot) return;
 message.delete({ timeout: 500 })
 let args = message.content.split(" ").slice(1);
 let arama = args.slice(0).join(" ");
