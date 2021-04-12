@@ -476,11 +476,16 @@ app.get("/error", (req, res) => {
     });
     //
     const checkAdmin = async (req, res, next) => {
-        if(client.guilds.cache.get(config.serverID).members.cache.get(req.user.id).roles.cache.get(roles.yonetici) || client.guilds.cache.get(config.serverID).members.cache.get(req.user.id).roles.cache.get(roles.moderator)) {
+    if (req.isAuthenticated()) {
+	if(client.guilds.cache.get(config.serverID).members.cache.get(req.user.id).roles.cache.get(roles.yonetici) || client.guilds.cache.get(config.serverID).members.cache.get(req.user.id).roles.cache.get(roles.moderator)) {
             next();
             } else {
             res.redirect("/error?code=403&message=You is not competent to do this.")
-        }
+        } 
+    } else {
+    req.session.backURL = req.url;
+    res.redirect("/login");
+    }
     }
     app.get("/admin", checkMaintence, checkAdmin, checkAuth, async (req, res) => {
     const botdata = await botsdata.find()
