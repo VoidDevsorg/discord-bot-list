@@ -8,7 +8,7 @@
 
   > [English] <p class="subtitle"> We are not charities, you have conditions for use. Refuse the terms and open a private message group for us; "Didn't you share it for people to use?" Do not ask questions like.</p>
   > [Türkçe] <p class="subtitle"> Biz hayır kurumu değiliz, kullanım için şartlarınız vardır. Şartları reddedip bize özel mesaj grubu açıp; "insanlar kullansın diye paylaşmadınız mı?" gibi sorular yöneltmeyin.</p>
- <br><br>
+  
 > # Developers
 <a href="https://github.com/iClaudette">👤 Claudette</a><br>
 <a href="https://github.com/tunarjs">👤 Tunar</a>
