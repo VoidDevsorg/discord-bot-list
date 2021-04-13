@@ -32,7 +32,7 @@
 # Ekstra Kullanım Şartları
 <a>- Video çekerek paylaşma iznine sahipsiniz fakat video içerisinde bizden, sunucumuzdan bahsetmek zorundasınız.</a><br>
 <a>- Yazılı bir şekilde paylaşma iznine sahipsiniz fakat yazı içerisinden bizden, sunucumuzdan bahsetmek zorundasınız.</a><br>
-<a>- Kullanma iznine sahipsiniz ve bu doğrultuda bizi Footer'a dahil etmelisiniz. Bunu yapmazsanız ve sizi keşfedersek, bunun sizin için iyi bir seçim olmadığını söylemek isterim.</a><br>
+<a>- Kullanma iznine sahipsiniz ve bu doğrultuda bizi Footer'a`(www/parts/foot.ejs)` dahil etmelisiniz. Bunu yapmazsanız ve sizi keşfedersek, bunun sizin için iyi bir seçim olmadığını söylemek isterim.</a><br>
 <a>- "Biz yaptık" şekilde konuşamazsın.</a><br>
 <a>- Satışını yapamazsınız.</a>
 
