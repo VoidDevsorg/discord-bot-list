@@ -154,7 +154,7 @@
     <p class="content has-text-white" style="margin-top: -20px;">They are ranked according to the votes they received.</p>
   </div>
   <div class="columns is-multiline is-desktop is-variable is-7 pt-5">
-    <% botdata.sort((a, b) => b.votes - a.votes).slice(0, 6).filter(a => a.status == "Approved").map(a => {%>
+    <% botdata.sort((a, b) => b.votes - a.votes).slice(0, 8).filter(a => a.status == "Approved").map(a => {%>
             <div class="column is-3 mb-5">    
                 <div style="background-color: #23272a;" class="box cardvcodesbotCard">
                   <div>
