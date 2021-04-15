@@ -47,7 +47,7 @@ if(args[1] == "open") {
     const tebriklerkanks = new Discord.MessageEmbed()
     .setAuthor(message.author.tag, message.author.avatarURL({dynamic: true}))
     .setThumbnail(client.user.avatarURL())
-    .setDescription(`Congratulations, You **shut down** the site for\`${reason}\`.)
+    .setDescription(`Congratulations, You **shut down** the site for\`${reason}\``)
     .setColor("GREEN")
     .setTitle("SUCCESSFUL")
     message.channel.send(tebriklerkanks);
