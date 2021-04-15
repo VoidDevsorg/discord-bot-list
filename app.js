@@ -715,7 +715,7 @@ app.get("/error", (req, res) => {
     });
   });
   app.post("/user/:userID/edit", checkMaintence, checkAuth, async (req, res) => {
-    rBody = req.body;
+    let rBody = req.body;
 await profiledata.findOneAndUpdate({userID: req.user.id}, {$set: {biography: rBody['biography']}}, {upsert:true})
 await profiledata.findOneAndUpdate({userID: req.user.id}, {$set: {website: rBody['website']}}, {upsert:true})
 await profiledata.findOneAndUpdate({userID: req.user.id}, {$set: {github: rBody['github']}}, {upsert:true})
