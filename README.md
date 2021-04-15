@@ -22,7 +22,7 @@
 # Extra Terms of use
 <a>- You have the permission to shoot and share videos, but you have to mention us, our server, in the video.</a><br>
 <a>- You have the permission to share in writing, but you have to mention us, our server, in the article.</a><br>
-<a>- - You are permitted to use and must include us in Footer accordingly. If you don't do this and we discover you, I would like to say that this is not a good choice for you.</a><br>
+<a>- - You are permitted to use and must include us in Footer`(www/parts/foot.ejs)` accordingly. If you don't do this and we discover you, I would like to say that this is not a good choice for you.</a><br>
 <a>- You can't speak in a "we did it" way.</a><br>
 <a>- You cannot sell it.</a>
 <br><br><br><br>
