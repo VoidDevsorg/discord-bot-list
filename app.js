@@ -346,6 +346,7 @@ app.get("/error", (req, res) => {
     app.post("/addbot", checkMaintence, checkAuth, async (req,res) => {
     rBody = req.body;
     let botvarmi = await botsdata.findOne({botID: rBody['botID']});
+    if(botvarmi) return res.redirect('?error=true&message=The bot you are trying to add exists in the system.');
     client.users.fetch(req.body.botID).then(async a => {
     if(!a.bot) return res.redirect("/error?code=404&message=You entered an invalid bot id.");
     if(!a) return res.redirect("/error?code=404&message=You entered an invalid bot id.");
@@ -353,7 +354,6 @@ app.get("/error", (req, res) => {
         if(String(rBody['coowners']).split(',').length > 3) return res.redirect("?error=true&message=You can add up to 3 CO-Owners..")
         if(String(rBody['coowners']).split(',').includes(req.user.id)) return res.redirect("?error=true&message=You cannot add yourself to other CO-Owners.");
     }
-    if(botvarmi) return res.redirect('?error=true&message=The bot you are trying to add exists in the system.');
     await new botsdata({
          botID: rBody['botID'], 
          ownerID: req.user.id,
