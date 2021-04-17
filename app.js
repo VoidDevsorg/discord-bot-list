@@ -345,8 +345,8 @@ app.get("/error", (req, res) => {
 
     app.post("/addbot", checkMaintence, checkAuth, async (req,res) => {
     rBody = req.body;
-    let botvarmi = await botsdata.findOne({botID: rBody['botID']});
-    if(botvarmi) return res.redirect('?error=true&message=The bot you are trying to add exists in the system.');
+      let botvarmi = await botsdata.findOne({botID: rBody['botID']});
+      if(botvarmi) return res.redirect('/error?code=404&message=The bot you are trying to add exists in the system.');
     client.users.fetch(req.body.botID).then(async a => {
     if(!a.bot) return res.redirect("/error?code=404&message=You entered an invalid bot id.");
     if(!a) return res.redirect("/error?code=404&message=You entered an invalid bot id.");
