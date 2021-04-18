@@ -3,7 +3,6 @@ const Discord = require("discord.js");
 const settings = require("./settings.json");
 const { Client, Collection } = require("discord.js");
 const client = (global.Client = new Client())
-const { Database, DatabaseManager } = require("@aloshai/mongosha")
 const canvacord = require('canvacord')
 const config = require("./settings.json")
 const { connect } = require("mongoose")
@@ -26,10 +25,6 @@ useCreateIndex : true
 }).then(() => {
 console.log("Mongoose Bağlandı!");
 }).catch(a => console.error(a));
-
-DatabaseManager.connect(url).then(() => {
-console.log("Monogsha Bağlandı!");
-}).catch(a => console.error(a))
 
 //-------------Events---------------\\
 
