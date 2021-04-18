@@ -1,9 +1,6 @@
 {
   "codelog": "CODE LOG",
   "login": "WEBSITE LOGIN LOG",
-  "request": "CODE REQUEST LOG",
-  "search": "SEARCH CODE CHANNEL",
-  "results": "SEARCH RESULT CHANNEL",
   "webstatus": "STATUS CHANNEL",
   "uptimelog": "UPTIME LOG",
   "botlog": "BOT LOG",
