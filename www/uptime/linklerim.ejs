@@ -1,0 +1,77 @@
+<%- include('../parts/head', {bot, user, path}) %>
+<style>
+  h1 {
+    color: #fFf;
+  }
+
+</style>
+<br><br><br>
+<div class="container">
+<a href="/uptime/add" style="float: right;" class="btn btn-primary has-text-white mb-3">Add Link</a>
+<table id="tableData" class="table table-dark table-striped" data-toggle="table" data-pagination="true" data-search="true">
+  <thead>
+  <th>Uptime Link</th>
+  <th>Uptime Code</th>
+  <th>Operation</th>
+  </thead>
+          <% uptimes.map(a => {%>
+            <tr>
+                <td><%= a.link %></td>
+                <td><%= a.code %></td>
+              <td><a onclick='deletequest("<%= a.code %>")' class="btn btn-danger">Delete</a></td>
+            </tr>
+         <% }); %>
+</table>
+</div>
+
+<br><br><br>
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('success') && urlParams.get('success')){
+    Swal.fire({
+     icon: 'success',
+     title: 'Succesfull...',
+     closeOnConfirm: false,
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/uptime/links';
+  }
+})
+    }
+    if(urlParams.has('error') && urlParams.get('error')){
+    Swal.fire({
+     icon: 'error',
+     title: 'Oops...',
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/uptime/links';
+  }    
+})
+    }
+function deletequest(uptimecode) {
+Swal.fire({
+  title: 'Are you sure?',
+  text: "Are you sure you want to permanently delete the link you selected?",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonText: 'Yes, delete it!',
+  cancelButtonText: 'No, cancel it!',
+  reverseButtons: true
+}).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/uptime/'+uptimecode+'/delete';
+  } else {
+    Swal.fire(
+      'Canceled..',
+      'Link deletion from the uptime system has been canceled.',
+      'error'
+    )
+  }
+})
+}
+   </script>
+<%- include('../parts/foot') %>

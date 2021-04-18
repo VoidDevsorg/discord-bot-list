@@ -1,0 +1,186 @@
+<%- include('../parts/head', {bot, user, path}) %>
+
+<title><%= member.username %> | Profile</title>
+<head>
+    <meta name="og:title" content="<%= member.username %>">
+</head>
+<div class="container px-3 px-3 mt-5 pt-5">
+    <div class="columns container px-3 is-multiline">
+        <div class="column is-2">
+            <img draggable="false" class="pulse-avatar-<%=member.presence.status%>"  onerror=" imgerror(this);"="" src="<%= member.avatarURL({dynamic: true}) %>" style="width: 300px; border-radius: 50%;">
+        </div>
+        <div class="column is-6">
+            <p translate="no" class="UserName is-size-2 has-text-white"> <%= member.username %><small class="is-size-5">#<%=member.discriminator%></small> <i class="status-circle fad fa-circle status-<%=member.presence.status%>"></i></p>
+            <% if(bot.guilds.cache.get(config.serverID).members.cache.get(member.id)) {%>
+            <% if (bot.guilds.cache.get(config.serverID).members.cache.get(member.id).roles.cache.get(roles.sitecreator)) { %>
+                <span data-tooltip="<%=bot.guilds.cache.get(config.serverID).roles.cache.get(roles.sitecreator).name%>" data-tooltip-location="top"> 
+                <i class="fad fa-brackets-curly has-text-success" style="color: <%=bot.guilds.cache.get(config.serverID).roles.cache.get(roles.sitecreator).hexColor%>;bottom: -5px; font-size: 26px;"></i>
+                </span>
+            <% } %>
+            <% if (bot.guilds.cache.get(config.serverID).members.cache.get(member.id).roles.cache.get(roles.yonetici)) { %>
+                <span data-tooltip="<%=bot.guilds.cache.get(config.serverID).roles.cache.get(roles.yonetici).name%>" data-tooltip-location="top"> 
+                    &nbsp;<i class="fad fa-crown has-text-danger" style="color: <%=bot.guilds.cache.get(config.serverID).roles.cache.get(roles.yonetici).hexColor%>;bottom: -5px; font-size: 26px;"></i>
+                </span>
+            <% } %>
+            <% if (bot.guilds.cache.get(config.serverID).members.cache.get(member.id).roles.cache.get(roles.moderator)) { %>
+                <span data-tooltip="<%=bot.guilds.cache.get(config.serverID).roles.cache.get(roles.moderator).name%>" data-tooltip-location="top"> 
+                    &nbsp;<i class="fad fa-gavel" style="color: <%=bot.guilds.cache.get(config.serverID).roles.cache.get(roles.moderator).hexColor%>;bottom: -5px; font-size: 26px;"></i>
+                </span>
+            <% } %>
+            <% if (bot.guilds.cache.get(config.serverID).members.cache.get(member.id).roles.cache.get(roles.codesharer)) { %>
+                <span data-tooltip="<%=bot.guilds.cache.get(config.serverID).roles.cache.get(roles.codesharer).name%>" data-tooltip-location="top"> 
+                    &nbsp;<i class="fad fa-file-code" style="color: <%=bot.guilds.cache.get(config.serverID).roles.cache.get(roles.codesharer).hexColor%>;bottom: -5px; font-size: 26px;"></i>
+                </span>
+            <% } %>
+            <% if (bot.guilds.cache.get(config.serverID).members.cache.get(member.id).roles.cache.get(roles.sponsor)) { %>
+                <span data-tooltip="<%=bot.guilds.cache.get(config.serverID).roles.cache.get(roles.sponsor).name%>" data-tooltip-location="top"> 
+                    &nbsp;<i class="fad fa-badge-dollar" style="color: <%=bot.guilds.cache.get(config.serverID).roles.cache.get(roles.sponsor).hexColor%>;bottom: -5px; font-size: 26px;"></i>
+                </span>
+            <% } %>
+            <% if (bot.guilds.cache.get(config.serverID).members.cache.get(member.id).roles.cache.get(roles.premium_developer)) { %>
+                <span data-tooltip="<%=bot.guilds.cache.get(config.serverID).roles.cache.get(roles.premium_developer).name%>" data-tooltip-location="top"> 
+                    &nbsp;<i class="fad fa-diamond" style="color: <%=bot.guilds.cache.get(config.serverID).roles.cache.get(roles.premium_developer).hexColor%>;bottom: -5px; font-size: 26px;"></i>
+                </span>
+            <% } %>
+            <% if (bot.guilds.cache.get(config.serverID).members.cache.get(member.id).roles.cache.get(roles.certified_developer)) { %>
+                <span data-tooltip="<%=bot.guilds.cache.get(config.serverID).roles.cache.get(roles.certified_developer).name%>" data-tooltip-location="top"> 
+                    &nbsp;<i class="fad fa-badge-check" style="color: <%=bot.guilds.cache.get(config.serverID).roles.cache.get(roles.certified_developer).hexColor%>;bottom: -5px; font-size: 26px;"></i>
+                </span>
+            <% } %>
+            <% if (bot.guilds.cache.get(config.serverID).members.cache.get(member.id).roles.cache.get(roles.supporter)) { %>
+                <span data-tooltip="<%=bot.guilds.cache.get(config.serverID).roles.cache.get(roles.supporter).name%>" data-tooltip-location="top"> 
+                    &nbsp;<i class="fad fa-diamond" style="color: <%=bot.guilds.cache.get(config.serverID).roles.cache.get(roles.supporter).hexColor%>;bottom: -5px; font-size: 26px;"></i>
+                </span>
+                <% } %>
+                <% } %>
+                <% if(member.flags) {%>
+                <%
+                            member.flags.toArray().forEach(flag =>{
+                                if (flag === "HOUSE_BALANCE") { %>
+                                    <span data-tooltip="Hypesquad Balance"
+                                    data-tooltip-location="top">
+                                    <img draggable="false" src="https://discord.com/assets/9fdc63ef8a3cc1617c7586286c34e4f1.svg" data-tooltip="Hypesquad Balance" class="mr-1" data-tippy-content="Hypesquad Balance" width="32px">
+                                </span>
+                                    <% }
+                
+                               if (flag === "HOUSE_BRILLIANCE") { %>
+                                <span data-tooltip="Hypesquad Brilliance"
+                                    data-tooltip-location="top">
+                               <img draggable="false" src="https://ptb.discord.com/assets/48cf0556d93901c8cb16317be2436523.svg" class="mr-1" data-tippy-content="HypeSquad Brilliance" width="32px">
+                               </span>
+                               <% }
+                
+                               if (flag === "HOUSE_BRAVERY") { %>
+                                <span data-tooltip="Hypesquad Bravery"
+                                    data-tooltip-location="top">
+                               <img draggable="false" src="https://canary.discord.com/assets/64ae1208b6aefc0a0c3681e6be36f0ff.svg" class=" mr-1" data-tippy-content="HypeSquad Bravery" width="32px">
+                          </span>
+                               <% }
+                               
+                               if (flag === "VERIFIED_DEVELOPER") { %>
+                                <span data-tooltip="Verified Developer"
+                                    data-tooltip-location="top">
+                               <img draggable="false" src="https://discord.com/assets/45cd06af582dcd3c6b79370b4e3630de.svg" class=" mr-1" data-tippy-content="Early Verified Developer" width="32px">
+                               </span>
+                               <% }
+                               
+                               if (flag === "EARLY_SUPPORTER") { %>
+                                <span data-tooltip="Early Supporter"
+                                    data-tooltip-location="top">
+                               <img draggable="false" src="https://discord.com/assets/23e59d799436a73c024819f84ea0b627.svg" class=" mr-1" data-tippy-content="Early Supporter" width="32px">
+                               </span>
+                               <% }
+                            })
+                            %>
+                            <% } %>
+                          <% let av = member.avatarURL({dynamic: true}) %>
+                          <% if(av.endsWith('.gif')) {%>
+                            <span data-tooltip="Nitro Subscriber"
+                                    data-tooltip-location="top">
+                            <img draggable="false" src="https://discord.com/assets/386884eecd36164487505ddfbac35a9d.svg" class="mr-1" data-tippy-content="Nitro Subscriber" width="32px">
+                            </span>
+                            <% } %>            
+            <br>
+            <% if(pdata) {%>
+            <p class="UserDesc mt-1 has-text-white"> <%= pdata.biography || "Biography not setted." %></p>
+            <% } %>
+		<br>
+	    <%if(req.user) {%>
+            <% if(req.user.id === member.id) {%>
+                <a class="btn btn-primary" href="/user/<%=member.id%>/edit"><i class="fad fa-pencil"></i> Edit</a>
+                <% } %>
+		<% } %>
+        </div>
+        <div class="is-4 mt-1 column">
+            <% if(pdata) {%>
+                <% if(pdata.twitter) {%>
+                    <a href="/redirect?type=website&url=https://twitter.com/<%= pdata.twitter %>" class="is-flex mt-1">
+                      <div style="background: #2077aa" class="box-2-p"><i class="fab fa-twitter is-size-6 mt-1"></i></div>
+                      <p style="background: #019ffa" class="box-2">Twitter</p>
+                    </a>
+                <% } %>
+                <% if(pdata.instagram) {%>
+                <a href="/redirect?type=website&url=https://instagram.com/<%= pdata.instagram %>" class="is-flex mt-1">
+                    <div style="background: #923453" class="box-2-p"><i class="fab fa-instagram is-size-6 mt-1"></i></div>
+                    <p style="background: #E1306C" class="box-2">Instagram</p>
+                </a>
+                 <% } %>
+                  <% if(pdata.website) {%>
+                  <a href="/redirect?type=website&url=<%= pdata.website %>" class="is-flex mt-1">
+                    <div style="background: rgb(33, 167, 111);" class="box-2-p"><i class="fa fa-globe is-size-6 mt-1"></i></div>
+                    <p style="background: rgb(8, 187, 112);"class="box-2">Website</p>
+                  </a>
+                  <% } %>
+                  <% if(pdata.github) {%>
+                  <a href="/redirect?type=website&url=https://github.com/<%= pdata.github %>" class="is-flex mt-1">
+                    <div style="background: rgb(0, 0, 0);" class="box-2-p"><i class="fab fa-github is-size-6 mt-1"></i></div>
+                    <p style="background: rgb(8, 8, 8);" class="box-2">Github</p>
+                  </a>
+                  <% } %>
+            <% } %>
+        </div>
+        <div class="column is-25">
+            <br>
+            <h3 style="margin-bottom: -2%; color: #fff;">
+                <i class="fad fa-robot" translate="no" data-tippy-content="Test"></i> <%= member.username %>'s Bots
+            </h3>
+            <hr class="vcodes_divider">
+            <div class="columns is-multiline is-desktop mt-5 is-variable is-7">
+                <% botdata.filter(a => (member.id === a.ownerID || a.coowners.includes(member.id))).sort((a, b) => b.votes - a.votes).map(a => {%>
+                    <div class="column is-4 mb-5">    
+                             
+                       <div style="background-color: #23272a;" class="box cardvcodesbotCard">
+                         <div>
+                           <img draggable="false" onerror="imgError(this);" alt="<%= a.username %>" src="<%= a.avatar %>" class="is-pulled-left cardvcodesbotIMG z">
+                         </div>
+                         <div class="is-pulled-right is-inline-block">
+                            <span class="tag is-dark mt-1 w-100">Votes: <%= a.votes || "0" %></span>
+                            </div>
+                          <br><br><br>
+                         <p translate="no" style="margin-top: 5px;" class="cardvcodesbotName has-text-white mt-3">
+                        <%= a.username %>
+                        <% if(a.certificate == "Certified") {%>
+                            <a data-tooltip="Certified Bot"
+                            data-tooltip-location="top"><i class="fad fa-badge-check has-text-primary"></i></a>
+                         <% } %>
+                         <% if(a.premium == "Premium") {%>
+                            <a data-tooltip="Premium Bot"
+                            data-tooltip-location="top"><i class="fad fa-diamond has-text-primary"></i></a>
+                         <% } %>
+                         </p>   
+                         <p style="margin-top: -10px;" class="cardvcodesbotDesc"><%= a.shortDesc %></p>
+                         <center>
+
+                            <div class="cardvcodesbotButtons is-flex">
+                                <a href="/bot/<%= a.botID %>" class="cardBtn1 btn-cardd"><i class="fad fa-eye"></i>&nbsp;View</a>
+                                <a href="/redirect?type=botInvite&botID=<%= a.botID %>" class="cardBtn2 btn-cardd"><i class="fad fa-user-plus"></i>&nbsp;Invite</a>
+                            </div>
+                        </center>
+                       </div>
+                   </div>
+                <% }) %>
+               </div>
+    </div>
+</div>
+</div>
+<%- include('../parts/foot') %>

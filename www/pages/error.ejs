@@ -1,0 +1,52 @@
+<%- include('../parts/head', {bot, user,path}) %>
+<%
+var url = new URL(`https://vcodes.xyz/error?code=${req.query.code}&message=${req.query.message}`);
+var params = new URLSearchParams(url.search);
+%>
+<title>Error <%= params.get('code')%> - vCodes</title>
+</head>
+<style>
+.four_zero_four_bg{
+ 
+ background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+ }
+.link_404 {
+
+}
+
+</style>
+<center>
+    <br><br><br><br>
+<section class="page_404">
+	<div class="container">
+		<div class="row">	
+		<div class="col-sm-12 ">
+		<div class="col-sm-10 col-sm-offset-1  text-center">
+		<h1><i class="fad fa-bug fa-5x has-text-danger"></i></h1>
+		</div>
+		<div class="contant_box_404">
+        <h1 class="text-center has-text-white"><%= params.get('code') %></h1>
+		<h3 class="h2 has-text-white">
+            <%= params.get('message') %>
+		</h3>		
+		<a href="/" class="btn btn-discord"><i class="fad fa-home"></i> Go to Home</a>
+		<a href="/dc" class="btn btn-discord"><i class="fab fa-discord"></i> Join our Discord</a>
+	</div>
+		</div>
+		</div>
+		</div>
+	</div>
+</section>
+</center>
+<br><br style.="margin-top: 5px;">
+
+<center>
+<% if(params.get('code') == "200") {%>
+    <p class="has-text-white">You are authorized? <a class="btn btn-discord" href="/login">Login</a></p>
+<% } %>
+</center>
+
+<%- include('../parts/foot') %>
