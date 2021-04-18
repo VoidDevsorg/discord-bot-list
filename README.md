@@ -5,6 +5,11 @@
 
   > <h3 style="background-color: #000;">Change Log</h3>
   > <p class="subtitle"> Some errors fixed.</p>
+  > <p class="subtitle"> Premium system removed.</p>
+  > <p class="subtitle"> Admin Panel modified..</p>
+  > <p class="subtitle"> Bots, Bot info command added.</p>
+  > <p class="subtitle"> A special url system has been added for certified bots.</p>
+  > <p class="subtitle"> The "latest bots" section has been added to the Homepage.</p>
  <br><br>
  
   > [English] <p class="subtitle"> We are not charities, you have conditions for use. Refuse the terms and open a private message group for us; "Didn't you share it for people to use?" Do not ask questions like.</p>
