@@ -435,7 +435,6 @@ app.get("/sitemap.xml", async function(req,res) {
     app.get("/bot/:botID", checkMaintence, async (req,res,next) => {
       let botdata = await botsdata.findOne({botID: req.params.botID});
       if(!botdata) return res.redirect("/error?code=404&message=You entered an invalid bot id.");
-      if(botdata.privateURL) return res.redirect('/bot/@'+botdata.privateURL)
       if(botdata.status != "Approved") {
         if(req.user.id == botdata.ownerID || botdata.coowners.includes(req.user.id)) {
           let coowner = new Array()
