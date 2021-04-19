@@ -151,13 +151,6 @@ app.get("/sitemap.xml", async function(req,res) {
         res.redirect("/");
       });
     });
-  
-    const http = require('http').createServer(app);
-    const io = require('socket.io')(http);
-    io.on('connection', socket => {
-      io.emit("userCount", io.engine.clientsCount);
-    }); 
-    http.listen(80);
     //------------------- EXTRA -------------------//
     app.get("/", checkMaintence, async (req, res) => {
       const botdata = await botsdata.find();
@@ -370,27 +363,6 @@ app.get("/sitemap.xml", async function(req,res) {
       if(!client.guilds.cache.get(settingsc.serverID).members.cache.get(req.user.id)) return res.redirect("/error?code=403&message=To do this, you have to join our discord server.");
       renderTemplate(res, req, "botlist/addbot.ejs", {req, roles, config});
     })
-    app.get("/bot/@:privateURL/vote", checkMaintence, async (req,res) => {
-      let botdata = await botsdata.findOne({ privateURL: req.params.privateURL });
-      if(!botdata) return res.redirect("/error?code=404&message=You entered an invalid bot id.");
-      if(req.user) {
-      if(!req.user.id === botdata.ownerID || req.user.id.includes(botdata.coowners)) {
-        if(botdata.status != "Approved") return res.redirect("/error?code=404&message=You entered an invalid bot id.");
-      }
-      }
-      renderTemplate(res, req, "botlist/vote.ejs", {req, roles, config, botdata});
-    })
-    app.post("/bot/@:privateURL/vote", checkMaintence, checkAuth, async (req,res) => {
-      const votes = require("./models/botlist/vote.js");
-      let botdata = await botsdata.findOne({ privateURL: req.params.privateURL });
-      let x = await votes.findOne({user: req.user.id,bot: botdata.botID })
-      if(x) return res.redirect("/error?code=400&message=You can vote every 12 hours.");
-      await votes.findOneAndUpdate({bot: botdata.botID, user: req.user.id }, {$set: {Date: Date.now(), ms: 43200000 }}, {upsert: true})
-      await botsdata.findOneAndUpdate({botID: botdata.botID}, {$inc: {votes: 1}})
-      client.channels.cache.get(channels.votes).send(`**${req.user.username}** voted **${botdata.username}** **\`(${botdata.votes + 1} votes)\`**`)
-      return res.redirect(`/bot/@${req.params.privateURL}/vote?success=true&message=You voted successfully. You can vote again after 12 hours.`);
-      renderTemplate(res, req, "botlist/vote.ejs", {req, roles, config, botdata});
-    })
     app.get("/bot/:botID/vote", checkMaintence, async (req,res) => {
       let botdata = await botsdata.findOne({ botID: req.params.botID });
       if(botdata.privateURL) return res.redirect('/bot/@'+botdata.privateURL+'/vote');
@@ -460,19 +432,6 @@ app.get("/sitemap.xml", async function(req,res) {
       res.redirect(`?success=true&message=Your bot has been successfully added to the system.&botID=${rBody['botID']}`)
       })
     })
-    app.get("/bot/@:privateURL", checkMaintence, async (req,res,next) => {
-      let botdata = await botsdata.findOne({ privateURL: req.params.privateURL });
-      if(!botdata) return res.redirect("/error?code=404&message=You entered an invalid bot id.");
-        let coowner = new Array()
-        botdata.coowners.map(a => {
-            client.users.fetch(a).then(b => coowner.push(b))
-        })
-        client.users.fetch(botdata.ownerID).then(aowner => {
-        client.users.fetch(botdata.botID).then(abot => {
-            renderTemplate(res, req, "botlist/bot.ejs", { req, abot, config, botdata, coowner, aowner, roles});
-        });
-        });
-    });
     app.get("/bot/:botID", checkMaintence, async (req,res,next) => {
       let botdata = await botsdata.findOne({botID: req.params.botID});
       if(!botdata) return res.redirect("/error?code=404&message=You entered an invalid bot id.");
@@ -502,19 +461,6 @@ app.get("/sitemap.xml", async function(req,res) {
         });
         });
       }
-    });
-    app.post("/bot/@:privateURL", checkMaintence, async (req,res,next) => {
-      let botdata = await botsdata.findOne({ privateURL: req.params.privateURL});
-        client.users.fetch(botdata.botID).then(async bot => {
-          client.users.fetch(botdata.ownerID).then(async owner => {
-          if(bot) {
-          await botsdata.findOneAndUpdate({ botID: botdata.botID },{$set: { ownerName: owner.username, username: bot.username, discrim: bot.discriminator, avatar: bot.avatarURL() }})
-          } else {
-          await botsdata.findOneAndDelete({ botID: botdata.botID })
-          }
-          })
-        })
-        return res.redirect('/bot/@'+req.params.privateURL);
     });
     app.post("/bot/:botID", async (req,res) => {
       let botdata = await botsdata.findOne({botID: req.params.botID});
@@ -928,6 +874,8 @@ app.get("/sitemap.xml", async function(req,res) {
     app.use((req, res) => {
         res.status(404).redirect("/")
     });
+    
+    app.listen(3000);
   };
   
   function makeid(length) {
