@@ -8,7 +8,6 @@
   > <p class="subtitle"> Premium system removed.</p>
   > <p class="subtitle"> Admin Panel modified..</p>
   > <p class="subtitle"> Bots, Bot info command added.</p>
-  > <p class="subtitle"> A special url system has been added for certified bots.</p>
   > <p class="subtitle"> The "latest bots" section has been added to the Homepage.</p>
   > <p class="subtitle"> The code search channel was removed.</p>
   > <p class="subtitle"> Bot autorole has been added.</p>
