@@ -489,8 +489,6 @@ app.get("/sitemap.xml", async function(req,res) {
     app.post("/bot/:botID/edit", checkMaintence, checkAuth, async (req,res) => {
       let rBody = req.body;
       let botdata = await botsdata.findOne({ botID: req.params.botID })
-      let database = botsdata.find();
-      if(database.filter(a => a.botID != req.body.botID && a.privateURL == req.body.privateURL)) return res.redirect('?error=true&message=This private url belongs to another bot.');
       if(String(rBody['coowners']).split(',').length > 3) return res.redirect("?error=true&message=You can add up to 3 CO-Owners..")
       if(String(rBody['coowners']).split(',').includes(req.user.id)) return res.redirect("?error=true&message=You cannot add yourself to other CO-Owners.");
       await botsdata.findOneAndUpdate({botID: req.params.botID},{$set: {
