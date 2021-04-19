@@ -31,7 +31,7 @@
                 <br>
                 <select name="bot" id="bot" required>
                   <% userbots.map(a => {%>
-                    <% if(a.certificate == "None") {%>
+                    <% if(a.status === "Approved" && a.certificate == "None") {%>
                     <option value="<%= a.botID %>"><%= a.username %></option>
                     <% } %>
                  <% }); %>
