@@ -4,16 +4,8 @@
 
   > <h3 style="background-color: #000;">Change Log</h3>
   > <p class="subtitle"> Some errors fixed.</p>
-  > <p class="subtitle"> Premium system removed.</p>
-  > <p class="subtitle"> Admin Panel modified..</p>
-  > <p class="subtitle"> Bots, Bot info command added.</p>
-  > <p class="subtitle"> The "latest bots" section has been added to the Homepage.</p>
-  > <p class="subtitle"> The code search channel was removed.</p>
-  > <p class="subtitle"> Bot autorole has been added.</p>
-  > <p class="subtitle"> Code request removed.</p>
-  > <p class="subtitle"> The number of active users in the site has been added to the footer.</p>
-  > <p class="subtitle"> Once the certificate is issued, automatic role assignment has been added.</p>
-  > <p class="subtitle"> Elements that slow down the site have been removed.</p>
+  > <p class="subtitle"> Cards changed.</p>
+  > <p class="subtitle"> API updated.</p>
  <br><br>
  <br><br>
  
