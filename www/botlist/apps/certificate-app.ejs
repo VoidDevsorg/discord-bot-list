@@ -1,0 +1,74 @@
+<%- include('../../parts/head', {bot, user, path}) %>
+     <br><br>
+<div class="container">
+  <br><br>
+<div class="container contact-form bg-vote-vcodes">
+  <div class="contact-image">
+      <i></i>
+  </div>
+  <form method="post" class="form-discorddark">
+      <h3></h3>
+     <div class="row">
+          <div class="col-md-6">
+              <div class="form-group">
+                <label><i class="fad fa-database"></i> Is the bot over 100+ servers?
+		<br><small class="text-muted">Since you are applying, your bot should already have 100+ servers.</small></label>
+                <br>
+                <select name="onehundred" id="onehundred" required disabled>
+                    <option value="Yes" selected>Yes</option>
+                    <option value="No">No</option>
+                </select>    
+              </div>
+              <br>
+              <div class="form-group">
+                  <label>What distinguishes your boat from other bots?</label>
+                  <textarea type="text" id="future" name="future" style="width: 100%;"></textarea>
+            </div>
+            <br>
+              <div class="form-group">
+                <label><i class="fad fa-robot"></i> Choose your bot
+                </label>
+                <br>
+                <select name="bot" id="bot" required>
+                  <% userbots.filter(a => a.status == "Approved" && a.certificate == "None").map(a => {%>
+                    <option value="<%= a.botID %>"><%= a.username %></option>
+                 <% }); %>
+              </select>
+            </div>
+          </div>
+      </div>
+      <br><br><br><br>
+      <button type="submit" name="btnSubmit" class="btn btn-primary"><i class="fad fa-save"></i> Submit</button>
+  </form>
+</div>
+</div>
+<br><br>
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('success') && urlParams.get('success')){
+    Swal.fire({
+     icon: 'success',
+     title: 'Succesfull...',
+     closeOnConfirm: false,
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = `/bot/${urlParams.get('botID')}`;
+  }
+})
+    }
+    if(urlParams.has('error') && urlParams.get('error')){
+    Swal.fire({
+     icon: 'error',
+     title: 'Oops...',
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/addbot';
+  }    
+})
+    }
+   </script>
+<%- include('../../parts/foot') %>

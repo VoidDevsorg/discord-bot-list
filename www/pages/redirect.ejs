@@ -1,0 +1,32 @@
+<%
+var url = new URL(`https://vcodes.xyz/redirect?type=${req.query.type}`);
+var params = new URLSearchParams(url.search);
+%>
+<head>
+    <% if(params.get('type') === "botInvite") {%>
+  <meta http-equiv="refresh" content="1; URL='https://discord.com/oauth2/authorize?client_id=<%= req.query.botID %>&permissions=8&scope=bot'" />
+    <% } %>
+    <% if(params.get('type') === "website") {%>
+        <meta http-equiv="refresh" content="1; URL='<%= req.query.url %>" />
+    <% } %>
+<link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet">
+<link href="https://getbootstrap.com/docs/4.4/assets/css/docs.min.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+<link rel="icon" href="https://img.devsforum.net/tr/img/e8T8H1.png" type="image/x-icon" />
+<link rel="shortcut icon" href="https://img.devsforum.net/tr/img/e8T8H1.png" type="image/x-icon" />
+</head>
+<html>
+
+<center>
+<div class="preloader">
+        <div class="loader loader-1">
+          <div class="loader-outter"></div>
+          <div class="loader-inner"></div>
+        </div>
+        <br>
+        <p class="has-text-white">Redirecting...</p>
+        <br><br>
+</div>
+</center>
+</html>

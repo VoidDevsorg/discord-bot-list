@@ -1,0 +1,23 @@
+<%- include('../../parts/head', {bot, user, path}) %>
+<br><br><br>
+    <div class="container">
+        <div class="column">
+            <p class="has-text-white title is-large" style="text-transform: capitalize;"><i class="fa fa-code has-text-info"></i>&nbsp; <%= req.params.type %> Codes</p>
+          </div>
+          <table id="tableData" class="table table-dark table-striped" data-toggle="table" data-pagination="true" data-search="true">
+            <thead>
+            <th>Code Name</th>
+            <th>Code Description</th>
+            <th>Operation</th>
+            </thead>
+                    <% data.filter(a => a.codeCategory.toLowerCase() === req.params.type.toLowerCase()).map(a => {%>
+                      <tr>
+                          <td><a translate="yes"><%= a.codeName %></a></td>
+                          <td><a translate="yes"><%= a.codeDesc %></a></td>
+                          <td><a href="/code/<%= a.code %>" style="padding: 5px 25px;" class="btn btn-vote has-text-white">View</a></td>
+                      </tr>
+                   <% }); %>
+          </table>
+    </div>
+</center>
+<%- include('../../parts/foot') %>
