@@ -830,12 +830,6 @@ app.get("/sitemap.xml", async function(req,res) {
         return res.redirect('../admin/userban?success=true&message=User ban removed.');
       });
     
-      app.get("/admin/partners", checkMaintence, checkAdmin, checkAuth, async (req, res) => {
-        if(!settingsc.owner.includes(req.user.id)) return res.redirect('../admin');
-        const Database = require("void.db");
-        const db = new Database("./databases/partners.json");
-        renderTemplate(res, req, "/admin/administrator/partners.ejs", { req, roles, config, db })
-      });
       //---------------- ADMIN ---------------\\
   
     //------------------- PROFILE -------------------//
