@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const vcodes = require("vcodes.js");
-const dbl = new vcodes("kbzWAcPtaDRFRUcVsrWsGktt",client);
+const dbl = new vcodes("TOKEN",client);
 module.exports.run = async (client,message,args) => {
    if(!args[0]) return message.channel.send("Error: Please write bot id.");
    let b = await dbl.search(args[0]);
