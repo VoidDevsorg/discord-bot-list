@@ -177,9 +177,7 @@ app.get("/sitemap.xml", async function(req,res) {
         renderTemplate(res, req, "team.ejs", {req, roles, config});
       });
     app.get("/partners", checkMaintence, (req, res) => {
-      const Database = require("void.db");
-      const db = new Database("./databases/partners.json")
-      renderTemplate(res, req, "partners.ejs", {roles, config, db});
+      renderTemplate(res, req, "partners.ejs", {roles, config});
     });
     app.get("/bot-rules", checkMaintence, (req, res) => {
       renderTemplate(res, req, "/botlist/bot-rules.ejs", {config,roles});
