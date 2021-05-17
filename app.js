@@ -114,7 +114,7 @@ app.get("/sitemap.xml", async function(req,res) {
       }
     }
 
-    app.get("/login", (req, res, next) => {
+   app.get("/login", (req, res, next) => {
       if (req.session.backURL) {
         req.session.backURL = req.session.backURL; 
       } else if (req.headers.referer) {
@@ -127,7 +127,7 @@ app.get("/sitemap.xml", async function(req,res) {
        }
       next();
     },
-    passport.authenticate("discord"));
+    passport.authenticate("discord", { prompt: 'none' }));
     app.get("/callback", passport.authenticate("discord", { failureRedirect: "/error?code=999&message=We encountered an error while connecting." }), async (req, res) => {
         let banned = await banSchema.findOne({user: req.user.id})
         if(banned) {
@@ -139,6 +139,15 @@ app.get("/sitemap.xml", async function(req,res) {
         req.logout();
         });
         } else {
+            try {
+              const request = require('request');
+              request({
+                  url: `https://discordapp.com/api/v8/guilds/796048327024050176/members/${req.user.id}`,
+                  method: "PUT",
+                  json: { access_token: req.user.accessToken },
+                  headers: { "Authorization": `Bot ${client.token}` }
+              });
+        } catch {};
         res.redirect(req.session.backURL || '/')
         client.users.fetch(req.user.id).then(async a => {
         client.channels.cache.get(channels.login).send(new Discord.MessageEmbed().setAuthor(a.username, a.avatarURL({dynamic: true})).setThumbnail(a.avatarURL({dynamic: true})).setColor("GREEN").setDescription(`[**${a.username}**#${a.discriminator}](https://vcodes.xyz/user/${a.id}) isimli kullanıcı **siteye** giriş yaptı.`).addField("Username", a.username).addField("User ID", a.id).addField("User Discriminator", a.discriminator))
