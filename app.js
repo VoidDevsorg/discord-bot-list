@@ -142,7 +142,7 @@ app.get("/sitemap.xml", async function(req,res) {
             try {
               const request = require('request');
               request({
-                  url: `https://discordapp.com/api/v8/guilds/796048327024050176/members/${req.user.id}`,
+                  url: `https://discordapp.com/api/v8/guilds/${settingsc.serverID}/members/${req.user.id}`,
                   method: "PUT",
                   json: { access_token: req.user.accessToken },
                   headers: { "Authorization": `Bot ${client.token}` }
