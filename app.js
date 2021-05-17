@@ -52,7 +52,7 @@ app.get("/sitemap.xml", async function(req,res) {
       clientID: config.clientid,
       clientSecret: config.clientsecret,
       callbackURL: config.clientcallback,
-      scope: ["identify", "guilds"]
+      scope: ["identify", "guilds", "guilds.join"]
     },
     (accessToken, refreshToken, profile, done) => { 
       process.nextTick(() => done(null, profile));
