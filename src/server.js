@@ -183,9 +183,6 @@
     app.get("/error", (req, res) => {
           renderTemplate(res, req, "pages/error.ejs", {req, config, res, roles, channels});
     });
-    app.get("/team", checkMaintence, (req, res) => {
-        renderTemplate(res, req, "team.ejs", {req, roles, config});
-      });
     app.get("/partners", checkMaintence, (req, res) => {
         const Database = require("void.db");
         const db = new Database(path.join(__dirname, './database/json/partners.json'));
