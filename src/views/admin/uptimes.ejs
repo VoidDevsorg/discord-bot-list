@@ -1,0 +1,80 @@
+<%- include('static/head.ejs', { bot,user,path})  %>
+<div id="content" class="main-content">
+    <div class="layout-px-spacing">
+
+        <div class="page-header">
+            <nav class="breadcrumb-one" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Bot List</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Uptimes</a></li>
+                </ol>
+            </nav>
+        </div>
+        
+        <div class="row layout-top-spacing" id="cancel-row">
+        
+            <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+                <div class="widget-content widget-content-area br-6">
+                    <table id="default-ordering" class="table table-hover" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Link</th>
+                                <th>Uptime Code</th>
+                                <th class="text-center dt-no-sorting">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% updata.map(b => {%>
+                            <tr>
+                                <td><%= b.userName %></td>
+                                <td><%= b.link %></td>
+                                <td><%= b.code %></td>
+                                <td class="text-center">
+                                    <button onclick="window.location.href='/admin/deleteuptime/<%= b.code %>'" class="btn btn-danger btn-sm">Delete</button>
+                                </td>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Username</th>
+                                <th>Link</th>
+                                <th>Uptime Code</th>
+                                <th class="invisible"></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script>
+            var urlParams = new URLSearchParams(window.location.search);
+            if(urlParams.has('success') && urlParams.get('success')){
+            Swal.fire({
+             icon: 'success',
+             title: 'Succesfull...',
+             closeOnConfirm: false,
+             text: urlParams.get('message'),
+             footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+            }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = '/admin/uptimes';
+          }
+        })
+            }
+            if(urlParams.has('error') && urlParams.get('error')){
+            Swal.fire({
+             icon: 'error',
+             title: 'Oops...',
+             text: urlParams.get('message'),
+             footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+            }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = '/admin/uptimes';
+          }    
+        })
+            }
+           </script>
+        </div></div>
+        <%- include('static/foot.ejs', { bot,user,path}) %>

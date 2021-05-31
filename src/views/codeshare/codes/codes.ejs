@@ -1,0 +1,189 @@
+<%- include('../../parts/head', {bot, user, path}) %>
+<br><br><br>
+    <div class="container">
+        <div class="column">
+            <p class="has-text-white title is-large"><i class="fa fa-code has-text-info"></i>&nbsp; Codes</p>
+          </div>
+          <div class="columns is-multiline is-desktop is-variable is-7 mt-5 pt-5">
+
+                    <div class="column is-3 mb-5">    
+                        <div style="background-color: #23272a;" class="box cardvcodesbotCard">
+                          <div>
+                            <i draggable="false" style="font-size: 140px;" class="fab fa-js fa-5x is-pulled-left has-text-warning cardvcodesbotIMG z"></i>
+                          </div>
+                          <div class="is-pulled-right is-inline-block">
+                             <span class="tag is-dark mt-1 w-100">Total: <%= data.filter(a => a.codeCategory.toLowerCase() === "javascript").length %></span>
+                             </div>
+                           <br><br><br>
+                          <p style="margin-top: 5px;" class="cardvcodesbotName has-text-white mt-5">
+                            Javascript Codes
+                        </p>   
+                          <center>
+        
+                          <div class="cardvcodesbotButtons">
+                              <a href="/codes/javascript" style="width: 70%; color: #fff;padding: 5px 20px;" class="btn btn-vote"><i class="fad fa-eye"></i>&nbsp;View</a>
+                              <br><br>
+        
+                             </div>
+                         </center>
+                        </div>
+                    </div>
+                    <div class="column is-3 mb-5">    
+                        <div style="background-color: #23272a;" class="box cardvcodesbotCard">
+                          <div>
+                            <i draggable="false" style="font-size: 140px;" class="fab fa-html5 fa-5x is-pulled-left has-text-danger cardvcodesbotIMG z"></i>
+                          </div>
+                          <div class="is-pulled-right is-inline-block">
+                             <span class="tag is-dark mt-1 w-100">Total: <%= data.filter(a => a.codeCategory.toLowerCase() === "html").length %></span>
+                             </div>
+                           <br><br><br>
+                          <p style="margin-top: 5px;" class="cardvcodesbotName has-text-white mt-5">
+                            HTML Codes
+                        </p>   
+                          <center>
+        
+                          <div class="cardvcodesbotButtons">
+                              <a href="/codes/html" style="width: 70%; color: #fff;padding: 5px 20px;" class="btn btn-vote"><i class="fad fa-eye"></i>&nbsp;View</a>
+                              <br><br>
+        
+                             </div>
+                         </center>
+                        </div>
+                    </div>
+                    <div class="column is-3 mb-5">    
+                        <div style="background-color: #23272a;" class="box cardvcodesbotCard">
+                          <div>
+                            <i draggable="false" style="font-size: 120px;" class="fad fa-file-code fa-3x is-pulled-left has-text-info cardvcodesbotIMG z"></i>
+                          </div>
+                          <div class="is-pulled-right is-inline-block">
+                             <span class="tag is-dark mt-1 w-100">Total: <%= data.filter(a => a.codeCategory.toLowerCase() === "substructure").length %></span>
+                             </div>
+                           <br><br><br>
+                          <p style="margin-top: 5px;" class="cardvcodesbotName has-text-white mt-5">
+                            Substructure Codes
+                        </p>   
+                          <center>
+        
+                          <div class="cardvcodesbotButtons">
+                              <a href="/codes/substructure" style="width: 70%; color: #fff;padding: 5px 20px;" class="btn btn-vote"><i class="fad fa-eye"></i>&nbsp;View</a>
+                              <br><br>
+        
+                             </div>
+                         </center>
+                        </div>
+                    </div>
+                    <div class="column is-3 mb-5">    
+                        <div style="background-color: #23272a;" class="box cardvcodesbotCard">
+                          <div>
+                            <i draggable="false" style="font-size: 120px;" class="fad fa-mobile-alt fa-3x is-pulled-left has-text-primary cardvcodesbotIMG z"></i>
+                          </div>
+                          <div class="is-pulled-right is-inline-block">
+                             <span class="tag is-dark mt-1 w-100">Total: <%= data.filter(a => a.codeCategory.toLowerCase() === "bdfd").length %></span>
+                             </div>
+                           <br><br><br>
+                          <p style="margin-top: 5px;" class="cardvcodesbotName has-text-white mt-5">
+                            BDFD Codes
+                        </p>   
+                          <center>
+        
+                          <div class="cardvcodesbotButtons">
+                              <a href="/codes/bdfd" style="width: 70%; color: #fff;padding: 5px 20px;" class="btn btn-vote"><i class="fad fa-eye"></i>&nbsp;View</a>
+                              <br><br>
+        
+                             </div>
+                         </center>
+                        </div>
+                    </div>
+
+                    <div class="column is-3 mb-5">    
+                        <div style="background-color: #23272a;" class="box cardvcodesbotCard">
+                          <div>
+                            <i draggable="false" style="font-size: 120px;" class="fad fa-stars fa-3x is-pulled-left has-text-warning cardvcodesbotIMG z"></i>
+                          </div>
+                          <div class="is-pulled-right is-inline-block">
+                             <span class="tag is-dark mt-1 w-100">Total: <%= data.filter(a => a.codeCategory.toLowerCase() === "5invites").length %></span>
+                             </div>
+                           <br><br><br>
+                          <p style="margin-top: 5px;" class="cardvcodesbotName has-text-white mt-5">
+                            5 Invites Codes
+                        </p>   
+                          <center>
+        
+                          <div class="cardvcodesbotButtons">
+                              <a href="/codes/5invites" style="width: 70%; color: #fff;padding: 5px 20px;" class="btn btn-vote"><i class="fad fa-eye"></i>&nbsp;View</a>
+                              <br><br>
+        
+                             </div>
+                         </center>
+                        </div>
+                    </div>
+                    <div class="column is-3 mb-5">    
+                        <div style="background-color: #23272a;" class="box cardvcodesbotCard">
+                          <div>
+                            <i draggable="false" style="font-size: 120px;" class="fad fa-stars fa-3x is-pulled-left has-text-warning cardvcodesbotIMG z"></i>
+                          </div>
+                          <div class="is-pulled-right is-inline-block">
+                             <span class="tag is-dark mt-1 w-100">Total: <%= data.filter(a => a.codeCategory.toLowerCase() === "10invites").length %></span>
+                             </div>
+                           <br><br><br>
+                          <p style="margin-top: 5px;" class="cardvcodesbotName has-text-white mt-5">
+                            10 Invites Codes
+                        </p>   
+                          <center>
+        
+                          <div class="cardvcodesbotButtons">
+                              <a href="/codes/10invites" style="width: 70%; color: #fff;padding: 5px 20px;" class="btn btn-vote"><i class="fad fa-eye"></i>&nbsp;View</a>
+                              <br><br>
+        
+                             </div>
+                         </center>
+                        </div>
+                    </div>
+                    <div class="column is-3 mb-5">    
+                        <div style="background-color: #23272a;" class="box cardvcodesbotCard">
+                          <div>
+                            <i draggable="false" style="font-size: 120px;" class="fad fa-stars fa-3x is-pulled-left has-text-warning cardvcodesbotIMG z"></i>
+                          </div>
+                          <div class="is-pulled-right is-inline-block">
+                             <span class="tag is-dark mt-1 w-100">Total: <%= data.filter(a => a.codeCategory.toLowerCase() === "15invites").length %></span>
+                             </div>
+                           <br><br><br>
+                          <p style="margin-top: 5px;" class="cardvcodesbotName has-text-white mt-5">
+                            15 Invites Codes
+                        </p>   
+                          <center>
+        
+                          <div class="cardvcodesbotButtons">
+                              <a href="/codes/15invites" style="width: 70%; color: #fff;padding: 5px 20px;" class="btn btn-vote"><i class="fad fa-eye"></i>&nbsp;View</a>
+                              <br><br>
+        
+                             </div>
+                         </center>
+                        </div>
+                    </div>
+                    <div class="column is-3 mb-5">    
+                        <div style="background-color: #23272a;" class="box cardvcodesbotCard">
+                          <div>
+                            <i draggable="false" style="font-size: 120px;" class="fad fa-stars fa-3x is-pulled-left has-text-warning cardvcodesbotIMG z"></i>
+                          </div>
+                          <div class="is-pulled-right is-inline-block">
+                             <span class="tag is-dark mt-1 w-100">Total: <%= data.filter(a => a.codeCategory.toLowerCase() === "20invites").length %></span>
+                             </div>
+                           <br><br><br>
+                          <p style="margin-top: 5px;" class="cardvcodesbotName has-text-white mt-5">
+                            20 Invites Codes
+                        </p>   
+                          <center>
+        
+                          <div class="cardvcodesbotButtons">
+                              <a href="/codes/20invites" style="width: 70%; color: #fff;padding: 5px 20px;" class="btn btn-vote"><i class="fad fa-eye"></i>&nbsp;View</a>
+                              <br><br>
+        
+                             </div>
+                         </center>
+                        </div>
+                    </div>
+                 </div>
+    </div>
+</center>
+<%- include('../../parts/foot') %>

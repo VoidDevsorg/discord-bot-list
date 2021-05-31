@@ -1,0 +1,79 @@
+<%- include('./meta.ejs') %>
+<body>
+<div id="loader-wrapper">
+    <center>
+    <div class="preloader">
+    <div id="loader" class="loader loader-1">
+        <div class="loader-outter"></div>
+        <div class="loader-inner"></div>
+    </div>
+    </div>
+    </center>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    
+</div>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark p-2 pl-4 pr-4 bg-vcodes">
+        <div class="container">
+        <a class="navbar-brand logoholder" href="/"><img id="logoimg" style="height:55px; width:55px;" src="../../img/logo.png" alt="vCodes"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul class="navbar-nav mainlink mr-auto">
+            <li class="nav-item">
+              <a class="nav-link nvhome" href="/"><i class="fad fa-home mr-1"></i> Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/bots"><i class="fad fa-robot mr-1"></i> Bots</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/certification"><i class="fad fa-badge-check mr-1"></i> Certification</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/partners"><i class="fad fa-handshake mr-1"></i> Partners</a>
+            </li>
+            <% if(user) { %>
+                <% 
+                let guild = bot.guilds.cache.get(config.server.id).members.cache.get(user.id);
+                if(guild) {
+                if(guild.roles.cache.get(roles.yonetici) || guild.roles.cache.get(roles.moderator)) {
+                %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin"><i class="fad fa-magic mr-1"></i> Admin Panel</a>
+                </li>
+                <% }} %>
+            <% } %>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <% if(user) {%>
+              <li class="nav-item dropdown">
+                  <a class="nav-link btn btn-discord dropdown-toggle has-text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>" class="nav-userProfile-image"/><b><%=user.username%></b><small>#<%=user.discriminator%></small>
+                  </a>
+                <div class="dropdown-menu dropdown-menu-right animate slideIn" style="max-width:220px!important;">
+                    <a class="dropdown-item" href="/user/<%=user.id %>/"><i class="fa fa-id-card mr-2"></i> Profile</a>
+                    <a class="dropdown-item" href="/addbot"><i class="fa fa-paper-plane mr-2"></i> Submit Bot</a>
+                    <a class="dropdown-item" href="/codes"><i class="fa fa-code mr-2"></i> Code Share</a>
+                    <a class="dropdown-item" href="/uptime/links"><i class="fa fa-sync-alt mr-2"></i> Uptime</a>
+                  
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item dropdown-danger" href="/logout"><i class="fad fa-sign-out mr-2"></i> Logout</a>
+                </div>
+              </li>
+            <% } else { %>
+            <li class="nav-item">
+                <a class="btn btn-discord nav-link" href="/login"><i class="fad fa-user mr-1"></i> Login</a>
+            </li>
+	    <% } %>
+          </ul>
+        </div>
+        </div>
+      </nav>
+    
+  
+<%
+let imgBack = "https://i.hizliresim.com/2sdunq.png";
+%>

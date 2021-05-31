@@ -1,0 +1,171 @@
+<%- include('../parts/head', {bot, user, path}) %>
+
+<title><%= member.username %> | Profile</title>
+<head>
+    <meta name="og:title" content="<%= member.username %> | Profile">
+    <meta name="og:description" content="<%= pdata ? (pdata.biography ? pdata.biography : member.username+' has no have any biography.') : member.username+' has no have any biography.'%>">
+    <meta name="og:image" content="https://cdn.discordapp.com/avatars/<%=member.id%>/<%=member.avatar%>.png">
+</head>
+<div class="container px-3 px-3 mt-5 pt-5">
+    <div class="columns container px-3 is-multiline">
+        <div class="column is-2">
+            <img draggable="false" class="pulse-avatar-<%=member.presence.status%>"  onerror=" imgerror(this);"="" src="<%= member.avatarURL({dynamic: true}) %>" style="width: 300px; border-radius: 50%;">
+        </div>
+        <div class="column is-6">
+          <p translate="no" class="has-text-white is-size-3" style="margin-bottom: 10px;"><%= member.username %><span class="is-size-4" style="opacity: 0.7;">#<%= member.discriminator %></span>&nbsp;<i class="status-circle fad fa-circle status-<%=member.presence.status%>"></i></p>
+           <div class="user-badges">
+            <% 
+            let cacheServer = bot.guilds.cache.get(config.server.id).members.cache.get(member.id) 
+            %>
+          <% if(cacheServer) {%>
+            <%
+            let sitecreatorRole = cacheServer.roles.cache.get(roles.profile.ssitecreator);
+            let adminRole = cacheServer.roles.cache.get(roles.yonetici);
+            let moderatorRole = cacheServer.roles.cache.get(roles.moderator);
+            let sponsorRole = cacheServer.roles.cache.get(roles.profile.sponsor);
+            let certifiedDeveloper = cacheServer.roles.cache.get(roles.botlist.certified_developer);
+            let partnerRoleCache = cacheServer.roles.cache.get(roles.profile.spartnerRole);
+            let supporterRole = cacheServer.roles.cache.get(roles.profile.supporter);
+            %>
+            <% if (sitecreatorRole) { %>
+            <span data-tooltip="<%=sitecreatorRole.name%>" data-tooltip-location="top"> <i class="fad fa-brackets-curly has-text-success" style="color: <%=sitecreatorRole.hexColor%>;bottom: -5px; font-size: 26px;"></i></span>
+            <% } %>
+            <% if (adminRole) { %>
+            <span data-tooltip="<%=adminRole.name%>" data-tooltip-location="top"> <i class="fad fa-crown has-text-danger" style="color: <%=adminRole.hexColor%>;bottom: -5px; font-size: 26px;"></i></span>
+            <% } %>
+            <% if (moderatorRole) { %>
+            <span data-tooltip="<%=moderatorRole.name%>" data-tooltip-location="top"> <i class="fad fa-gavel" style="color: <%=moderatorRole.hexColor%>;bottom: -5px; font-size: 26px;"></i></span>
+            <% } %>
+            <% if (sponsorRole) { %>
+            <span data-tooltip="<%=sponsorRole.name%>" data-tooltip-location="top"> <i class="fad fa-badge-dollar" style="color: <%=sponsorRole.hexColor%>;bottom: -5px; font-size: 26px;"></i></span>
+            <% } %>
+            <% if (certifiedDeveloper) { %>
+            <span data-tooltip="<%=certifiedDeveloper.name%>" data-tooltip-location="top"> <i class="fad fa-badge-check" style="color: <%=certifiedDeveloper.hexColor%>;bottom: -5px; font-size: 26px;"></i></span>
+            <% } %>
+            <% if (partnerRoleCache) { %>
+            <span data-tooltip="<%=partnerRoleCache.name%>" data-tooltip-location="top"> <span data-tooltip="vCodes Partner" data-tooltip-location="top"><img draggable="false" src="https://img.devsforum.net/tr/img/i9Y7Y1.png" width="32px"></span></span>
+            <% } %>
+            <% if (supporterRole) { %>
+            <span data-tooltip="<%=supporterRole.name%>" data-tooltip-location="top"> <i class="fad fa-star" style="color: <%=supporterRole.hexColor%>;bottom: -5px; font-size: 26px;"></i></span>
+            <% } %>
+            <% } %>
+            <% if(member.flags) {%>
+            <% member.flags.toArray().forEach(flag =>{
+            if (flag === "HOUSE_BALANCE") { %>
+            <span data-tooltip="Hypesquad Balance" data-tooltip-location="top"><img draggable="false" src="https://discord.com/assets/9fdc63ef8a3cc1617c7586286c34e4f1.svg" data-tooltip="Hypesquad Balance" data-tippy-content="Hypesquad Balance" width="32px"></span>
+            <% } if (flag === "HOUSE_BRILLIANCE") { %>
+            <span data-tooltip="Hypesquad Brilliance"data-tooltip-location="top"><img draggable="false" src="https://ptb.discord.com/assets/48cf0556d93901c8cb16317be2436523.svg" data-tippy-content="HypeSquad Brilliance" width="32px"></span>
+            <% } if (flag === "HOUSE_BRAVERY") { %>
+            <span data-tooltip="Hypesquad Bravery"data-tooltip-location="top"><img draggable="false" src="https://canary.discord.com/assets/64ae1208b6aefc0a0c3681e6be36f0ff.svg" data-tippy-content="HypeSquad Bravery" width="32px"></span>
+            <% } if (flag === "VERIFIED_DEVELOPER") { %>
+            <span data-tooltip="Verified Developer"data-tooltip-location="top"><img draggable="false" src="https://discord.com/assets/45cd06af582dcd3c6b79370b4e3630de.svg" data-tippy-content="Early Verified Developer" width="32px"></span>
+            <% } if (flag === "EARLY_SUPPORTER") { %>
+            <span data-tooltip="Early Supporter" data-tooltip-location="top"><img draggable="false" src="https://discord.com/assets/23e59d799436a73c024819f84ea0b627.svg" data-tippy-content="Early Supporter" width="32px"></span>
+            <% } }) %>
+            <% } %> 
+            </div>             
+            <% if(pdata) {%>
+            <% if(pdata.biography) { %>
+            <p translate="no" class="mt-1 has-text-white"><%=pdata.biography%></p>
+            <% } else { %>
+            <p class="mt-1 has-text-white"><%=member.username%> has no have any biography.</p>
+            <% } %>
+            <% } else { %>
+            <p class="mt-1 has-text-white"> <%= member.username %> has no have any biography.</p>
+            <% } %>
+	    <%if(req.user) {%>
+            <% if(req.user.id === member.id) {%>
+                <a class="btn btn-tag" href="/user/<%=member.id%>/edit"><i class="fad fa-pencil"></i> Edit Profile</a>
+                <% } %>
+		<% } %>
+        </div>
+        <div class="is-4 mt-1 column">
+            <% if(pdata) {%>
+                <% if(pdata.twitter) {%>
+                    <a href="https://twitter.com/<%= pdata.twitter %>" class="is-flex mt-1">
+                      <div style="background: #2077aa" class="box-2-p"><i class="fab fa-twitter is-size-6 mt-1"></i></div>
+                      <p style="background: #019ffa" class="box-2">Twitter</p>
+                    </a>
+                <% } %>
+                <% if(pdata.instagram) {%>
+                <a href="https://instagram.com/<%= pdata.instagram %>" class="is-flex mt-1">
+                    <div style="background: #923453" class="box-2-p"><i class="fab fa-instagram is-size-6 mt-1"></i></div>
+                    <p style="background: #E1306C" class="box-2">Instagram</p>
+                </a>
+                 <% } %>
+                  <% if(pdata.website) {%>
+                  <a href="<%= pdata.website %>" class="is-flex mt-1">
+                    <div style="background: rgb(33, 167, 111);" class="box-2-p"><i class="fa fa-globe is-size-6 mt-1"></i></div>
+                    <p style="background: rgb(8, 187, 112);"class="box-2">Website</p>
+                  </a>
+                  <% } %>
+                  <% if(pdata.github) {%>
+                  <a href="https://github.com/<%= pdata.github %>" class="is-flex mt-1">
+                    <div style="background: rgb(0, 0, 0);" class="box-2-p"><i class="fab fa-github is-size-6 mt-1"></i></div>
+                    <p style="background: rgb(8, 8, 8);" class="box-2">Github</p>
+                  </a>
+                  <% } %>
+            <% } %>
+        </div>
+            <br>
+    <div class="column mt-5">
+    <p class="has-text-white title is-large"><i class="fa fa-robot"></i>&nbsp;<%= member.username%>'s Bots</p>
+    <p class="content has-text-white" style="margin-top: -20px;">They are ranked according to the votes they received.</p>
+    <% if(botdata.filter(a => (member.id === a.ownerID || a.coowners.includes(member.id))).length <= 0) { %>
+      <div class="alert alert-danger" role="alert">
+       <span style="color: #fff!important;" class="is-size-5"><i class="fad fa-robot"></i>&nbsp;<strong>Oops..</strong></span><br>
+       <strong><%=member.username%></strong> does not have any bots in the system.
+      </div>
+      <% } %>
+    <div class="row">
+      <% botdata.filter(a => (member.id === a.ownerID || a.coowners.includes(member.id))).sort((a, b) => b.votes - a.votes).map(a => {%>
+        <div class="col-md-6 col-lg-4 pb-3">
+          <div class="card vcodes-card-custom bg-vcodes border-white border-0">
+            <div class="vcodes-card-custom-img" style="background-image: url(<%= a.backURL || "https://i.hizliresim.com/2sdunq.png" %>);"></div>
+            <div class="vcodes-card-custom-avatar">
+              <img class="img-fluid" onerror="imgError(this);" src="<%=a.avatar%>" alt="Avatar" />
+            </div>
+            <div class="card-body">
+             <div class="is-pulled-right mt-vcodes mt-1">
+                  <span data-tooltip="Total Votes" data-tooltip-location="left" class="badge badge-stats mb-vcodes mt-1 w-100"><i class="fad fa-chevron-up"></i>&nbsp;<%= a.votes || "0" %></span>
+                  <span data-tooltip="Server Count" data-tooltip-location="left" class="badge badge-stats mt-1 w-100"><i class="fad fa-server"></i>&nbsp;<%= a.serverCount || "N/A" %></span>
+                </div>
+              <h4 translate="no" class="card-title"><%= a.username %>
+              <% if(a.certificate === "Certified") { %>
+                <span data-tooltip="Verified Bot" data-tooltip-location="top"><i class="fad fa-badge-check has-text-success"></i></span>
+              <% } %>
+              </h4>
+              <p translate="no" class="card-text vCodesbotDesc"><%= a.shortDesc %></p>
+            </div>
+            <div class="card-footer">
+              <a href="/bot/<%=a.botID%>" class="btn btn-tag btn-bot">View</a>
+              <a href="https://discord.com/oauth2/authorize?client_id=<%=a.botID%>&scope=bot&permissions=8" class="btn btn-tag btn-bot">Invite</a>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+  </div>
+</div>    
+</div>
+</div>
+
+<script>
+var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('success') && urlParams.get('success')){
+    Swal.fire({
+     icon: 'success',
+     title: 'Successful...',
+     closeOnConfirm: false,
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = `/user/<%= req.params.userID %>`;
+  }
+})
+}
+</script>
+<%- include('../parts/foot') %>
+
+
+

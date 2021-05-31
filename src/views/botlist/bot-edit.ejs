@@ -1,0 +1,135 @@
+<%- include('../parts/head', {bot, user, path}) %>
+     <br><br>
+<div class="container">
+  <br><br>
+<div class="container contact-form">
+  <div class="contact-image">
+      <i></i>
+  </div>
+
+      <h3 style="color: #fff">Editing "<%= botdata.username %>"</h3>
+      <%= _token %>
+    <form method="POST">
+     <div class="row">
+          <div class="col-md-6">
+              <div class="form-group">
+                <label><i class="fad fa-fingerprint"></i> Bot ID<span style="color: rgb(175, 22, 22)">*</span></label>
+                  <input type="text" name="botID" id="botID" class="form-control" value="<%= botdata.botID %>" placeholder="746673633551974456" disabled />
+              </div>
+              <div class="form-group">
+                  <label><i class="fad fa-crown"></i> Owner ID<span style="color: rgb(175, 22, 22)">*</span></label>
+                  <input type="text" name="ownerID" id="ownerID" class="form-control" placeholder="Bot Sahibi" value="<%= botdata.ownerID %>" required="required" disabled/>
+              </div>
+              <% if(req.user.id === botdata.ownerID) {%>
+              <div class="form-group">
+                <label><i class="fad fa-users"></i> Co-Owners <small style="font-size: 12px;" class="title_divider_text">id1,id2,id3</small></label>
+                <% if(!botdata.coowners) { %>
+                    <input type="text" name="coowners" id="coowners" class="form-control" placeholder="id,id2,id3"/>
+                <% } else { %>
+                    <input type="text" name="coowners" id="coowners" class="form-control" value="<%=botdata.coowners%>" placeholder="id,id2,id3"/>
+                <% } %>
+              </div>
+              <% } else { %>
+                <div class="form-group">
+                    <label><i class="fad fa-users"></i> Co-Owners <small style="font-size: 12px;" class="title_divider_text">id1,id2,id3</small></label>
+                    <% if(!botdata.coowners) { %>
+                        <input type="text" name="coowners" id="coowners" class="form-control" placeholder="id,id2,id3" disabled/>
+                    <% } else { %>
+                        <input type="text" name="coowners" id="coowners" class="form-control" value="<%=botdata.coowners%>" placeholder="id,id2,id3" disabled/>
+                    <% } %>
+                 </div>
+              <% } %>
+              <div class="form-group">
+                <label><i class="fad fa-terminal"></i> Prefix<span style="color: rgb(175, 22, 22)">*</span></label>
+                  <input type="text" name="prefix" id="prefix" class="form-control" placeholder="!" value="<%= botdata.prefix %>" required="required"/>
+              </div>
+              <div class="form-group">
+                <label><i class="fab fa-google"></i> Website</label>
+                <% if(!botdata.website) { %>
+                    <input type="text" name="website" id="website" class="form-control" placeholder=""/>
+                <% } else { %>
+                    <input type="text" name="website" id="website" value="<%= botdata.website %>" class="form-control" placeholder=""/>
+                <% } %>
+              </div>
+              <div class="form-group">
+                <label><i class="fab fa-discord"></i> Support Server</label>
+                <% if(!botdata.support) { %>
+                    <input type="text" name="support" id="support" class="form-control" placeholder=""/>
+                  <% } else { %>
+                    <input type="text" name="support" id="support" value="<%= botdata.support %>" class="form-control" placeholder=""/>
+                  <% } %>
+              </div>
+              <div class="form-group">
+                <label><i class="fab fa-github"></i> Github Repository</label>
+                <% if(!botdata.github) { %>
+                    <input type="text" name="github" id="github" class="form-control" placeholder=""/>
+                  <% } else { %>
+                    <input type="text" name="github" id="github" value="<%= botdata.github %>" class="form-control" placeholder=""/>
+                  <% } %>
+              </div>
+              <div class="form-group">
+                <label><i class="fad fa-image"></i> Background Image</label>
+                  <input type="text" name="background" id="background" class="form-control" placeholder=""/>
+              </div>
+          </div>
+       <br>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label><i class="fad fa-text"></i> Short Description<span style="color: rgb(175, 22, 22)">*</span></label>
+              <input name="shortDesc" id="shortDesc" class="form-control" placeholder="Kısa Açıklama" value="<%= botdata.shortDesc %>" maxlength="300" required="required">
+          </div>
+              <div class="form-group">
+                <label><i class="fad fa-texts"></i> Long Description<span style="color: rgb(175, 22, 22)">*</span></label>
+                  <textarea name="longDesc" id="longDesc" class="form-control" placeholder="Uzun Açıklama" value="<%= botdata.longDesc %>" minlength="300" required="required" style="width: 100%; height: 300px;"><%= botdata.longDesc %></textarea>
+              </div>
+              <div class="form-group">
+                <label><i class="fad fa-tags"></i> Tags<span style="color: rgb(175, 22, 22)">*</span></label>
+                <select name="tags" id="tags" multiple required>
+                  <% config.website.tags.map(a => {%>
+                    <% if(botdata.tags.includes(a)) {%>
+                        <option value="<%= a %>" selected><%= a %></option>
+                    <% } else { %>
+                    <option value="<%= a %>"><%= a %></option>
+                    <% } %>
+                 <% }); %>
+              </select>
+            </div>
+            </div>
+      </div>
+      <br><br> <br>
+<input type="hidden" value="<%= _token %>" name="_token" id="_token">
+    <p class="text-muted">Spaces with <span style="color: rgb(175, 22, 22)">*</span> next to it are required.</p>
+      <button type="submit" name="btnSubmit" class="btn btn-primary"><i class="fad fa-save"></i> Save</button>
+  </form>
+</div>
+</div>
+<br><br>
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('success') && urlParams.get('success')){
+    Swal.fire({
+     icon: 'success',
+     title: 'Successful...',
+     closeOnConfirm: false,
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = `/bot/${urlParams.get('botID')}`;
+  }
+})
+    }
+    if(urlParams.has('error') && urlParams.get('error')){
+    Swal.fire({
+     icon: 'error',
+     title: 'Oops...',
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = `/bot/${urlParams.get('botID')}/edit`;
+  }    
+})
+    }
+   </script>
+<%- include('../parts/foot') %>

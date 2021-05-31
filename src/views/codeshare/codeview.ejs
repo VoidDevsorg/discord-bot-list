@@ -1,0 +1,113 @@
+<%- include('../parts/head', {bot, user, path}) %>
+<title><%= koddata.codeName %> | Discord Codes</title>
+<% let docs = koddata; %>
+<head>
+    <meta property="og:title" content="<%= docs.codeName %>">
+    <meta property="og:description" content="<%= docs.codeDesc %>">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/atom-one-dark.css">
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+<script>        function copyFunction() {
+    const copyText = document.getElementById("myCommands").textContent;
+    const textArea = document.createElement('textarea');
+    textArea.textContent = copyText;
+    document.body.append(textArea);
+    textArea.select();
+    document.execCommand("copy");
+  }
+  
+  document.getElementById('copybtn').addEventListener('click', copyFunction);</script>
+
+</head>
+<div class="main-content">
+    <br><br><br><br><br>
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+      <div class="row">
+        <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+          <div class="card card-profile shadow">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                <div class="card-profile-image">
+                  <span class="avatar">
+                    <%if(docs.codeCategory.toLowerCase() === "html") {%>
+                        <img alt="Image placeholder" style="width: 130%;" class="rounded-circle" width="1200" src="https://img.devsforum.net/tr/img/o1G4A5.png">
+                    <% } else if(docs.codeCategory.toLowerCase() === "javascript") {%>
+                        <img alt="Image placeholder" style="width: 130%;" class="rounded-circle" src="https://img.devsforum.net/tr/img/r3K9J8.png">
+                    <% } else if(docs.codeCategory.toLowerCase() === "bdfd") {%>
+                        <img alt="Image placeholder" style="width: 130%;" class="rounded-circle" src="https://img.devsforum.net/tr/img/b1K4S9.png">
+                    <% } else if(docs.codeCategory.toLowerCase() === "substructure") {%>
+                        <img alt="Image placeholder" style="width: 130%;" class="rounded-circle" src="https://img.devsforum.net/tr/img/j7D4P9.png">
+                    <% } %>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+            </div>
+            <div class="card-body pt-0 pt-md-4">
+              <div class="row">
+                <div class="col">
+                  <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <h3>
+                  <%= docs.codeName %> 
+                </h3>
+                <div>
+                    <%= docs.codeDesc %>
+                </div>
+                <br>
+              </div>
+              <div class="h6 mt-4">
+                <i class="fad fa-question-circle"></i> Information
+              </div>
+
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fad fa-terminal"></i></div>
+                <p class="box-2">Code: <%= docs.code %> </p>
+              </div>
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fad fa-text"></i></div>
+                <p class="box-2">Code Name: <%= docs.codeName %> </p>
+              </div>
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fad fa-book"></i></div>
+                <p class="box-2">Code Category: <%= docs.codeCategory %> </p>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 order-xl-1">
+        <% if(docs.main) {%>
+            <span style="float: right;cursor: pointer;transition: all 0.1s;font-size: 20px;" data-tooltip="Click and copy to clipboard" data-tooltip-location="top"> 
+                <a class="btn copybtn" onclick="copy('main')"><i class="fad fa-copy has-text-white"></i></a>
+                </span>
+            <pre style="background-color:#282c34; margin-left:15px; width:100%;display: block!important;"><code id="main"><%=docs.main%></code></pre>
+      <% } %>
+        <% if(docs.commands) {%>
+        <span style="float: right;cursor: pointer;transition: all 0.1s;font-size: 20px;" data-tooltip="Click and copy to clipboard" data-tooltip-location="top"> 
+            <a class="btn copybtn" onclick="copy('command')"><i class="fad fa-copy has-text-white"></i></a>
+            </span>
+            <pre style="background-color:#282c34; margin-left:15px; width:100%;"><code class="language-javascript line-numbers" data-src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/line-numbers/prism-line-numbers.js" data-start="-5" id="command"><%= docs.commands %></code></pre>
+        <% } %>
+      </div>
+  </div>
+  </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <script>
+	function copy(element) {
+		  var $temp = $("<input>");
+		  $("body").append($temp);
+		  $temp.val($("#"+element).text()).select();
+		  document.execCommand("copy");
+		  $temp.remove();
+          Swal.fire("Successful", "Successfully code copied to clipboard.", success)
+		}
+    </script>
+<%- include('../parts/foot') %>

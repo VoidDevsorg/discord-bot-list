@@ -1,0 +1,62 @@
+{
+  "name": "vcodes",
+  "version": "0.0.1",
+  "description": "vcodes.xyz",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@aloshai/mongosha": "^1.2.3",
+    "async-ejs": "^0.1.6",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.0",
+    "cheerio": "^1.0.0-rc.5",
+    "child_process": "^1.0.2",
+    "cookie-parser": "^1.4.5",
+    "cron": "^1.8.2",
+    "discord.js": "^12.5.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "fs": "^0.0.2",
+    "hastebin-gen": "^2.0.5",
+    "helmet": "^4.4.1",
+    "http": "0.0.1-security",
+    "jimp": "^0.16.1",
+    "js-alert": "^1.0.4",
+    "level-session-store": "^2.2.0",
+    "marked": "^2.0.0",
+    "memorystore": "^1.6.4",
+    "moment": "^2.29.1",
+    "moment-duration-format": "^2.3.2",
+    "mongoose": "^5.11.17",
+    "node-fetch": "^2.6.1",
+    "parse-ms": "^2.1.0",
+    "passport": "^0.4.1",
+    "passport-discord": "^0.1.4",
+    "path": "^0.12.7",
+    "referrer-policy": "^1.2.0",
+    "request": "^2.88.2",
+    "socket.io": "^4.0.1",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "10.15.6",
+    "vcodes.js": "1.0.1-renewed",
+    "void.nsfw": "^1.0.8-beta",
+    "void.db": "^2.0.4"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "repository": {
+    "url": ""
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ],
+  "author": ""
+}

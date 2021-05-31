@@ -1,0 +1,119 @@
+<%- include('../parts/head', {bot, user, path}) %>
+<br><br>
+<div class="container">
+  <center>
+  <i style="color: #fff;" class="fad fa-user-cog fa-5x"></i>
+  <h3 style="color: #fff;">
+    <br>
+
+   Editing User: "<%=member.username%>"
+  </h3>
+  </center>
+  <br><br>
+  
+  <form method="POST" class="form-discorddark">
+    <input type="hidden" value="<%= _token %>" name="_token" id="_token">
+
+<% if(!pdata) {%>
+<label for="basic-url"><i class="fab fa-github"></i> Github (Optional)</label>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">https://github.com/</span>
+  </div>
+  <input type="text" class="form-control" name="github" id="github" aria-describedby="basic-addon3">
+</div>
+<label for="basic-url"><i class="fab fa-twitter"></i> Twitter (Optional)</label>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">https://twitter.com/</span>
+  </div>
+  <input type="text" class="form-control" name="twitter" id="twitter" aria-describedby="basic-addon3">
+</div>
+<label for="basic-url"><i class="fab fa-instagram"></i> Instagram (Optional)</label>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">https://instagram.com/</span>
+  </div>
+  <input type="text" class="form-control" name="instagram" id="instagram" aria-describedby="basic-addon3">
+</div>
+<label for="basic-url"><i class="fad fa-globe"></i> Website (Optional)</label>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Straight URL</span>
+  </div>
+  <input type="text" class="form-control" name="website" id="website" aria-describedby="basic-addon3">
+</div>
+
+<label for="basic-url"><i class="fad fa-text"></i> Biography (Optional)</label>
+<div class="input-group mb-3">
+  <textarea id="biography" name="biography" style="width: 100%" maxlength="250"></textarea>
+</div>
+<% } else { %>
+<label for="basic-url"><i class="fab fa-github"></i> Github (Optional)</label>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">https://github.com/</span>
+  </div>
+  <input type="text" class="form-control" value="<%= pdata.github %>" name="github" id="github" aria-describedby="basic-addon3">
+</div>
+<label for="basic-url"><i class="fab fa-twitter"></i> Twitter (Optional)</label>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">https://twitter.com/</span>
+  </div>
+  <input type="text" class="form-control" value="<%= pdata.twitter %>" name="twitter" id="twitter" aria-describedby="basic-addon3">
+</div>
+<label for="basic-url"><i class="fab fa-instagram"></i> Instagram (Optional)</label>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">https://instagram.com/</span>
+  </div>
+  <input type="text" class="form-control" value="<%= pdata.instagram %>" name="instagram" id="instagram" aria-describedby="basic-addon3">
+</div>
+<label for="basic-url"><i class="fad fa-globe"></i> Website (Optional)</label>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">Straight URL</span>
+  </div>
+  <input type="text" class="form-control" value="<%= pdata.website %>" name="website" id="website" aria-describedby="basic-addon3">
+</div>
+
+<label for="basic-url"><i class="fad fa-text"></i> Biography (Optional)</label>
+<div class="input-group mb-3">
+  <textarea id="biography" name="biography" style="width: 100%" maxlength="250"><%= pdata.biography %></textarea>
+</div>
+<% } %>
+  <br>
+  <button type="submit" class="btn btn-primary"><i class="fad fa-save"></i> Save</button>
+</form>
+</div>
+<br><br>
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('success') && urlParams.get('success')){
+    Swal.fire({
+     icon: 'success',
+     title: 'Successful...',
+     closeOnConfirm: false,
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/user/<%=req.params.userID%>';
+  }
+})
+    }
+    if(urlParams.has('error') && urlParams.get('error')){
+    Swal.fire({
+     icon: 'error',
+     title: 'Oops...',
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/user/<%=req.params.userID%>/edit';
+  }    
+})
+    }
+   </script>
+<%- include('../parts/foot') %>

@@ -1,0 +1,222 @@
+<%- include('../parts/head', {bot, user, path}) %>
+<title><%= botdata.username %> | Discord Bots</title>
+<head>
+    <meta property="og:title" content="<%= botdata.username %>">
+    <meta property="og:description" content="<%= botdata.shortDesc %>">
+    <meta property="og:image" content="<%= botdata.avatar %>">
+</head>
+
+<div class="main-content">
+    <% if(botdata.status != "Approved") {%>
+        <br><br>
+        <div class="container alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fa fa-exclamation-circle"></i> This bot is <strong>not approved</strong> yet.
+            <br>And therefore it will not appear in the bots section, and also the bot owners will not be able to access the external bot.
+          </div>
+    <% } %>
+    <br><br><br><br><br>
+
+    <style>
+        .separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.separator::after {
+  content: '';
+  flex: 2;
+  border-bottom: 1px solid #fff;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .55em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .55em;
+}
+    </style>
+
+    <!-- Page content -->
+    <div class="container-fluid mt--7">
+      <div class="row">
+        <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+          <div class="card card-profile shadow">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                <div class="card-profile-image">
+                  <span class="avatar">
+                    <img alt="Image placeholder" onerror="imgError(this)" class="rounded-circle mr-4" src="<%= botdata.avatar %>">
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+              <div class="d-flex justify-content-between">
+                <a href="/bot/<%= botdata.botID%>/vote" class="btn btn-tag mr-4"><i class="fad fa-vote-yea"></i> Vote</a>
+                <a href="https://discord.com/oauth2/authorize?client_id=<%= botdata.botID %>&scope=bot&permissions=8" class="btn btn-tag float-right"><i class="fad fa-link"></i> Invite</a>
+              </div>
+            </div>
+            <div class="card-body pt-0 pt-md-4">
+              <div class="row">
+                <div class="col">
+                  <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <h3 translate="no">
+                  <%= botdata.username %> 
+                  <% if(botdata.botID === "746673633551974456") {%>
+                    <a data-tooltip="Server Bot"
+                    data-tooltip-location="top"><i class="fad fa-server has-text-primary"></i></a>
+                 <% } %>
+                 <% if(botdata.certificate == "Certified") {%>
+                    <a data-tooltip="Verified Bot"
+                    data-tooltip-location="top"><i class="fad fa-badge-check has-text-primary"></i></a>
+                 <% } %>
+                </h3>
+                <div>
+                    <%= botdata.shortDesc %>
+                </div>
+             </div>
+              <hr>
+            <% if(req.user) {%>
+            <% if(req.user.id === botdata.ownerID || botdata.coowners.includes(req.user.id)) {%>
+            <div class="h6 mt-4">
+                    <i class="fad fa-user-crown"></i> Owner Options
+                  </div>
+    
+                  <a href="/bot/<%= botdata.botID %>/edit" class="is-flex mt-1">
+                    <div class="box-2-p"><i class="mt-1 fad fa-pencil"></i></div>
+                    <p class="box-2">Edit Bot</p>
+                  </a>
+                  <form action="#" id="my_form" method="POST">
+                    <a href="javascript:{}" onclick="document.getElementById('my_form').submit();" class="is-flex mt-1">
+                        <div class="box-2-p"><i class="fad fa-database is-size-6 mt-1"></i></div>
+                        <p class="box-2">Refresh Datas</p>
+                    </a>
+                </form>
+                <div class="separator">DANGER ZONE</div>
+                <a class="is-flex mt-1">
+                    <div class="box-2-p"><i class="mt-1 fad fa-eye"></i></div>
+                    <p class="box-2">Token: 
+                        <input style="pointer-events: none; color: #fff;background-color: transparent; border: none;" type="password" id="token" value="<%= botdata.token %>" name="">
+                    </p>
+                    <span data-tooltip="Click and copy to clipboard" data-tooltip-location="top"> 
+                    <div class="col-sm-2">
+                        <button style="cursor: pointer; background: transparent; border: none" class="pull-right" onclick="copyToClipboard('#token')"><i class="fad fa-copy mt-2 is-size-4 has-text-white"></i></button>
+                  </div>
+                  </span>
+                </a>
+                <a style="cursor: pointer" onclick="return deleteReady();" class="is-flex mt-1">
+                    <div style="background: rgb(151, 11, 11);" class="box-2-p"><i class="mt-1 fad fa-trash"></i></div>
+                    <p style="background: rgb(211, 7, 7);" class="box-2">Delete Bot</p>
+                  </a>
+                  <script>
+            function copyToClipboard(element) {
+              var $temp = $("<input>");
+              $("body").append($temp);
+              $temp.val($(element).val()).select();
+             // alert($(element).val());
+              document.execCommand("copy");
+              $temp.remove();
+            }
+                      function deleteReady() {
+                        Swal.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.isConfirmed) {
+    location.href = '/bot/<%= req.params.botID %>/delete';
+  }
+})
+                      }
+                  </script>
+             <% } %>
+             <% } %>
+              <div class="h6 mt-4">
+                <i class="fad fa-question-circle"></i> Information
+              </div>
+
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fad fa-terminal"></i></div>
+                <p class="box-2">Prefix:&nbsp;<%= botdata.prefix %> </p>
+              </div>
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fad fa-vote-yea"></i></div>
+                <p class="box-2">Votes:&nbsp;<%= botdata.votes || "0" %> </p>
+              </div>
+              <% if(botdata.serverCount) {%>
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fad fa-server"></i></div>
+                <p class="box-2">Servers:&nbsp;<%= botdata.serverCount %> </p>
+              </div>
+              <% } %>
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fad fa-circle status-<%= bot.users.cache.get(botdata.botID).presence.status %>"></i></div>
+                <p class="box-2">Status:&nbsp;<%= bot.users.cache.get(botdata.botID).presence.status.toUpperCase() %></p>
+              </div>
+             <div class="h6 mt-4">
+                <i class="fad fa-user-crown"></i> Owners
+              </div>
+              <a style="text-decoration: none;margin-bottom: -5px;" href="/user/<%= botdata.ownerID %>" class="is-flex mt-1">
+                <div class="box-2-p ownerIMG" style="background: url(<%= aowner.avatarURL({dynamic:true}) %>) center center no-repeat; background-size: 100%;"></div>
+                <p translate="no" class="box-2"><%= aowner.tag %></p>
+              </a>
+              <% coowner.map(a => {%>
+              <a style="text-decoration: none;margin-bottom: -5px;" href="/user/<%= a.id %>" class="is-flex mt-1">
+                <div class="box-2-p ownerIMG" style="background: url(<%= a.avatarURL({dynamic:true}) %>) center center no-repeat; background-size: 100%;"></div>
+                    <p translate="no" class="box-2"><%= a.tag %></p>
+              </a>
+              <% }) %>
+            <div class="h6 mt-4">
+                <i class="fad fa-tags"></i> Tags
+              </div>
+
+              <div style="width: 80%;">
+                <% botdata.tags.map(a => {%>
+                    <a translate="no" style="margin: 5px;" href="/tag/<%=a%>" class="btn btn-sm btn-tag"><%=a%></a>
+                <% }) %>
+              </div>
+              <br><br>
+              <% if(botdata.support) {%>
+                <a href="<%= botdata.support %>" class="is-flex mt-1">
+                  <div style="background: rgb(97, 124, 221)" class="box-2-p"><i class="fab fa-discord is-size-6 mt-1"></i></div>
+                  <p style="background: #7289da" class="box-2">Support Server</p>
+                </a>
+                <% } %>
+                <% if(botdata.website) {%>
+                <a href="<%= botdata.website %>" class="is-flex mt-1">
+                  <div style="background: rgb(33, 167, 111);" class="box-2-p"><i class="fa fa-globe is-size-6 mt-1"></i></div>
+                  <p style="background: rgb(8, 187, 112);"class="box-2">Website</p>
+                </a>
+                <% } %>
+                <% if(botdata.github) {%>
+                <a href="<%= botdata.github %>" class="is-flex mt-1">
+                  <div style="background: rgb(0, 0, 0);" class="box-2-p"><i class="fab fa-github is-size-6 mt-1"></i></div>
+                  <p style="background: rgb(8, 8, 8);" class="box-2">Github</p>
+                </a>
+                <% } %>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-8 order-xl-1">
+          <div class="card bg-secondary shadow">
+            <div style="padding: 1px!important;" class="card-body">
+                <pre translate="no" class="bot"><% let $ = bot.htmll.load(botdata.longDesc) %><%- $.html() %></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+<%- include('../parts/foot') %>

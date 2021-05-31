@@ -1,0 +1,44 @@
+</div>
+<footer class="sticky-footer bg-dark-200">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright 2021 &copy; vcodes.xyz</span>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+    <script src="https://designreset.com/cork/ltr/demo9/assets/js/libs/jquery-3.1.1.min.js"></script>
+    <script src="https://designreset.com/cork/ltr/demo9/bootstrap/js/popper.min.js"></script>
+    <script src="https://designreset.com/cork/ltr/demo9/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://designreset.com/cork/ltr/demo9/plugins/table/datatable/datatables.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/js/sb-admin-2.min.js"></script>
+        <script src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/vendor/chart.js/Chart.min.js"></script>
+        <script src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/js/demo/chart-area-demo.js"></script>
+        <script src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/js/demo/chart-pie-demo.js"></script>
+    <script>        
+        $('#default-ordering').DataTable( {
+            "dom": "<'dt--top-section'<'row'<'col-12 col-sm-6 d-flex justify-content-sm-start justify-content-center'l><'col-12 col-sm-6 d-flex justify-content-sm-end justify-content-center mt-sm-0 mt-3'f>>>" +
+        "<'table-responsive'tr>" +
+        "<'dt--bottom-section d-sm-flex justify-content-sm-between text-center'<'dt--pages-count  mb-sm-0 mb-3'i><'dt--pagination'p>>",
+            "oLanguage": {
+                "sInfo": " ",
+                "sSearch": ' ',
+                "sSearchPlaceholder": "Search...",
+               "sLengthMenu": " ",
+            },
+            "order": [[ 3, "desc" ]],
+            "stripeClasses": [],
+            "lengthMenu": 9,
+            "pageLength": 9,
+            drawCallback: function () { $('.dataTables_paginate > .pagination').addClass(' pagination-style-13 pagination-bordered'); }
+        } );
+    </script>
+<script>
+function newtab(url) {
+  window.open(url);
+}    
+</script>
+
