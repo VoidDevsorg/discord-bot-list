@@ -401,7 +401,7 @@
       renderTemplate(res, req, "botlist/vote.ejs", {req, roles, config, botdata});
     })
     app.post("/bot/:botID/vote", checkMaintence, checkAuth, async (req,res) => {
-      const votes = require("./models/botlist/vote.js");
+      const votes = require("./database/models/botlist/vote.js");
       let botdata = await botsdata.findOne({ botID: req.params.botID });
       let x = await votes.findOne({user: req.user.id,bot: req.params.botID})
       if(x) return res.redirect("/error?code=400&message=You can vote every 12 hours.");
