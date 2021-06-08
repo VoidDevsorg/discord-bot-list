@@ -800,7 +800,7 @@ module.exports = async (client) => {
             res.redirect("/login");
         }
     }
-    app.get("/admin", checkMaintence, checkAdmin, checkAuth, async (req, res) => {
+    app.get("/admin", checkMaintence, checkAuth, checkAdmin, async (req, res) => {
         const botdata = await botsdata.find()
         const codedata = await codesSchema.find()
         const udata = await uptimedata.find()
