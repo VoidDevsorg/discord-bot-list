@@ -72,7 +72,10 @@
                     </div>
                 </div>
             </li>
-            <% if(global.config.bot.owners.includes(req.user.id)) { %>
+            <% 
+            if(req.user) {
+            if(global.config.bot.owners.includes(req.user.id)) { 
+            %>
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#vCodesAdmin"
                         aria-expanded="true" aria-controls="vCodesAdmin">
@@ -88,7 +91,9 @@
                         </div>
                     </div>
                 </li>
-            <% } %>
+            <% 
+            }}
+            %>
             <hr class="sidebar-divider">
 
 
