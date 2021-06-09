@@ -3,7 +3,7 @@
 - https://discord.gg/z7dBzygse4
 
 # vCodes.xyz
-<a href="https://vcodes.xyz/dc" target="_blank"><img src="https://img.devsforum.net/tr/img/h1Z2X3.png" alt="Join our discord" width="256"></a><br>
+**Discord Server:** [https://discord.gg/z7dBzygse4](https://discord.gg/z7dBzygse4)<br>
 **NPM:** [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
   
 > # Developers
