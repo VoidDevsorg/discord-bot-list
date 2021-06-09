@@ -1,3 +1,7 @@
+# Where are the new updates?
+> As you know, our server has 650 members, we will not share any current updates in the source code on github without 1000 members to increase the server. If you want so much, you can support by inviting people.
+- https://discord.gg/z7dBzygse4
+
 # vCodes.xyz
 <a href="https://vcodes.xyz/dc" target="_blank"><img src="https://img.devsforum.net/tr/img/h1Z2X3.png" alt="Join our discord" width="256"></a><br>
 **NPM:** [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
