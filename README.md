@@ -1,5 +1,5 @@
 # Where are the new updates?
-> As you know, our server has 650 members, we will not share any current updates in the source code on github without 1000 members to increase the server. If you want so much, you can support by inviting people.
+> As you know, our server has 784 members, we will not share any current updates in the source code on github without 1000 members to increase the server. If you want so much, you can support by inviting people.
 - https://discord.gg/z7dBzygse4
 
 # vCodes.xyz
