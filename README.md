@@ -1,12 +1,13 @@
-# vCodes.xyz
 ### **vCodes is a [Void Development](https://voiddevs.org) project.**
+
+# vCodes.xyz
 **Discord Server:** [https://discord.gg/z7dBzygse4](https://discord.gg/z7dBzygse4)<br>
 **NPM:** [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
-  
+<br>
 > # Developers
 <a href="https://github.com/iClaudette">👤 Claudette</a><br>
 <a href="https://github.com/tunarjs">👤 Tunar</a>
-
+<br><br>
 > # Extra Terms of use
 <a>- You have the permission to shoot and share videos, but you have to mention us, our server, in the video.</a><br>
 <a>- You have the permission to share in writing, but you have to mention us, our server, in the article.</a><br>
@@ -18,7 +19,7 @@
 <br><br>
 > # Demo
 <a href="https://vcodes.xyz">vcodes.xyz</a>
-
+<br>
 > # 💨 Run the projects
 [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/vcodes-xyz/bot-list)<br>
 [![Run on Repl.it](https://repl.it/badge/github/vcodes-xyz/bot-list)](https://repl.it/github/vcodes-xyz/bot-list)<br>
