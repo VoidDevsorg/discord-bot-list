@@ -1,0 +1,41 @@
+<%- include('../../parts/head', {bot, user, path}) %>
+<title>Join | <%= data.name %> | Discord Servers</title>
+<head>
+    <meta name="og:title" content="<%= data.name %>">
+    <meta name="og:description" content="
+🟢 <%= bot.guilds.cache.get(data.id).members.cache.filter(a => a.presence.status != "dnd").size %> onlineᅠᅠᅠᅠ⚫ <%= bot.guilds.cache.get(data.id).memberCount %> members
+">
+    <meta property="og:image" content="<%= data.icon %>">
+</head>
+<div class="container px-3 mt-2 pt-5">
+    <center>
+    <div class="container px-3 content is-widescreen pt-5">
+        <div class="bg-vote-vcodes pt-5">
+            <div class="botImg-voteArea mt-5">
+                <img style="border-radius: 10px;" onError="imgError(this);"raggable="false" src="<%= data.icon %>">
+            </div>
+            	<h3 translate="no" class="has-text-white is-size-5 text-uppercase" style="opacity: 60%; margin-bottom: -3%;">Redirecting To</h3>
+            	<h3 translate="no" class="has-text-white is-size-3" style="margin-bottom: 10px;"><%= data.name %></h3>
+            <br>
+            <br>
+            	<div class="countdown is-size-4"></div>
+        </div>
+    </div>
+    </center>
+</div>
+
+<script>
+var timer2 = "6";
+var interval = setInterval(function() {
+  var seconds = parseInt(timer2, 10);
+  --seconds;
+  if(seconds < 1) {
+  	window.location.href = '<%= inviteURL %>';
+  	$('.countdown').html('Redirecting...');
+  	return clearInterval(interval);
+  }
+  $('.countdown').html(seconds);
+  timer2 = seconds;
+}, 1000);
+</script>
+<%- include('../../parts/foot') %>

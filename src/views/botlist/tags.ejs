@@ -1,0 +1,21 @@
+<%- include('../parts/head', {bot, user, path}) %>
+    <div class="mt-5 container">
+        <div class="column">
+            <p class="has-text-white title is-large"><i class="fa fa-tag has-text-info"></i>&nbsp;All Tags</p>
+          </div>
+          <br><br><br><br>
+          <div style="margin-top: -5.5%;" class="container">
+            <div class="home-tags">
+            <% config.website.tags.map(a => {%>
+                    <a translate="no" style="margin: 5px;" href="/tag/<%=a %>" class="btn btn-vcodes">
+                        <%= a %>
+                        </a>
+                  <% }) %>
+                </div>
+            </div>
+</div>
+
+<center>
+ </div>
+</center>
+<%- include('../parts/foot') %>

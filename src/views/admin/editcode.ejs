@@ -1,0 +1,109 @@
+<%- include('static/head.ejs', { bot,user,path}) %>
+<div id="content" class="main-content">
+    <br><br><br><br><br><br>
+    <div class="container">
+
+
+    <form method="POST">
+        <div class="form-row mb-4">
+            <div class="form-group col-md-4">
+                <label for="inputEmail4">Code Name<span style="color:red">*</span></label>
+                <input type="text" class="form-control" value="<%= koddata.codeName %>" id="codename" name="codename" placeholder="" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputEmail4">Code Description<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="codedesc" value="<%= koddata.codeDesc %>" name="codedesc" maxlength="100" placeholder="" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">Code Category<span style="color:red">*</span></label>
+                <select id="category" name="category" class="form-control" required>
+                    <option value="<%= koddata.codeCategory %>" selected><%= koddata.codeCategory %></option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="BDFD">BDFD</option>
+                    <option value="Substructure">Substructure</option>
+                    <option value="5Invites">5 Invites</option>
+                    <option value="10Invites">10 Invites</option>
+                    <option value="15Invites">15 Invites</option>
+                    <option value="20Invites">20 Invites</option>
+                </select>
+            </div>
+            
+        </div>
+        <div class="form-group mb-4">
+            <label for="inputAddress">Main (Optional)</label>
+            <textarea type="text" class="form-control" id="main" name="main" placeholder=""><%= koddata.main %></textarea>
+        </div>
+        <!-- div style="float:right;" id="dynamicCheck">
+            <input type="button" value="Create Command Input" class="btn btn-success" onclick="createNewElement();"/>
+            <input type="button" value="Remove Command Input" class="btn btn-danger" onclick="removeElement();"/>
+         </div>
+         <br><br -->
+         <div class="form-group">
+            <label for="inputEmail4">Command</label>
+            <textarea type="text" class="form-control" id="commands" value="<%= koddata.commands %>" name="commands" placeholder=""><%=koddata.commands%></textarea>
+        </div>
+
+            <div id="newElementId"></div>
+
+      <button type="submit" class="btn btn-primary mt-3"><i class="fa fa-save"></i> Submit</button>
+    </form>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<script>
+function createNewElement() {
+    // First create a DIV element.
+	var txtNewInputBox = document.createElement('div');
+
+    // Then add the content (a new input box) of the element.
+    txtNewInputBox.innerHTML = `
+    <div id="commandinput">
+    <br><br>
+        <div class="form-row mb-4">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Command Name (Optional)</label>
+                <input type="text" class="form-control" id="commandsname" name="commandsname" maxlength="100" placeholder="">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Command (Optional)</label>
+                <textarea type="text" style="height: 120%;" class="form-control" id="commands" name="commands" placeholder=""></textarea>
+            </div>
+        </div>
+    </div>
+    `;
+
+    // Finally put it where it is supposed to appear.
+	document.getElementById("newElementId").appendChild(txtNewInputBox);
+}
+function removeElement() {
+    var myobj = document.getElementById("commandinput");
+  myobj.remove();
+}
+var urlParams = new URLSearchParams(window.location.search);
+            if(urlParams.has('success') && urlParams.get('success')){
+            Swal.fire({
+             icon: 'success',
+             title: 'Succesfull...',
+             closeOnConfirm: false,
+             text: urlParams.get('message'),
+             footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+            }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = '/admin/codes';
+          }
+        })
+            }
+            if(urlParams.has('error') && urlParams.get('error')){
+            Swal.fire({
+             icon: 'error',
+             title: 'Oops...',
+             text: urlParams.get('message'),
+             footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+            }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = '/admin/codes';
+          }    
+        })
+            }
+</script>
+</div></div>
+<%- include('static/foot.ejs', { bot,user,path}) %>

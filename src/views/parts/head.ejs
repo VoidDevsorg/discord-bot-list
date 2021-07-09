@@ -1,0 +1,144 @@
+<%- include('./meta.ejs') %>
+<style>
+.bg-indigo-600 {
+    --tw-bg-opacity: 1;
+    background: linear-gradient(-45deg, #ee7752, rgba(79,70,229, 1), #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+</style>
+<div class="bg-indigo-600">
+  <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+    <div class="is-flex is-align-items-center justify-content-between is-flex-wrap">
+      <div class="w-0 is-flex-grow-1" style="align-items: center">
+        <span class="is-flex p-2 rounded-lg bg-indigo-600" style="opacity: 0%!important">
+         
+        </span>
+        <p class="ml-3 font-medium text-white truncate">
+          <span>
+            <span class="badge badge-danger is-size-6">EVENT</span>&nbsp;Add your bot now and join our server for a discord nitro gift to the bot owner who reaches the first 100 votes.
+          </span>
+        </p>
+      </div>
+      <div class="is-flex justify-content-end">
+        <a href="/dc" class="btn btn-vcodes">
+          Join Our Discord
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark p-2 pl-4 pr-4 bg-vcodes z">
+        <div class="container">
+        <a title="vcodes" class="navbar-brand logoholder"><img id="logoimg" style="height:55px; width:55px;" src="../../img/logo.png" alt="vCodes"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation" style="border: none">
+          <span class="fal fa-bars fa-2x"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul class="navbar-nav mainlink mr-auto">
+            <% if(!req.originalUrl.includes('/server')) { %>
+            <li class="nav-item">
+              <a title="vcodes" class="nav-link nvhome" href="/"><i class="fal fa-home mr-1"></i> Home</a>
+            </li>
+            <li class="nav-item">
+              <a title="vcodes" class="nav-link" href="/bots"><i class="fal fa-robot mr-1"></i> Bots</a>
+            </li>
+
+            <% if(user) {%>
+            <li class="nav-item">
+                <a title="vcodes" class="nav-link" href="/addbot"><i class="fal fa-plus mr-1"></i> Add Bot</a>
+            </li>
+            <% } %>
+            <li class="nav-item">
+                <a title="vcodes" class="nav-link" href="/servers"><i class="fal fa-server mr-1"></i> Servers</a>
+            </li>
+            
+            <% } else { %>
+            <li class="nav-item">
+              <a title="vcodes" class="nav-link nvhome" href="/servers"><i class="fal fa-home mr-1"></i> Home</a>
+            </li>
+            <li class="nav-item">
+                <a title="vcodes" class="nav-link" href="/servers/tags"><i class="fal fa-tags mr-1"></i> Tags</a>
+            </li>
+            <li class="nav-item">
+                <a title="vcodes" class="nav-link" href="/"><i class="fal fa-robot mr-1"></i> Bots</a>
+            </li>
+            <% if(user) {%>
+            <li class="nav-item">
+                <a title="vcodes" class="nav-link" href="/server/add"><i class="fal fa-plus mr-1"></i> Add Server</a>
+            </li>
+            <% } %>
+            <% } %>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fal fa-ellipsis-h"></i>&nbsp;More
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#"><i class="fal fa-handshake"></i>&nbsp;Partners</a>
+            <a class="dropdown-item" href="/certification"><i class="fal fa-badge-check"></i>&nbsp;Certification</a>
+            <a class="dropdown-item" href="/codes/categories"><i class="fal fa-code"></i>&nbsp;Code Share</a>
+            <a class="dropdown-item" href="/uptime/links"><i class="fal fa-sync-alt"></i>&nbsp;Uptime</a>
+            <% if(user) { %>
+                <% 
+                let guild = bot.guilds.cache.get(config.server.id).members.cache.get(user.id);
+                if(guild) {
+                if(guild.roles.cache.get(roles.administrator) || guild.roles.cache.get(roles.moderator)) {
+                %>
+                    <a title="vcodes" class="dropdown-item" href="/admin"><i class="fad fa-magic mr-1"></i> Admin Panel</a>
+
+                <% }} %>
+            <% } %>
+            </div>
+        </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <% 
+            let languages = global.config.website.languages;
+            %>
+
+            <li class="nav-item dropdown">
+                  <a class="btn btn-vcodes dropdown-toggle" href="#" id="navbarDropdown" translate="no" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fal fa-globe"></i>&nbsp;Language
+                  </a>
+                <div class="dropdown-menu dropdown-menu-right" style="max-width:220px!important;">
+            <% languages.map(x => { %>
+                <a href="#" translate="no" onclick="doGTranslate('en|<%= x.code %>')" title="vcodes" class="dropdown-item">
+                <img src="https://www.countryflags.io/<%= x.flag %>/flat/32.png">
+                    &nbsp;<%= x.name %>
+                </a>
+                <% }) %>
+                </div>
+              </li>
+          &nbsp;
+            <% if(user) {%>
+              <li class="nav-item dropdown">
+                  <a class="btn btn-vcodes" onclick='location.href = "/user/<%= user.id %>"' translate="no">
+                  <img width="24" style="border-radius: 50%" src='https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png'>
+                    <%=user.username%><small>#<%=user.discriminator%></small>
+                  </a>
+              </li>
+            <% } else { %>
+            <li class="nav-item">
+                <a title="vcodes" class="btn btn-vcodes" href="/login"><i class="fal fa-sign-in mr-1"></i> Login</a>
+            </li>
+	    <% } %>
+          </ul>
+        </div>
+        </div>
+
+
+      </nav>

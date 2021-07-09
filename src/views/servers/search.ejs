@@ -1,0 +1,192 @@
+<%- include('../parts/head', {bot, user, path}) %>
+<section class="jumbotron vcodes">
+    <br><br>
+    <div class="container px-3 mb-5 mt-1">
+      <div class="mb-3 mx-auto">
+       <span class="icon-section" style="margin-top: -5%;float: right;">
+        <img  draggable="false" style="z-index: -1!important;" class="section-img" title="vCodes.xyz"  src="../img/logo.png" width="320" alt="Discord Bots | Discord Bot List">
+        </span>
+        <h1 class="title" translate="no" style="font-weight: 800;color: #fff">vCodes</h1>
+        <p class="content" style="opacity: 0.6; margin-top: -20px;color: #fff">Do you want to grow a your server? vCodes is here for you!</p>
+        
+            <div>
+              <div class="z">
+                <form action="/servers/search">
+                   <div class="input-group">
+                          <input name="q" autocomplete="off" id="search" class="mainInput searchIcon isMobile sectionInput rounded-lg" style="border: none;color: var(--body-text);" type="text"  placeholder="Search servers...">
+                          <span class="search-icon-input input-group-append">
+                              <button id="search" class="btn rounded-pill ms-n3 sectionSubmit" type="submit">
+                                  <i class="fal fa-search"></i>
+                              </button>
+                          </span>
+                   </div>
+        <div class="searchArea" style="display: none">
+        <div class="pt-2"></div>
+        <div class="mainInput resultSection">
+        <b id="searchResultTitle"><i class="fa fa-search"></i> Search Results</b>
+        <span class="has-text-white has-text-centered" id="loadingIcon">
+        <i class="fal fa-spinner fa-pulse is-size-3"></i>
+        </span>
+            <span id="searchResults"><i class="fal fa-bug"></i>&nbsp;You haven't made any searchs.</span>
+            <button style="display:none;" class="btn btn-vcodes showMore"><i class="fal fa-list"></i> Show More</button>
+        </div>
+        </div>
+                  <input type="hidden" name="page" value="1">
+                </form>
+          <% global.config.website.servers.tags.slice(0, 3).map(tag => { %>
+          	<a title="vCodes" href="/servers/tag/<%= tag.name %>" class="btn btn-vcodes"><i class="<%= tag.icon %>"></i>&nbsp;<%= tag.name %></a>
+          <% }) %>
+          	<a title="vCodes" href="/servers/tags" class="btn btn-vcodes"><i class="fal fa-tags"></i>&nbsp;Explore Tags</a>
+              </div>
+      </div>
+    </div>
+</div>
+</section>
+
+</div>
+
+<script>
+        $(function() {
+            $(".searchArea").hide();
+            $("#searchResultTitle").hide();
+            $("#loadingIcon").hide();
+        })
+        $("#search, .searchArea").hover(function () {  
+          $(".searchArea").show();
+        }, function () {
+          $(".searchArea").hide();
+        });
+        $("#search").keyup(function () {
+          $("#loadingIcon").show();
+          $(".searchArea").show();
+          $(".showMore").hide();
+          $("#searchResults").hide();
+          $("#searchResultTitle").hide();
+          $.ajax({
+            type: "POST",
+            url: "/api/search/servers",
+            data: {key: $("#search").val()},
+            dataType: "json",
+            success: function (response) {
+            $("#loadingIcon").hide();
+            $("#searchResults").show();
+              let message = "";
+              let data = response.data;
+              if (data.length == 0) {
+                $('searchResultTitle').hide();
+                $("#searchResults").html("<i class='fal fa-bug'></i>&nbsp;No results were found.");
+                $('.showMore').hide();
+                return;
+              }
+              $("#searchResultTitle").show();
+              for (let i = 0; i < data.length; i++) {
+                if (i === 5) break; 
+                let server = data[i];
+                message += `
+                <a href="/server/${server.id}">
+                <div translate="no" class="mt-2 resultBotBanner">
+                  <img title="vCodes.xyz" class="mr-2" width="48" onError="imgError(this)" style="border-radius: 8px;" src="${server.icon}" />${server.name}
+                </div>
+            </a>
+            `;
+              }
+              if (data.length > 5) {
+                $(".showMore").show();  
+                setInterval(() => {
+                  $(".showMoreLink").attr("value", `/servers/search?q=${$("#search").val()}&page=1`);
+                }, 100);
+                $(".showMore").click(function () { window.location.href = $(".showMoreLink").val(); });    
+              }
+              $("#searchResults").html(message);
+            }
+          });
+        });
+</script>
+<style>
+.resultBotBanner {
+    background: var(--bg-card);
+    padding: 7px;
+    border-radius: 7px;
+    color: var(--text-section-hover)!important;
+    transition: all .2s;
+}
+.resultBotBanner:hover {
+    background: var(--bg-button-dark-hover);
+    padding: 7px;
+    color: var(--text-section-hover)!important;
+    border-radius: 7px;
+}
+</style>
+
+    <div class="container">
+        <div class="column">
+            <p class="has-text-white title is-large"><i class="fa fa-search has-text-info"></i>&nbsp;Search results for "<%= req.query.q %>"</p>
+            <p class="content has-text-white" style="margin-top: -20px;">They are ranked according to the votes they received.</p>
+          </div>
+    <div class="columns is-multiline is-desktop is-variable is-7 mt-5 pt-5">
+
+    <%
+       for (let i = (page - 1) * 6; i < data.length; i++) {
+       if (i === 6 * page) break;
+       let a = data.sort((a, b) => b.votes - a.votes)[i]
+    %>  
+    <% if(global.clientSL.guilds.cache.get(a.id)) { %>
+    %>
+    <% let guildCache = global.clientSL.guilds.cache.get(a.id) %>
+      <div class="col-md-6 col-lg-4 pb-3">
+        <div data-aos="fade-left">
+        <div class="card vcodes-card-custom bg-vcodes border-white border-0">
+          <div class="vcodes-card-custom-img" onerror="backImgError(this);" style="background-image: url(<%= guildCache.banner ? 'https://cdn.discordapp.com/banners/'+a.id+'/'+guildCache.banner+'?size=1024' : 'https://vcodes.xyz/img/undefined_back.png' %>);" title="vCodes.xyz" ></div>
+          <div class="vcodes-card-custom-avatar">
+            <img class="img-fluid" title="Discord Bot Avatar" onerror="imgError(this);" src="<%=a.icon%>" alt="Avatar" />
+          </div>
+          <div class="card-body">
+           <div class="is-pulled-right mt-vcodes mt-1" style="max-width: 28.5%!important;">
+            <span data-tooltip="Votes this Month" data-tooltip-location="left" class="badge badge-stats mb-vcodes mt-1 w-100"><i class="fad fa-chevron-up"></i>&nbsp;<%= a.votes %></span><span data-tooltip="Bumps this Month" data-tooltip-location="left" class="badge badge-stats mb-vcodes mt-1 w-100"><i class="fad fa-bomb"></i>&nbsp;<%= a.bumps %></span>
+            <span data-tooltip="Members" data-tooltip-location="left" class="badge badge-stats mt-1 w-100"><i class="fad fa-users"></i>&nbsp;<%= guildCache.memberCount > 999 ? guildCache.memberCount.toLocaleString().split(',')[0]+'k' : guildCache.memberCount %></span>
+              </div>
+            <p translate="no" class="card-title is-size-4"><%= a.name %>
+            <% if(guildCache.partnered === true) { %>
+              <span data-tooltip="Partnered Discord" data-tooltip-location="top">
+              <i class="fad fa-handshake bodyIcon"></i></span>
+            <% } %>
+            </p>
+            <p translate="no" class="card-text vCodesbotDesc"><%= a.shortDesc %></p>
+          </div>
+          <div class="card-footer">
+            <a title="vcodes" href="/server/<%=a.id%>" class="btn  btn-bot">View</a>
+            <a title="vcodes" href="/server/<%=a.id%>/join" class="btn  btn-bot">Join</a>
+          </div>
+        </div>
+      </div>
+      </div>
+      <% } %>
+         <% } %>
+         </div>
+</div>
+<br><br>
+<center>
+<%
+if (page != 1) {
+%>
+<a data-tooltip="Previous Page" data-tooltip-location="top" href="/search?q=<%=req.query.q%>&page=<%= page-1; %>" class="btn btn-vcodes p-2">
+    <i class="fad fa-arrow-left"></i>
+</a>
+  <% } else { %>
+    <a disabled="" class="btn btn-vcodes p-2" style="opacity: 0.5;" style="color: #fff!important">
+        <i class="fad fa-arrow-left"></i>
+    </a>
+  <% } %>
+  <a data-tooltip="Current Page" data-tooltip-location="top" class="btn btn-vcodes" style="color: #fff!important" disabled="">
+    <%= page %>
+  </a>
+  <%
+  if (page != Math.ceil(data.length / 6) && data.length > 0) {
+  %>
+  <a data-tooltip="Next Page" data-tooltip-location="top" href="/search?q=<%=req.query.q%>&page=<%= Number(page)+ Number(1); %>" class="btn btn-vcodes p-2">
+    <i class="fad fa-arrow-right"></i>
+</a>
+  <% } %>
+    </div>
+</center>
+<%- include('../parts/foot') %>

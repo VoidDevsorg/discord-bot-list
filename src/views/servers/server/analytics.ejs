@@ -1,0 +1,201 @@
+<%- include('../../parts/head', {bot, user, path}) %>
+<%- include('../../parts/edit-head') %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<h2 style="margin-top: -10px;" class="text-white"><i class="fas fa-chart-bar"></i>&nbsp;Analytics</h2>
+
+<style>
+.table-responsive {
+    background: #23272a!important;
+    color: #fff!important;
+    border-radius: 10px;
+}
+table.dataTable tbody tr {
+    background-color: #23272a;
+    border: none;
+  padding: 10px;
+}
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: #23272a;
+    color: #fff;
+}
+tfoot {
+    display: none;
+}
+  .page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #4e73df;
+    background-color: #fff;
+    border: 1px solid #dddfeb;
+}
+table.dataTable.no-footer {
+  border-bottom: none;
+}
+table.dataTable thead th, table.dataTable thead td {
+    padding: 10px 18px;
+    border-bottom: 1px solid #2c2f33;
+}
+.table td, .table th {
+    border: .5px solid #2c2f33;
+    border-width: 0 0 1px;
+    padding: .5em .75em;
+    vertical-align: top;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 1.5em;
+    padding: .5em 1em;
+    margin-left: 2px;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: not-allowed;
+    color: #7289da !important;
+    border: 1px solid #7289da;
+    border-radius: 2px;
+    opacity: 50%;
+    border-radius: 6px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 1.5em;
+    padding: .5em 1em;
+    margin-left: 5px;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    color: #7289da !important;
+    border: 1px solid #7289da;
+    border-radius: 6px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  border: 1px solid #7289da;
+  background: #7289da;
+  color: #fff!important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  border: 1px solid #7289da;
+  background: #7289da;
+  color: #fff!important;
+}
+.dataTables_filter {
+display: none;
+}
+.dataTables_info {
+display: none;
+}
+</style>
+<br>
+<div class="row">
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card bg-dark-200 border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Bumps</div>
+                        <div class="h5 mb-0 font-weight-bold has-text-white"><%= data.votes || 0 %></div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-chevron-up fa-2x text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card bg-dark-200 border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Joins&nbsp;<!-- small style="opacity: 75%" class="text-white">/month</small --></div>
+                        <div class="h5 mb-0 font-weight-bold has-text-white"><%= data.analytics_joins || 0 %></div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-plus fa-2x text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card bg-dark-200 border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Visitors&nbsp;<!-- small style="opacity: 75%" class="text-white">/week</small --></div>
+                            <div class="h5 mb-0 font-weight-bold has-text-white"><%= data.analytics_visitors || 0%></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-eye fa-2x text-white"></i>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="mt-2 font-italic">
+<h3 style="color: #5f79da" class="text-uppercase">Referrers</h3>
+<p style="color: rgb(126, 126, 126)">The domain names of the sites that most redirect to your server's page.</p>
+</div>
+<table id="analytics_referring" class="table table-hover" style="width:100%; color: #fff">
+    <thead>
+        <tr>
+            <th>Referring Url</th>
+            <th>Total referrers</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if(data.analytics) { %>
+        <% Object.keys(data.analytics).sort((a,b) => data.analytics[b] - data.analytics[a]).forEach(b => { %>
+        <tr>
+          <td translate="no"><span style="display: flex; align-items: center;"><%= b.split(",").join(".") %></span></td>
+          <td><span style="display: flex; align-items: center;"><%= data.analytics[b] %></span></td>
+        </tr>
+        <% }) %>
+        <% } %>
+    </tbody>
+</table>
+
+<div class="mt-2 font-italic">
+<h3 style="color: #5f79da" class="text-uppercase">Countries</h3>
+<p style="color: rgb(126, 126, 126)">These are the countries that enter your bot's page.</p>
+</div>
+<table id="analytics_country" class="table table-hover" style="width:100%; color: #fff">
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th>Total viewers</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% 
+        if(data.country) {
+        Object.keys(data.country).sort((a,b) => data.country[b] - data.country[a]).forEach(b => { 
+        %>
+        <tr>
+          <td translate="no"><span style="display: flex; align-items: center;"><img src="https://www.countryflags.io/<%= b %>/flat/32.png">&nbsp;<%= b %></span></td>
+          <td><span style="display: flex; align-items: center;"><%= data.country[b] %></span></td>
+        </tr>
+        <% 
+        }) 
+        }
+        %>
+    </tbody>
+</table>
+
+
+
+</div>
+
+
+</div></div>
+<%- include('../../parts/foot') %>

@@ -1,0 +1,96 @@
+<%- include('../parts/head', {bot, user, path}) %>
+<%- include('../parts/section') %>
+    <div class="container">
+        <div class="column">
+            <p class="has-text-white title is-large"><i class="fa fa-badge-check has-text-info"></i>&nbsp;Certified Bots</p>
+            <p class="content has-text-white" style="margin-top: -20px;">They are ranked according to the votes they received.</p>
+          </div>
+    <div class="columns is-multiline is-desktop is-variable is-7 mt-5 pt-5">
+
+    <%
+       for (let i = (page - 1) * 6; i < data.length; i++) {
+       if (i === 6 * page) break;
+       let a = data.filter(a => a.certificate === "Certified").sort((a, b) => b.votes - a.votes)[i]
+    %>
+      <div class="col-md-6 col-lg-4 pb-3">
+        <div class="card vcodes-card-custom bg-vcodes border-white border-0">
+          <div class="vcodes-card-custom-img" style="background-image: url(<%= a.backurl || "https://i.hizliresim.com/2sdunq.png" %>);"></div>
+          <div class="vcodes-card-custom-avatar">
+            <img class="img-fluid" onerror="imgError(this);" src="<%=a.avatar%>" alt="Avatar" />
+          </div>
+          <div class="card-body">
+           <div class="is-pulled-right mt-vcodes mt-1">
+                <span data-tooltip="Votes this Month" data-tooltip-location="left" class="badge badge-stats mb-vcodes mt-1 w-100"><i class="fad fa-chevron-up"></i>&nbsp;<%= a.votes || "0" %></span>
+                <span data-tooltip="Server Count" data-tooltip-location="left" class="badge badge-stats mt-1 w-100"><i class="fad fa-server"></i>&nbsp;<%= a.serverCount || "N/A" %></span>
+              </div>
+            <h4 translate="no" class="card-title"><%= a.username %>
+            <% if(a.certificate === "Certified") { %>
+              <span data-tooltip="Verified Bot" data-tooltip-location="top"><i class="fad fa-badge-check has-text-success"></i></span>
+            <% } %>
+            </h4>
+            <p translate="no" class="card-text vCodesbotDesc"><%= a.shortDesc %></p>
+          </div>
+          <div class="card-footer">
+            <a href="/bot/<%=a.botID%>" class="btn btn-tag btn-bot">View</a>
+            <a href="https://discord.com/oauth2/authorize?client_id=<%=a.botID%>&scope=bot&permissions=8" class="btn btn-tag btn-bot">Invite</a>
+          </div>
+        </div>
+      </div>
+         <% } %>
+         </div>
+</div>
+
+<br><br>
+<center>
+<%
+if (page != 1) {
+%>
+<a data-tooltip="Previous Page" data-tooltip-location="top" href="/bots/certified?page=<%= page-1; %>"  class="btn" style="padding: 14px;background-color: #242526; color: white;" >
+    <i class="fad fa-arrow-left"></i>
+</a>
+  <% } else { %>
+    <a disabled="" class="btn" style="padding: 14px;opacity: .4; background-color: #242526; color: white;" >
+        <i class="fad fa-arrow-left"></i>
+    </a>
+  <% } %>
+  <a data-tooltip="Current Page" data-tooltip-location="top"class="btn" style="background-color: #242526; color: white;">
+    <%= page %>
+  </a>
+  <%
+  if (page != Math.ceil(data.length / 6) && data.length > 0) {
+  %>
+  <a data-tooltip="Next Page" data-tooltip-location="top" href="/bots/certified?page=<%= Number(page)+ Number(1); %>"  class="btn" style="padding: 14px;background-color: #242526; color: white;" >
+    <i class="fad fa-arrow-right"></i>
+</a>
+  <% } %>
+    </div>
+</center>
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('success') && urlParams.get('success')){
+    Swal.fire({
+     icon: 'success',
+     title: 'Succesfull...',
+     closeOnConfirm: false,
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = `/bot/${urlParams.get('botID')}`;
+  }
+})
+    }
+    if(urlParams.has('error') && urlParams.get('error')){
+    Swal.fire({
+     icon: 'error',
+     title: 'Oops...',
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/addbot';
+  }    
+})
+    }
+   </script>
+<%- include('../parts/foot') %>

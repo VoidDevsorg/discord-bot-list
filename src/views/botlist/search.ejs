@@ -1,0 +1,73 @@
+<%- include('../parts/head', {bot, user, path}) %>
+<%- include('../parts/section') %>
+
+    <div class="container">
+        <div class="column">
+            <p class="has-text-white title is-large"><i class="fa fa-search has-text-info"></i>&nbsp;Search results for "<%= req.query.q %>"</p>
+            <p class="content has-text-white" style="margin-top: -20px;">They are ranked according to the votes they received.</p>
+          </div>
+    <div class="columns is-multiline is-desktop is-variable is-7 mt-5 pt-5">
+
+    <%
+       for (let i = (page - 1) * 6; i < data.length; i++) {
+       if (i === 6 * page) break;
+       let a = data.sort((a, b) => b.votes - a.votes)[i]
+    %>  
+    <% if(a.status === "Approved") { %>
+    %>
+      <div class="col-md-6 col-lg-4 pb-3">
+        <div data-aos="fade-left">
+        <div class="card vcodes-card-custom bg-vcodes border-white border-0">
+          <div class="vcodes-card-custom-img" style="background-image: url(<%= a.backURL || "https://i.hizliresim.com/2sdunq.png" %>);"></div>
+          <div class="vcodes-card-custom-avatar">
+            <img class="img-fluid" onerror="imgError(this);" src="<%=a.avatar%>" alt="Avatar" />
+          </div>
+          <div class="card-body">
+           <div class="is-pulled-right mt-vcodes mt-1">
+                <span data-tooltip="Votes this Month" data-tooltip-location="left" class="badge badge-stats mb-vcodes mt-1 w-100"><i class="fad fa-chevron-up"></i>&nbsp;<%= a.votes || "0" %></span>
+                <span data-tooltip="Server Count" data-tooltip-location="left" class="badge badge-stats mt-1 w-100"><i class="fad fa-server"></i>&nbsp;<%= a.serverCount || "N/A" %></span>
+              </div>
+            <h4 translate="no" class="card-title"><%= a.username %>
+            <% if(a.certificate === "Certified") { %>
+              <span data-tooltip="Verified Bot" data-tooltip-location="top"><i class="fad fa-badge-check bodyIcon"></i></span>
+            <% } %>
+            </h4>
+            <p translate="no" class="card-text vCodesbotDesc"><%= a.shortDesc %></p>
+          </div>
+          <div class="card-footer">
+            <a href="/bot/<%=a.botID%>" class="btn  btn-bot">View</a>
+            <a href="/bot/<%=a.botID%>/invite" class="btn  btn-bot">Invite</a>
+          </div>
+        </div>
+        </div>
+      </div>
+      <% } %>
+         <% } %>
+         </div>
+</div>
+<br><br>
+<center>
+<%
+if (page != 1) {
+%>
+<a data-tooltip="Previous Page" data-tooltip-location="top" href="/search?q=<%=req.query.q%>&page=<%= page-1; %>" class="btn btn-vcodes p-2">
+    <i class="fad fa-arrow-left"></i>
+</a>
+  <% } else { %>
+    <a disabled="" class="btn btn-vcodes p-2" style="opacity: 0.5;" style="color: #fff!important">
+        <i class="fad fa-arrow-left"></i>
+    </a>
+  <% } %>
+  <a data-tooltip="Current Page" data-tooltip-location="top" class="btn btn-vcodes" style="color: #fff!important" disabled="">
+    <%= page %>
+  </a>
+  <%
+  if (page != Math.ceil(data.length / 6) && data.length > 0) {
+  %>
+  <a data-tooltip="Next Page" data-tooltip-location="top" href="/search?q=<%=req.query.q%>&page=<%= Number(page)+ Number(1); %>" class="btn btn-vcodes p-2">
+    <i class="fad fa-arrow-right"></i>
+</a>
+  <% } %>
+    </div>
+</center>
+<%- include('../parts/foot') %>

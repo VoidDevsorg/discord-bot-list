@@ -1,0 +1,366 @@
+<style>
+   .dashboard {
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   min-height: 100vh;
+   }
+   .dashboard-app {
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+   -webkit-flex-direction: column;
+   -ms-flex-direction: column;
+   flex-direction: column;
+   -webkit-box-flex: 2;
+   -webkit-flex-grow: 2;
+   -ms-flex-positive: 2;
+   flex-grow: 2;
+   margin-top: 84px;
+   }
+   .dashboard-content {
+   -webkit-box-flex: 2;
+   -webkit-flex-grow: 2;
+   -ms-flex-positive: 2;
+   flex-grow: 2;
+   padding: 25px;
+   }
+   .dashboard-nav {
+   min-width: 238px;
+   position: relative;
+   left: 0;
+   top: 0;
+   bottom: 0;
+   overflow: auto;
+   background-color: var(--bg-section);
+   }
+   .dashboard-compact .dashboard-nav {
+   display: none;
+   }
+   .dashboard-nav header {
+   min-height: 84px;
+   padding: 8px 18px;
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-pack: center;
+   -webkit-justify-content: center;
+   -ms-flex-pack: center;
+   justify-content: center;
+   -webkit-box-align: center;
+   -webkit-align-items: center;
+   -ms-flex-align: center;
+   align-items: center;
+   }
+   .dashboard-nav header .menu-toggle {
+   display: none;
+   margin-right: auto;
+   }
+   .dashboard-nav a {
+   color: #515151;
+   }
+   .dashboard-nav a:hover {
+   text-decoration: none;
+   }
+   .dashboard-nav {
+   background-color: var(--bg-section);
+   }
+   .dashboard-nav a {
+   color: #fff;
+   }
+   .brand-logo {
+   font-weight: bold;
+   font-size: 20px;
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   color: #515151;
+   -webkit-box-align: center;
+   -webkit-align-items: center;
+   -ms-flex-align: center;
+   align-items: center;
+   }
+   .brand-logo:focus, .brand-logo:active, .brand-logo:hover {
+   color: #dbdbdb;
+   text-decoration: none;
+   }
+   .brand-logo i {
+   color: #d2d1d1;
+   font-size: 27px;
+   margin-right: 10px;
+   }
+   .dashboard-nav-list {
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+   -webkit-flex-direction: column;
+   -ms-flex-direction: column;
+   flex-direction: column;
+   transition: all 0.2s;
+   }
+   .dashboard-nav-item {
+   min-height: 56px;
+   padding: 8px 20px 8px 70px;
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-align: center;
+   -webkit-align-items: center;
+   -ms-flex-align: center;
+   align-items: center;
+   letter-spacing: 0.02em;
+   transition: ease-out 0.5s;
+   }
+   .dashboard-nav-item i {
+   width: 36px;
+   font-size: 19px;
+   margin-left: -40px;
+   }
+   .dashboard-nav-item:hover {
+   background: rgba(255, 255, 255, 0.04);
+   }
+   .active {
+   background: rgba(0, 0, 0, 0.1);
+   }
+   .dashboard-nav-dropdown {
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+   -webkit-flex-direction: column;
+   -ms-flex-direction: column;
+   flex-direction: column;
+   }
+   .dashboard-nav-dropdown.show {
+   background: rgba(255, 255, 255, 0.04);
+   }
+   .dashboard-nav-dropdown.show > .dashboard-nav-dropdown-toggle {
+   font-weight: bold;
+   }
+   .dashboard-nav-dropdown.show > .dashboard-nav-dropdown-toggle:after {
+   -webkit-transform: none;
+   -o-transform: none;
+   transform: none;
+   }
+   .dashboard-nav-dropdown.show > .dashboard-nav-dropdown-menu {
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   }
+   .dashboard-nav-dropdown-toggle:after {
+   content: "";
+   margin-left: auto;
+   display: inline-block;
+   width: 0;
+   height: 0;
+   border-left: 5px solid transparent;
+   border-right: 5px solid transparent;
+   border-top: 5px solid rgba(81, 81, 81, 0.8);
+   -webkit-transform: rotate(90deg);
+   -o-transform: rotate(90deg);
+   transform: rotate(90deg);
+   }
+   .dashboard-nav .dashboard-nav-dropdown-toggle:after {
+   border-top-color: rgba(255, 255, 255, 0.72);
+   }
+   .dashboard-nav-dropdown-menu {
+   display: none;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+   -webkit-flex-direction: column;
+   -ms-flex-direction: column;
+   flex-direction: column;
+   }
+   .dashboard-nav-dropdown-item {
+   min-height: 40px;
+   padding: 8px 20px 8px 70px;
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-align: center;
+   -webkit-align-items: center;
+   -ms-flex-align: center;
+   align-items: center;
+   transition: ease-out 0.5s;
+   }
+   .dashboard-nav-dropdown-item:hover {
+   background: rgba(255, 255, 255, 0.04);
+   }
+   .menu-toggle {
+   position: relative;
+   width: 42px;
+   height: 42px;
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-align: center;
+   -webkit-align-items: center;
+   -ms-flex-align: center;
+   align-items: center;
+   -webkit-box-pack: center;
+   -webkit-justify-content: center;
+   -ms-flex-pack: center;
+   justify-content: center;
+   color: #fff;
+   background-color: var(--bg-section);
+   border-bottom-right-radius: 10px;
+   }
+   .menu-toggle:hover {
+   text-decoration: none;
+   color: #7289da;
+   }
+   .menu-toggle i {
+   font-size: 20px;
+   }
+   .dashboard-toolbar {
+   min-height: 84px;
+   display: flex;
+   position: relative;
+   z-index: 1;
+   }
+   .nav-item-divider {
+   height: 1px;
+   margin: 1rem 0;
+   overflow: hidden;
+   background-color: rgba(236, 238, 239, 0.3);
+   }
+   @media (min-width: 992px) {
+   .dashboard-app {
+   margin-left: 238px;
+   }
+   .dashboard-compact .dashboard-app {
+   margin-left: 0;
+   }
+   }
+   @media (max-width: 768px) {
+   .dashboard-content {
+   padding: 15px 0px;
+   }
+   }
+   @media (max-width: 992px) {
+   .dashboard-nav {
+   display: none;
+   position: relative;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   z-index: 1070;
+   }
+   .dashboard-nav.mobile-show {
+   display: block;
+   }
+   }
+   @media (max-width: 992px) {
+   .dashboard-nav header .menu-toggle {
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   }
+   }
+   @media (min-width: 992px) {
+   .dashboard-compact .dashboard-toolbar {
+   left: 0;
+   }
+   }
+   .upper {
+   display: none;
+   }
+</style>
+<div class='dashboard'>
+<div style="margin-bottom: -10px;" class="dashboard-nav">
+   <header>
+      <% if(!req.originalUrl.includes('/server')) { %>
+      <% botCache = global.Client.users.cache.get(req.params.botID) %>
+      <a href="#" class="brand-logo"><img style="border-radius: 50%" width="64" src="<%=botCache.avatarURL() %>">&nbsp;&nbsp;<span><%= botCache.tag %></span></a>
+   </header>
+   <nav class="dashboard-nav-list">
+      <a href="/bot/<%= req.params.botID %>/edit" class="dashboard-nav-item"><i class="fas fa-pencil"></i> Edit </a>
+      <a href="/bot/<%= req.params.botID %>/analytics" class="dashboard-nav-item"><i class="fas fa-chart-bar"></i> Analytics </a>
+      <div class="nav-item-divider"></div>
+      <% if(botdata.status === "Approved") { %>
+      <input hidden="hidden" style="pointer-events: none; color: #fff;background-color: transparent; border: none;" type="password" id="token" value="<%= botdata.token %>" name="">
+      <span data-tooltip="Click and copy to clipboard" data-tooltip-location="top" onclick="copyToClipboard('#token')"><a href="#copyed" class="dashboard-nav-item"><i class="fas fa-eye"></i> Token </a></span>
+      <% } %>
+      <a style="color: red;cursor: pointer" onclick="return deleteReady();" class="dashboard-nav-item"><i class="fas fa-trash"></i> Delete </a>
+      <script>
+         <% if(botdata.status === "Approved") { %>
+         function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).val()).select();
+            document.execCommand("copy");
+            $temp.remove();
+          }
+         <% } %>
+                    function deleteReady() {
+                      Swal.fire({
+                        title: 'Are you sure?',
+                        text: "You won't be able to revert this!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Yes, delete it!'
+                      }).then((result) => {
+                        if (result.isConfirmed) {
+                          location.href = '/bot/<%= req.params.botID %>/delete';
+                        }
+                      })
+                    }
+      </script>
+      <div class="nav-item-divider"></div>
+      <a href="/bot/<%= req.params.botID %>" class="dashboard-nav-item"><i class="fas fa-arrow-left"></i> Back to bot page</a>
+      <% } else { %>
+    <% guildCache = global.clientSL.guilds.cache.get(req.params.guildID) %>
+      <a href="#" class="brand-logo"><img style="border-radius: 50%" width="64" onError="imgError(this);" src="<%= guildCache.iconURL({ dynamic: true }) %>">&nbsp;&nbsp;<span><%= guildCache.name %></span></a>
+   </header>
+   <nav class="dashboard-nav-list">
+      <a href="/server/<%= req.params.guildID %>/edit" class="dashboard-nav-item"><i class="fas fa-pencil"></i> Edit </a>
+      <a href="/server/<%= req.params.guildID %>/analytics" class="dashboard-nav-item"><i class="fas fa-chart-bar"></i> Analytics </a>
+      <div class="nav-item-divider"></div>
+      <a style="color: red;cursor: pointer" onclick="return deleteReady();" class="dashboard-nav-item"><i class="fas fa-trash"></i> Delete </a>
+      <script>
+        function deleteReady() {
+          Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              location.href = '/server/<%= req.params.guildID %>/delete';
+            }
+          })
+        }
+      </script>
+      <div class="nav-item-divider"></div>
+      <a href="/server/<%= req.params.guildID %>" class="dashboard-nav-item"><i class="fas fa-arrow-left"></i> Back to server page</a>
+      <% } %>
+   </nav>
+</div>
+<header class='dashboard-toolbar'>
+   <a href="#!" class="menu-toggle">
+   <i class="fas fa-bars"></i>
+   </a>
+</header>
+<div class='dashboard-content container'>

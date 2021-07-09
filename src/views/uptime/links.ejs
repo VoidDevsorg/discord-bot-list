@@ -1,0 +1,154 @@
+<%- include('../parts/head', {bot, user, path}) %>
+<style>
+  h1 {
+    color: #fFf;
+  }
+#tableData_filter {
+    display:none;
+}
+#tableData_info {
+    color: var(--body-text)!important;
+}
+</style>
+<br><br><br>
+<div class="container">
+Your Links
+<button style="float: right;" class="btn btn-vcodes" data-toggle="modal" data-target="#exampleModalCenter">Add Link</button>
+<table id="tableData" class="table table-dark table-striped" data-toggle="table" data-pagination="true" data-search="true">
+  <thead>
+  <th>Uptime Link</th>
+  <th>Uptime Code</th>
+  <th>Operation</th>
+  </thead>
+          <% uptimes.map(a => {%>
+            <tr>
+                <td><%= a.link %></td>
+                <td><%= a.code %></td>
+              <td><button onclick='deletequest("<%= a.code %>")' id="deleteButton" class="btn btn-danger">Delete</button></td>
+            </tr>
+         <% }); %>
+</table>
+</div>
+
+<br><br><br>
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('success') && urlParams.get('success')){
+    Swal.fire({
+     icon: 'success',
+     title: 'Succesfull...',
+     closeOnConfirm: false,
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/uptime/links';
+  }
+})
+    }
+    if(urlParams.has('error') && urlParams.get('error')){
+    Swal.fire({
+     icon: 'error',
+     title: 'Oops...',
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/uptime/links';
+  }    
+})
+    }
+function deletequest(uptimecode) {
+$("#deleteButton").html('<i class="fad fa-spinner fa-w-16 fa-pulse fa-lg"></i>');
+$("#deleteButton").attr("disabled", true);
+setTimeout(() => {
+Swal.fire({
+  title: 'Are you sure?',
+  text: "Are you sure you want to permanently delete the link you selected?",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonText: 'Yes, delete it!',
+  cancelButtonText: 'No, cancel it!',
+  reverseButtons: true
+}).then((result) => {
+  if (result.isConfirmed) {
+  $("#deleteButton").html('Delete');
+  $("#deleteButton").attr("disabled", false);
+    window.location.href = '/uptime/'+uptimecode+'/delete';
+  } else {
+  $("#deleteButton").html('Delete');
+  $("#deleteButton").attr("disabled", false);
+    Swal.fire(
+      'Canceled..',
+      'Link deletion from the uptime system has been canceled.',
+      'error'
+    )
+  }
+})
+}, 2000);
+}
+   </script>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="background-color: var(--bg-card)">
+      <div class="modal-header">
+        <h5 class="modal-title text-white" style="color: var(--body-text)!important;" id="exampleModalLongTitle">Uptime your link!</h5>
+        <button type="button" class="btn btn-vcodes" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="fal fa-times fa-lg"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/uptime/add" id="myUptimeForm" method="POST" class="form-discorddark">
+        <div class="form-group">
+          <label style="color: var(--body-text)!important;">Your website link;</label>
+          <input type="text" class="form-control" id="link" name="link" />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" onclick="clickOnAdd()" id="myButton" class="btn btn-vcodes"><i class="fad fa-save"></i>&nbsp;Save</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function clickOnAdd() {
+    $("#myButton").attr("disabled", true);
+    $("#myButton").html('<i class="fad fa-spinner fa-w-16 fa-spin fa-lg"></i>');
+    setTimeout(() => {
+        $.post("/uptime/add", {
+                link: $('#link').val()
+            })
+            .done(function(data) {
+                if (data.error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        closeOnConfirm: false,
+                        text: data.message,
+                        footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+                    })
+                    $("#myButton").html('<i class="fad fa-save"></i>&nbsp;Save');
+                    $("#myButton").attr("disabled", false);
+                    return;
+                } else {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Nice...',
+                        closeOnConfirm: false,
+                        text: data.message,
+                        footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+                    })
+                    $("#myButton").html('<i class="fad fa-save"></i>&nbsp;Save');
+                    $("#myButton").attr("disabled", false);
+                    return;
+                }
+            });
+    }, 2000)
+}
+</script>
+
+                                          
+                                   
+<%- include('../parts/foot') %>

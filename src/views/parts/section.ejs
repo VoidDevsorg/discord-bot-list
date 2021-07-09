@@ -1,0 +1,120 @@
+
+<section class="jumbotron vcodes">
+    <br><br>
+    <div class="container px-3 mb-5 mt-1">
+      <div class="mb-3 mx-auto">
+       <span class="icon-section" style="margin-top: -5%;float: right;">
+        <img  draggable="false" style="z-index: -1!important;" class="section-img" title="vCodes.xyz"  src="../img/logo.png" width="320" alt="Discord Bots | Discord Bot List">
+        </span>
+        <h1 class="title" translate="no" style="font-weight: 800;color: #fff">vCodes</h1>
+        <p class="content" style="opacity: 0.6; margin-top: -20px;color: #fff">Do you want to expand and improve your Discord bot? Here vCodes are here for you!</p>
+        
+            <div>
+              <div class="z">
+                <form action="/search">
+                   <div class="input-group">
+                          <input name="q" autocomplete="off" id="search" class="mainInput searchIcon isMobile sectionInput rounded-lg" style="border: none;color: var(--body-text);" type="text"  placeholder="Search bots...">
+                          <span class="search-icon-input input-group-append">
+                              <button id="search" class="btn rounded-pill ms-n3 sectionSubmit" type="submit">
+                                  <i class="fal fa-search"></i>
+                              </button>
+                          </span>
+                   </div>
+        <div class="searchArea" style="display: none">
+        <div class="pt-2"></div>
+        <div class="mainInput resultSection">
+        <b id="searchResultTitle"><i class="fa fa-search"></i> Search Results</b>
+        <span class="has-text-white has-text-centered" id="loadingIcon">
+        <i class="fal fa-spinner fa-pulse is-size-3"></i>
+        </span>
+            <span id="searchResults"><i class="fal fa-bug"></i>&nbsp;You haven't made any searchs.</span>
+            <button style="display:none;" class="btn btn-vcodes showMore"><i class="fal fa-list"></i> Show More</button>
+        </div>
+        </div>
+                  <input type="hidden" name="page" value="1">
+                </form>
+          <a translate="no" title="vCodes" href="/tag/Moderation" class="btn btn-vcodes"><i class="fal fa-magic"></i>&nbsp;Moderation</a>
+          <a translate="no" title="vCodes" href="/tag/Fun" class="btn btn-vcodes"><i class="fal fa-smile"></i>&nbsp;Fun</a>
+          <a translate="no" title="vCodes" href="/tag/NSFW" class="btn btn-vcodes"><i class="fal fa-lips"></i>&nbsp;NSFW</a>
+          <a translate="no" title="vCodes" href="/tag/Utility" class="btn btn-vcodes"><i class="fal fa-cogs"></i>&nbsp;Utility</a>
+          <a title="vCodes" href="/tags" class="btn btn-vcodes"><i class="fal fa-tags"></i>&nbsp;Explore Tags</a>
+              </div>
+      </div>
+    </div>
+</div>
+</section>
+
+</div>
+
+<script>
+        $(function() {
+            $(".searchArea").hide();
+            $("#searchResultTitle").hide();
+            $("#loadingIcon").hide();
+        })
+        $("#search, .searchArea").hover(function () {  
+          $(".searchArea").show();
+        }, function () {
+          $(".searchArea").hide();
+        });
+        $("#search").keyup(function () {
+          $("#loadingIcon").show();
+          $(".searchArea").show();
+          $(".showMore").hide();
+          $("#searchResults").hide();
+          $("#searchResultTitle").hide();
+          $.ajax({
+            type: "POST",
+            url: "/api/search",
+            data: {key: $("#search").val()},
+            dataType: "json",
+            success: function (response) {
+            $("#loadingIcon").hide();
+            $("#searchResults").show();
+              let message = "";
+              let data = response.data;
+              if (data.length == 0) {
+                $('searchResultTitle').hide();
+                $("#searchResults").html("<i class='fal fa-bug'></i>&nbsp;No results were found.");
+                $('.showMore').hide();
+                return;
+              }
+              $("#searchResultTitle").show();
+              for (let i = 0; i < data.length; i++) {
+                if (i === 5) break; 
+                let bot = data[i];
+                message += `
+                <a href="/bot/${bot.botID}">
+                <div translate="no" class="mt-2 resultBotBanner">
+                  <img title="vCodes.xyz" class="mr-2" width="48" onError="imgError(this)" style="border-radius: 8px;" src="${bot.avatar}" />${bot.username}
+                </div>
+            </a>
+            `;
+              }
+              if (data.length > 5) {
+                $(".showMore").show();  
+                setInterval(() => {
+                  $(".showMoreLink").attr("value", `/search?q=${$("#search").val()}&page=1`);
+                }, 100);
+                $(".showMore").click(function () { window.location.href = $(".showMoreLink").val(); });    
+              }
+              $("#searchResults").html(message);
+            }
+          });
+        });
+</script>
+<style>
+.resultBotBanner {
+    background: var(--bg-card);
+    padding: 7px;
+    border-radius: 7px;
+    color: var(--text-section-hover)!important;
+    transition: all .2s;
+}
+.resultBotBanner:hover {
+    background: var(--bg-button-dark-hover);
+    padding: 7px;
+    color: var(--text-section-hover)!important;
+    border-radius: 7px;
+}
+</style>

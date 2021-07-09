@@ -1,0 +1,51 @@
+<%- include('../parts/head', {bot, user, path}) %>
+<title>Rules | Discord Bots</title>
+<style>
+strong {
+color: var(--body-text)!important;
+}
+</style>
+<div class="container px-3 mt-2 pt-5">
+    <div class="container px-3 content is-widescreen pt-5">
+        <div class="bg-vote-vcodes pt-5">
+            <p class="is-size-4" style="text-decoration: underline;">Bot Rules</p>
+            <p style="text-align: none;"class="text-muted">
+&raquo <strong>1.</strong> The conditions for adding bots are as follows;<br>
+  &nbsp;&nbsp;<strong>a.</strong> You have to choose a tag.<br>
+  &nbsp;&nbsp;<strong>b.</strong> You have to enter the bot ID correctly.<br>
+  &nbsp;&nbsp;<strong>c.</strong> The opening date of your bot must be 2 weeks before it is added.<br>
+  &nbsp;&nbsp;<strong>d.</strong> Your bot should not be a duplicate of other bots.<br>
+  &nbsp;&nbsp;<strong>e.</strong> Your bot's avatar must not belong to another bot.<br><br>
+&raquo <strong>2.</strong> Bot page content that is not allowed;<br>
+  &nbsp;&nbsp;<strong>a.</strong> You should not redirect to any unrelated site.<br>
+  &nbsp;&nbsp;<strong>b.</strong> You should not put another bot list site as an iframe.<br>
+  &nbsp;&nbsp;<strong>c.</strong> You should not post pictures that contain nudity.<br>
+  &nbsp;&nbsp;<strong>d.</strong> You must provide detailed information about your bot.<br>
+  &nbsp;&nbsp;<strong>e.</strong> While giving detailed information about your bot, you should use it in the pictures.<br>
+  &nbsp;&nbsp;<strong>f.</strong> You must write the correct prefix.<br>
+  &nbsp;&nbsp;<strong>g.</strong> You have to put your bot's site as an iframe or write your bot's commands.<br><br>
+&raquo <strong>3.</strong> Not allowed in bot commands;<br>
+  &nbsp;&nbsp;<strong>a.</strong> Another bot should not be advertised on your bot.<br>
+  &nbsp;&nbsp;<strong>b.</strong> There should be no emojis in any of your bot's commands that will cause an epilepsy crisis.<br>
+  &nbsp;&nbsp;<strong>c.</strong> Your bot's commands must be unique.<br>
+  &nbsp;&nbsp;<strong>d.</strong> There should be no batch-processing commands on your bot.<br>
+  &nbsp;&nbsp;<strong>e.</strong> Your bot should not have any prohibited commands.<br>
+  &nbsp;&nbsp;<strong>f.</strong> Your bot must have been opened at least 2 weeks ago.<br>
+  &nbsp;&nbsp;<strong>g.</strong> Your bot must be unique.
+<br><br>
+&raquo Prohibited Commands;<br>
+  <strong>1.</strong> Give / Get Role For Everyone<br>
+  <strong>2.</strong> Blast the Server<br>
+  <strong>3.</strong>  DM Announcement<br>
+  <strong>4.</strong> Spam Message<br>
+  <strong>5.</strong> Send a private message
+                </p>
+            <br>
+        </div>
+    </div>
+    <center>
+    <button onclick="location.href='/addbot'" class="btn btn-vcodes"><i class="fad fa-check"></i>&nbsp;Apply your bot</button>
+    </center>
+</div>
+
+<%- include('../parts/foot') %>

@@ -1,0 +1,151 @@
+<%- include('../../parts/head', {bot, user, path}) %>
+<title><%= sdb.name %> | Discord Servers</title>
+<head>
+    <meta property="og:site_name" content="Powered by vCodes.xyz">
+    <meta property="og:title" content="<%= sdb.name %>">
+    <meta property="og:description" content="<%= sdb.shortDesc %>
+    ­
+🟢 <%= global.clientSL.guilds.cache.get(sdb.id).members.cache.filter(a => a.presence.status != 'dnd').size %> onlineᅠᅠᅠᅠ⚫ <%= global.clientSL.guilds.cache.get(sdb.id).memberCount %> members">
+    <meta property="og:image" content="<%= sdb.icon %>">
+</head>
+
+<div class="main-content">
+    <br><br><br><br><br>
+
+    <style>
+
+        .separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.separator::after {
+  content: '';
+  flex: 2;
+  border-bottom: 1px solid #fff;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .55em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .55em;
+}
+    </style>
+    <!-- Page content -->
+    <div class="container-fluid mt-7">
+      <div class="row">
+        <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+          <div class="card card-profile">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                <div class="card-profile-image">
+                  <span class="avatar">
+                    <img alt="Image placeholder" onerror="imgError(this)" class="rounded-circle mr-4" src="<%= sdb.icon %>">
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+              <div class="d-flex justify-content-between">
+                <a href="/server/<%= sdb.id %>/join" class="btn btn-vcodes float-right"><i class="fad fa-link"></i> Join</a>
+              </div>
+            </div>
+            <div class="card-body pt-0 pt-md-4">
+              <div class="row">
+                <div class="col">
+                  <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <h3 translate="no">
+                  <%= sdb.name %> 
+                 <% if(guildGet.partnerd === true) {%>
+                    <a data-tooltip="Partnered with Discord"
+                    data-tooltip-location="top"><i class="fad fa-badge-check bodyIcon"></i></a>
+                 <% } %>
+                </h3>
+                <div>
+                    <%= sdb.shortDesc %>
+                </div>
+             </div>
+            <% 
+            if(req.user) {
+            if(guildGet.members.cache.get(req.user.id)) {
+            if(guildGet.members.cache.get(req.user.id).permissions.has('ADMINISTRATOR')) {
+            %>
+            <div class="h6 mt-4">
+                    <i class="fad fa-user-crown"></i> Owner Options
+                  </div>
+    
+                  <a href="/server/<%= sdb.id %>/edit" class="is-flex mt-1">
+                    <div class="box-2-p"><i class="mt-1 fal fa-pencil"></i></div>
+                    <p class="box-2">Edit Server</p>
+                  </a>
+                  <form action="#" id="my_form" method="POST">
+                    <a href="javascript:{}" onclick="document.getElementById('my_form').submit();" class="is-flex mt-1">
+                        <div class="box-2-p"><i class="fal fa-sync-alt is-size-6 mt-1"></i></div>
+                        <p class="box-2">Refresh Data</p>
+                    </a>
+                </form>
+             <% } %>
+             <% } %>
+             <% } %>
+              <div class="h6 mt-4">
+                <i class="fad fa-question-circle"></i> Information
+              </div>
+
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fal fa-users"></i></div>
+                <p class="box-2">Members:&nbsp;<%= guildGet.memberCount.toLocaleString().replace(',', '.') %> </p>
+              </div>
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fal fa-robot"></i></div>
+                <p class="box-2">Bots:&nbsp;<%= guildGet.members.cache.filter(a => a.user.bot).size %> </p>
+              </div>
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fal fa-icons"></i></div>
+                <p class="box-2">Emoji:&nbsp;<%= guildGet.emojis.cache.size || "0" %> </p>
+              </div>
+             <div class="h6 mt-4">
+                <i class="fal fa-user-crown"></i> Owners
+              </div>
+              <% guildGet.members.cache.filter(a => !a.user.bot && a.permissions.has('ADMINISTRATOR')).map(admin => { %>
+              <a style="text-decoration: none;margin-bottom: -5px;" href="/user/<%= admin.user.id %>" class="is-flex mt-1">
+                <div class="box-2-p ownerIMG"  style="background: url(<%= admin.user.avatarURL({dynamic:true}) || '../../img/undefined_avatar.png' %>) center center no-repeat; background-size: 100%;"></div>
+                <p translate="no" class="box-2"><%= admin.user.tag %>
+                <% if(admin.user.id === sdb.ownerID) { %>
+                  &nbsp;<span data-tooltip="Guild Owner" data-tooltip-location="top"><i class="fa fa-crown has-text-warning"></i></span>
+                <% } %></p>
+                
+              </a>
+              <% }) %>
+            <div class="h6 mt-4">
+                <i class="fad fa-tags"></i> Tags
+              </div>
+
+              <div style="width: 80%;">
+                <% sdb.tags.map(a => {%>
+                    <a translate="no" style="margin: 5px;" href="/servers/tag/<%=a%>" class="btn btn-sm btn-tag"><%=a%></a>
+                <% }) %>
+              </div>
+              <br><br>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-8 order-xl-1">
+          <div class="card bg-secondary shadow">
+            <div style="padding: 1px!important;" class="card-body">
+                <pre translate="no" class="bot"><% let $ = global.Client.htmll.load(sdb.longDesc) %><%- $.html() %></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+<%- include('../../parts/foot') %>

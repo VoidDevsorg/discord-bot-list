@@ -1,0 +1,783 @@
+<%- include('../../parts/head', {bot, user, path}) %>
+<title><%= botdata.username %> | Discord Bots</title>
+<head>
+    <meta property="og:title" content="<%= botdata.username %>">
+    <meta property="og:description" content="<%= botdata.shortDesc %>">
+    <meta property="og:image" content="<%= botdata.avatar %>">
+</head>
+
+<div class="main-content">
+    <% if(botdata.status != "Approved") {%>
+        <br><br>
+        <div class="container alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fa fa-exclamation-circle"></i> This bot is <strong>not approved</strong> yet.
+            <br>And therefore it will not appear in the bots section, and also the bot owners will not be able to access the external bot.
+          </div>
+    <% } %>
+    <br><br><br><br><br>
+
+    <style>
+        .separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.separator::after {
+  content: '';
+  flex: 2;
+  border-bottom: 1px solid #fff;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .55em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .55em;
+}
+    </style>
+
+    <!-- Page content -->
+    <div class="container-fluid mt-7">
+      <div class="row">
+        <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+          <div class="card card-profile">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                <div class="card-profile-image">
+                  <span class="avatar">
+                    <img alt="Image placeholder" onerror="imgError(this)" class="rounded-circle mr-4" src="<%= botdata.avatar %>">
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+              <div class="d-flex justify-content-between">
+                <a href="/bot/<%= botdata.botID%>/vote" class="btn btn-vcodes mr-4"><i class="fad fa-vote-yea"></i> Vote</a>
+                <a href="/bot/<%= botdata.botID%>/invite" class="btn btn-vcodes float-right"><i class="fad fa-link"></i> Invite</a>
+              </div>
+            </div>
+            <div class="card-body pt-0 pt-md-4">
+              <div class="row">
+                <div class="col">
+                  <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <h3 translate="no">
+                  <%= botdata.username %> 
+                  <% if(botdata.botID === "746673633551974456") {%>
+                    <a data-tooltip="Server Bot"
+                    data-tooltip-location="top"><i class="fad fa-server bodyIcon"></i></a>
+                 <% } %>
+                 <% if(botdata.certificate == "Certified") {%>
+                    <a data-tooltip="Verified Bot"
+                    data-tooltip-location="top"><i class="fad fa-badge-check bodyIcon"></i></a>
+                 <% } %>
+                </h3>
+                <div>
+                    <%= botdata.shortDesc %>
+                </div>
+             </div>
+            <% if(req.user) {%>
+            <% if(req.user.id === botdata.ownerID || botdata.coowners.includes(req.user.id)) {%>
+            <div class="h6 mt-4">
+                    <i class="fad fa-user-crown"></i> Owner Options
+                  </div>
+    
+                  <a href="/bot/<%= botdata.botID %>/edit" class="is-flex mt-1">
+                    <div class="box-2-p"><i class="mt-1 fal fa-pencil"></i></div>
+                    <p class="box-2">Edit Bot</p>
+                  </a>
+                  <form action="#" id="my_form" method="POST">
+                    <a href="javascript:{}" onclick="document.getElementById('my_form').submit();" class="is-flex mt-1">
+                        <div class="box-2-p"><i class="fal fa-sync-alt is-size-6 mt-1"></i></div>
+                        <p class="box-2">Refresh Data</p>
+                    </a>
+                </form>
+
+
+             <% } %>
+             <% } %>
+              <div class="h6 mt-4">
+                <i class="fad fa-question-circle"></i> Information
+              </div>
+
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fal fa-terminal"></i></div>
+                <p class="box-2">Prefix:&nbsp;<%= botdata.prefix %> </p>
+              </div>
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fal fa-vote-yea"></i></div>
+                <p class="box-2">Votes:&nbsp;<%= botdata.votes || "0" %> </p>
+              </div>
+              <% if(botdata.serverCount) {%>
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fal fa-server"></i></div>
+                <p class="box-2">Servers:&nbsp;<%= botdata.serverCount || "N/A" %> </p>
+              </div>
+              <% } %>
+              <% if(botdata.shardCount) {%>
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fal fa-sitemap"></i></div>
+                <p class="box-2">Shards:&nbsp;<%= botdata.shardCount || "N/A"%> </p>
+              </div>
+              <% } %>
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fad fa-circle status-<%= bot.users.cache.get(botdata.botID).presence.status %>"></i></div>
+                <p class="box-2">Status:&nbsp;<%= bot.users.cache.get(botdata.botID).presence.status.toUpperCase() %></p>
+              </div>
+             <div class="h6 mt-4">
+                <i class="fal fa-user-crown"></i> Owners
+              </div>
+              <a style="text-decoration: none;margin-bottom: -5px;" href="/user/<%= botdata.ownerID %>" class="is-flex mt-1">
+                <div class="box-2-p ownerIMG" style="background: url(<%= aowner.avatarURL({dynamic:true}) %>) center center no-repeat; background-size: 100%;"></div>
+                <p translate="no" class="box-2"><%= aowner.tag %></p>
+              </a>
+              <% coowner.map(a => {%>
+              <a style="text-decoration: none;margin-bottom: -5px;" href="/user/<%= a.id %>" class="is-flex mt-1">
+                <div class="box-2-p ownerIMG" style="background: url(<%= a.avatarURL({dynamic:true}) %>) center center no-repeat; background-size: 100%;"></div>
+                    <p translate="no" class="box-2"><%= a.tag %></p>
+              </a>
+              <% }) %>
+              <% if(botdata.status == "Approved") {%>
+              <div class="h6 mt-4">
+                <i class="fal fa-star"></i> Rating
+              </div>
+              
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fal fa-stars"></i></div>
+                <%
+                let count = new Array();
+                let rating;
+                botdata.rates ? botdata.rates.forEach(x => {
+                  count.push(x.star_rate)
+                }) : 0;
+                %>
+                <p class="box-2">Rating Average: <a id="averageCount"></a></p>
+                <script>
+                let x = new Array(<%= count %>)
+                let number = `${x.reduce((a,b) => a+b, 0)/x.length}`
+                $('#averageCount').html(number.split('.').length >= 2 ? number.split('.')[0]+'.'+number.split('.')[1].slice(0,1) : number)
+                </script>
+              </div>
+              <div class="is-flex mt-1">
+                <div class="box-2-p"><i class="mt-1 fal fa-comment"></i></div>
+                <p class="box-2">Reviews: &nbsp;<%= botdata.rates ? botdata.rates.length : 0 %> </p>
+              </div>
+              <% } %>
+
+            <div class="h6 mt-4">
+                <i class="fad fa-tags"></i> Tags
+              </div>
+
+              <div style="width: 80%;">
+                <% botdata.tags.map(a => {%>
+                    <a translate="no" style="margin: 5px;" href="/tag/<%=a%>" class="btn btn-sm btn-tag"><%=a%></a>
+                <% }) %>
+              </div>
+              <br><br>
+              <% if(botdata.support) {%>
+                <a href="<%= botdata.support %>" class="is-flex mt-1">
+                  <div style="background: rgb(97, 124, 221)" class="box-2-p"><i class="fab fa-discord is-size-6 mt-1"></i></div>
+                  <p style="background: #7289da;color:#fff" class="box-2">Support Server</p>
+                </a>
+                <% } %>
+                <% if(botdata.website) {%>
+                <a href="<%= botdata.website %>" class="is-flex mt-1">
+                  <div style="background: rgb(33, 167, 111);" class="box-2-p"><i class="fal fa-globe is-size-6 mt-1"></i></div>
+                  <p style="background: rgb(8, 187, 112);color:#fff"class="box-2">Website</p>
+                </a>
+                <% } %>
+                <% if(botdata.github) {%>
+                <a href="<%= botdata.github %>" class="is-flex mt-1">
+                  <div style="background: rgb(0, 0, 0);" class="box-2-p"><i class="fal fa-github is-size-6 mt-1"></i></div>
+                  <p style="background: rgb(8, 8, 8); color:#fff" class="box-2">Github</p>
+                </a>
+                <% } %>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-8 order-xl-1">
+          <div class="card bg-secondary shadow">
+            <div style="padding: 1px!important;" class="card-body">
+                <pre translate="no" class="bot"><% let $ = bot.htmll.load(botdata.longDesc) %><%- $.html() %></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% if(botdata.status == "Approved") { %>
+      <hr style="opacity: 5%;">
+      <h4 class="has-text-white">
+        Ratings & Reviews <span class="badge badge-danger">Beta v2.0</span>
+      </h4>
+      <%
+      if(req.user) { 
+      if(botdata.ownerID != req.user.id && !botdata.coowners.includes(req.user.id)) {
+      let writedByUser;
+      let writedLength = 0;
+      %>
+      <% if(botdata.rates) { %>
+      <%
+      writedByUser = botdata.rates.map(x => x).filter(x => x.author === req.user.id); 
+      writedLength = writedByUser.length;
+      %>
+      <% } %>
+      <% if(writedLength == 0) { %>
+      <div class="card">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="rating-cards col-md-12">
+                        <div class="ml-4 media p-2" style="border-radius: 5px;">
+                          <img class="mr-3 rounded-circle" alt="vcodes-xyz | Rating System" src="https://cdn.discordapp.com/avatars/<%= req.user.id %>/<%=req.user.avatar%>" />
+                            <div class="media-body">
+                                <div class="row">
+                                    <div class="col-8 d-flex">
+                                      <h5><%= req.user.username %></h5>
+                                    </div>
+                                </div>
+                              <form method="POST" id="myReviewForm" action="/bot/<%= botdata.botID %>/new-comment">
+                                  <div class="rating">
+                                    <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> 
+                                    <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
+                                    <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> 
+                                    <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> 
+                                    <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                                  </div>
+                                <div style="padding-right: 5%;">
+                                  <textarea name="content" id="content-text" class="form-control" style="color: #fff; background-color: #2c2f33;border: none;" placeholder="Do you have thoughts on <%= botdata.username %>? Then evaluate now." rows="4"></textarea>
+                                <br>
+                                <button type="button" onclick="clickOnReview()" id="myReview" class="btn btn-tag float-right">
+                                    <i class="fad fa-save"></i>&nbsp;Submit
+                                </button>
+                                </div>
+                              </form>
+                              <script>
+                                  function clickOnReview() {
+                                    $("#myReview").attr("disabled", true);
+                                    $("#myReview").html('<i class="fad fa-spinner fa-w-16 fa-spin fa-lg"></i>');
+                                    setTimeout(() => {
+                                    if(!$("#content-text").val()) {
+                                          Swal.fire({
+                                             icon: 'error',
+                                             title: 'Oops...',
+                                             allowOutsideClick: false,
+                                             text: "You forgot to write a review.",
+                                             footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+                                            })
+                                      $("#myReview").html('<i class="fad fa-save"></i>&nbsp;Submit');
+                                      $("#myReview").attr("disabled", false);
+                                      return;
+                                    }
+                                    if($("#content-text").val()) {
+                                     Swal.fire({
+                                       icon: 'success',
+                                       title: 'Successful...',
+                                       allowOutsideClick: false,
+                                       text: "Evaluation has been successfully added to <%= botdata.username%>.",
+                                       footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+                                      }).then((result) => {
+                                       if (result.isConfirmed) {
+                                         return document.getElementById('myReviewForm').submit();
+                                       }
+                                     })
+                                    } else {
+                                     Swal.fire({
+                                       icon: 'error',
+                                       title: 'Oops...',
+                                       allowOutsideClick: false,
+                                       text: "An unknown error has occurred.",
+                                       footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+                                      })
+                                      $("#myReview").html('<i class="fad fa-save"></i>&nbsp;Submit');
+                                      $("#myReview").attr("disabled", false);
+                                      return;
+                                    }
+                                    }, 2000)
+                                  }
+                              </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <% } else { %>
+      <div class="card">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="rating-cards col-md-12">
+                        <div class="ml-4 media p-2" style="border-radius: 5px;">
+                          <img class="mr-3 rounded-circle" alt="vcodes-xyz | Rating System" src="https://cdn.discordapp.com/avatars/<%= req.user.id %>/<%=req.user.avatar%>" />
+                            <div class="media-body">
+                                <div class="row">
+                                    <div class="col-8 d-flex">
+                                      <h5><%= req.user.username %></h5>
+                                    </div>
+                                </div>
+                                <div class="alert alert-danger" role="alert">
+                                 <span style="color: #fff!important;" class="is-size-5"><i class="fad fa-star"></i>&nbsp;<strong>Nooo..</strong></span><br>
+                                 You cannot re-evaluate because you have an existing assessment.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <% } %>
+  <% } %>
+  <% } %>
+
+      <br>
+    <% if(botdata.rates) { %>
+    <div id="rates-box">
+    <%
+       for (let i = (page - 1) * 5; i < data.length; i++) {
+       if (i === 5 * page) break;
+       let a = data.sort((a, b) => b.date - a.date)[i]
+       let c = a;
+    %>  
+    <br>
+    <% 
+    let userRate = rateAuthors.find(user => user.id === c.author);
+    %>
+    <div class="card" style="border-radius: 5px;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+
+                    <div class="rating-cards col-md-12">
+                        <div class="ml-4 media p-2">
+                          <img class="mr-3 rounded-circle" alt="vcodes-xyz | Rating System" onError="imgError(this)" src="<%= userRate ? userRate.avatarURL() : '../../img/undefined_logo.png' %>" />
+                            <div class="media-body">
+                                <div class="row">
+                                    <div class="col-8 d-flex">
+                                      <a href="/user/<%= userRate ? userRate.id : '' %>" class="is-size-5"><span translate="no" style="color: var(--body-text)"><%= userRate ? userRate.tag : 'undefined#0000' %></span> <small class="text-muted"><%= moment(c.date).fromNow(); %>&nbsp;<%= c.edit ? '(edited)' : '' %></small></a>
+                                      &nbsp;
+                                    </div>
+                                </div> 
+                                      <div class="stars-media">
+                                        <% for(let i = 0; i < c.star_rate; i++) { %>
+                                          <i class="fa fa-star text-warning" style="margin-right: 3px;"></i>
+                                        <% } %>
+                                      </div>
+                                <% if(c.edit) { %>
+                                <span style="color: var(--body-text)" translate="no"><%= c.edit %></span>
+                                <% } else { %>
+                                <span style="color: var(--body-text)" translate="no"><%= c.message %></span>
+                                <% } %>
+
+                            </div>
+                             <% if(req.user && userRate) { %>
+                             <div class="buttons mr-5" style="float: right">
+                             <% 
+                             if(!c.reply) {
+                             if(req.user.id === botdata.ownerID || botdata.coowners.includes(req.user.id)) { 
+                             %>
+                              &nbsp;<button data-toggle="modal" data-target="#reply<%= userRate.id %>" id="replyButton" class="btn btn-vcodes"><i class="fal fa-reply"></i>&nbsp;Reply</button>
+                              &nbsp;<button onclick="clickOnDeletReview('<%= userRate.id %>')" id="reviewDeleteButton<%= userRate.id %>" class="btn btn-vcodes"><i class="fal fa-trash"></i>&nbsp;Delete</button>
+                                <div class="modal fade" id="reply<%= userRate.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                  <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content" style="background-color: var(--bg-card)">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" style="color: var(--body-text)!important;" id="exampleModalLongTitle">Replying to <%= userRate ? userRate.tag : 'undefined#0000' %></h5>
+                                        <button type="button" class="btn btn-vcodes" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true"><i class="fal fa-times fa-lg"></i></span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <form action="/bot/<%= req.params.botID %>/reply/<%= userRate.id %>" id="myReplyForm<%= userRate.id %>" method="POST" class="form-discorddark">
+                                        <div class="form-group">
+                                          <label style="color: var(--body-text)!important;">Enter your reply message.</label>
+                                          <textarea type="text" class="form-control" id="replyM<%= userRate.id %>" name="replyM"></textarea>
+                                        </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" onclick="clickOnReply('<%= userRate.id %>')" id="myReplyButton<%= userRate.id %>" class="btn btn-vcodes">
+                                        <i class="fad fa-reply"></i>&nbsp;Reply</button>
+                                      </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                             <% }} %>
+
+                             <% if(userRate.id == req.user.id) { %>
+                              &nbsp;<button class="btn btn-vcodes" data-toggle="modal" data-target="#edit<%= userRate.id %>" id="editButton"><i class="fal fa-pencil"></i>&nbsp;Edit</button>
+                              <% if(req.user.id != botdata.ownerID && !botdata.coowners.includes(req.user.id)) { %>
+                              &nbsp;<button onclick="clickOnDeletReview('<%= userRate.id %>')" id="reviewDeleteButton<%= userRate.id %>" class="btn btn-vcodes"><i class="fal fa-trash"></i>&nbsp;Delete</button>
+                              <% } %>
+                                <div class="modal fade" id="edit<%= userRate.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                  <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content" style="background-color: var(--bg-card)">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" style="color: var(--body-text)!important;" id="exampleModalLongTitle">Editing review to <%= userRate ? userRate.tag : 'undefined#0000' %></h5>
+                                        <button type="button" class="btn btn-vcodes" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true"><i class="fal fa-times fa-lg"></i></span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <form action="/bot/<%= req.params.botID %>/edit/<%= userRate.id %>" id="myEditForm<%= userRate.id %>" method="POST" class="form-discorddark">
+                                        <div class="rating">
+                                        <script>
+                                        $(function() {
+                                          $('#<%= c.star_rate %>').attr("checked", true);
+                                        })
+                                        </script>
+                                    <input type="radio" name="ratingEdit" value="5" id="5"><label for="5">☆</label> 
+                                    <input type="radio" name="ratingEdit" value="4" id="4"><label for="4">☆</label> 
+                                    <input type="radio" name="ratingEdit" value="3" id="3"><label for="3">☆</label> 
+                                    <input type="radio" name="ratingEdit" value="2" id="2"><label for="2">☆</label> 
+                                    <input type="radio" name="ratingEdit" value="1" id="1"><label for="1">☆</label>
+                                  </div>
+                                <div style="padding-right: 5%;">
+                                  <textarea placeholder="Enter your new review." type="text" class="form-control" id="editM<%= userRate.id %>" rows="4" name="editM"><%= c.reply ? c.reply : c.message %></textarea>
+                                <br>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" onclick="clickOnMessage('<%= userRate.id %>')" id="myEditButton<%= userRate.id %>" class="btn btn-vcodes">
+                                        <i class="fad fa-save"></i>&nbsp;Save</button>
+                                      </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                </div>
+                                </div>
+                             <% } %>
+                             <% } %>
+                            
+                            
+                        </div>
+
+                    </div>
+
+                    <% if(c.reply) { %>
+                    <div class="rating-cards col-md-12">
+                    <div class="ml-5">
+                        <div class="ml-4 media p-2">
+                          <img class="mr-3 rounded-circle" alt="vcodes-xyz | Rating System" onError="imgError(this)" src="<%= botdata.avatar %>" />
+                            <div class="media-body">
+                                <div class="row">
+                                    <div class="col-8 d-flex">
+                                      <a href="/bot/<%= botdata.botID %>" class="is-size-5"><span translate="no" style="color: var(--body-text)"><%= botdata.username %>#<%= botdata.discrim %></span> <small class="text-muted">Replying to <%= userRate ? userRate.tag : 'undefined#0000'%></small></a>
+                                      &nbsp;
+                                    </div>
+
+                                </div> 
+                                <span style="color: var(--body-text)" translate="no"><%= c.reply %></span>                           
+                             </div>
+                             <% if(req.user) { %>
+                             <% if(req.user.id === botdata.ownerID || botdata.coowners.includes(req.user.id)) { %>
+                             <div class="buttons mr-5" style="margin-right: 10px; float: right">
+                              <button onclick="replyTo('<%= userRate.id %>')" data-toggle="modal" data-target="#editReply<%= userRate.id %>" id="replyButton" class="btn btn-vcodes"><i class="fal fa-pencil"></i>&nbsp;Edit</button>
+                              &nbsp;<button onclick="clickOnDeletReply('<%= userRate.id %>')" id="replyDeleteButton<%= userRate.id%>" class="btn btn-vcodes"><i class="fal fa-trash"></i>&nbsp;Delete</button>
+
+                                <div class="modal fade" id="editReply<%= userRate.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                  <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content" style="background-color: var(--bg-card)">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" style="color: var(--body-text)!important;" id="exampleModalLongTitle">Replying to <%= userRate ? userRate.tag : 'undefined#0000' %></h5>
+                                        <button type="button" class="btn btn-vcodes" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true"><i class="fal fa-times fa-lg"></i></span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <form action="/bot/<%= req.params.botID %>/reply/<%= userRate.id %>/edit" id="myReplyEditForm<%= userRate.id %>" method="POST" class="form-discorddark">
+                                        <div class="form-group">
+                                          <label style="color: var(--body-text)!important;">Enter your new reply message.</label>
+                                          <textarea type="text" class="form-control" id="editReplyM<%= userRate.id %>" name="editReplyM"><%= c.reply %></textarea>
+                                        </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" onclick="clickOnEditReply('<%= userRate.id %>')" id="clickOnEditReply<%= userRate.id %>" class="btn btn-vcodes">
+                                        <i class="fad fa-reply"></i>&nbsp;Reply</button>
+                                      </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                </div>
+                                </div>
+                                
+                             <% } %>
+                            <% } %>
+                            </div>
+
+</div>
+</div>
+
+                  <% } %>
+                  </div>
+
+</div>
+        </div>
+
+    </div>
+   <% } %>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script>
+    function clickOnReply(userID) {
+        $("#myReplyButton" + userID).attr("disabled", true);
+        $("#myReplyButton" + userID).html('<i class="p-2 fad fa-spinner fa-w-16 fa-pulse fa-lg"></i>');
+        setTimeout(() => {
+            if (!$("#replyM" + userID).val()) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    allowOutsideClick: false,
+                    text: "You forgot to write a reply message.",
+                    footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+                })
+                $("#myReplyButton" + userID).html('<i class="fad fa-save"></i>&nbsp;Save');
+                $("#myReplyButton" + userID).attr("disabled", false);
+                return;
+            }
+            if ($("#replyM" + userID).val()) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Successful...',
+                    allowOutsideClick: false,
+                    text: "Your reply has been successfully added.",
+                    footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        return document.getElementById('myReplyForm' + userID).submit();
+                    }
+                })
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    allowOutsideClick: false,
+                    text: "An unknown error has occurred.",
+                    footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+                })
+                $("#myReplyButton" + userID).html('<i class="fad fa-save"></i>&nbsp;Save');
+                $("#myReplyButton" + userID).attr("disabled", false);
+                return;
+            }
+        }, 2000)
+    } 
+    function clickOnMessage(userID) {
+        $("#myEditButton" + userID).attr("disabled", true);
+        $("#myEditButton" + userID).html('<i class="p-2 fad fa-spinner fa-w-16 fa-pulse fa-lg"></i>');
+        setTimeout(() => {
+            if (!$("#editM" + userID).val()) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    allowOutsideClick: false,
+                    text: "You forgot to write a new message.",
+                    footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+                })
+                $("#myEditButton" + userID).html('<i class="fad fa-save"></i>&nbsp;Save');
+                $("#myEditButton" + userID).attr("disabled", false);
+                return;
+            }
+            if ($("#editM" + userID).val()) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Successful...',
+                    allowOutsideClick: false,
+                    text: "Your reply has been successfully added.",
+                    footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        return document.getElementById('myEditForm' + userID).submit();
+                    }
+                })
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    allowOutsideClick: false,
+                    text: "An unknown error has occurred.",
+                    footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+                })
+                $("#myEditButton" + userID).html('<i class="fad fa-save"></i>&nbsp;Save');
+                $("#myEditButton" + userID).attr("disabled", false);
+                return;
+            }
+        }, 2000)
+    } 
+    function clickOnEditReply(userID) {
+        $("#clickOnEditReply" + userID).attr("disabled", true);
+        $("#clickOnEditReply" + userID).html('<i class="p-2 fad fa-spinner fa-w-16 fa-pulse fa-lg"></i>');
+        setTimeout(() => {
+            if (!$("#editReplyM" + userID).val()) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    allowOutsideClick: false,
+                    text: "You forgot to write a new message.",
+                    footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+                })
+                $("#clickOnEditReply" + userID).html('<i class="fad fa-save"></i>&nbsp;Save');
+                $("#clickOnEditReply" + userID).attr("disabled", false);
+                return;
+            }
+            if ($("#editReplyM" + userID).val()) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Successful...',
+                    allowOutsideClick: false,
+                    text: "Your reply has been successfully added.",
+                    footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        return document.getElementById('myReplyEditForm' + userID).submit();
+                    }
+                })
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    allowOutsideClick: false,
+                    text: "An unknown error has occurred.",
+                    footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+                })
+                $("#clickOnEditReply" + userID).html('<i class="fad fa-save"></i>&nbsp;Save');
+                $("#clickOnEditReply" + userID).attr("disabled", false);
+                return;
+            }
+        }, 2000)
+    } 
+  function clickOnDeletReply(userID) {
+    $("#replyDeleteButton" + userID).html('<i class="fa fa-spinner fa-pulse"></i>');
+    $("#replyDeleteButton" + userID).attr("disabled", true);
+    setTimeout(() => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Are you sure you want to permanently delete the reply selected?",
+      icon: 'warning',
+      showCancelButton: true,
+      allowOutsideClick: false,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel it!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+      $("#replyDeleteButton" + userID).html('<i class="fal fa-trash"></i>&nbsp;Delete');
+      $("#replyDeleteButton" + userID).attr("disabled", false);
+      Swal.fire({
+          icon: 'success',
+          title: 'Successful...',
+          allowOutsideClick: false,
+          text: "Your reply has been successfully deleted.",
+          footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+      })
+      $.ajax({
+        type: "POST",
+        url: "/bot/<%= req.params.botID %>/reply/"+userID+"/delete",
+      }).then(() => {
+         window.location.href = '/bot/<%= req.params.botID %>';
+      });
+      } else {
+      $("#replyDeleteButton" + userID).html('<i class="fal fa-trash"></i>&nbsp;Delete');
+      $("#replyDeleteButton" + userID).attr("disabled", false);
+        Swal.fire(
+          'Canceled..',
+          'Reply deleting action has been canceled.',
+          'error'
+        )
+      }
+    })
+    }, 2000);
+    } 
+  function clickOnDeletReview(userID) {
+    $("#reviewDeleteButton" + userID).html('<i class="fa fa-spinner fa-pulse"></i>');
+    $("#reviewDeleteButton" + userID).attr("disabled", true);
+    setTimeout(() => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Are you sure you want to permanently delete the review selected?",
+      icon: 'warning',
+      showCancelButton: true,
+      allowOutsideClick: false,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel it!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+      $("#reviewDeleteButton" + userID).html('<i class="fal fa-trash"></i>&nbsp;Delete');
+      $("#reviewDeleteButton" + userID).attr("disabled", false);
+      Swal.fire({
+          icon: 'success',
+          title: 'Successful...',
+          allowOutsideClick: false,
+          text: "Your review has been successfully deleted.",
+          footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+      })
+      $.ajax({
+        type: "POST",
+        url: "/bot/<%= req.params.botID %>/review/"+userID+"/delete",
+      }).then(() => {
+         window.location.href = '/bot/<%= req.params.botID %>';
+      });
+      } else {
+      $("#reviewDeleteButton" + userID).html('<i class="fal fa-trash"></i>&nbsp;Delete');
+      $("#reviewDeleteButton" + userID).attr("disabled", false);
+        Swal.fire(
+          'Canceled..',
+          'Review deleting action has been canceled.',
+          'error'
+        )
+      }
+    })
+    }, 2000);
+    } 
+</script>
+                                
+
+<div class="d-flex justify-content-center mt-4">
+<%
+if (page != 1) {
+%>
+<a data-tooltip="Previous Page" data-tooltip-location="top" href="/bot/<%= req.params.botID %>?page=<%= page-1; %>" class="mr-1 btn btn-vcodes p-2">
+    <i class="fal fa-arrow-left"></i>
+</a>
+  <% } else { %>
+    <a disabled="" class="btn btn-vcodes p-2 mr-1" style="opacity: 0.5;" style="color: #fff!important">
+        <i class="fal fa-arrow-left"></i>
+    </a>
+  <% } %>
+  <a data-tooltip="Current Page" data-tooltip-location="top" class="btn btn-vcodes mr-1" style="color: #fff!important" disabled="">
+    <%= page %>
+  </a>
+  <%
+  if (page != Math.ceil(data.length / 6) && data.length > 0) {
+  %>
+  <a data-tooltip="Next Page" data-tooltip-location="top" href="/bot/<%= req.params.botID %>?page=<%= Number(page)+ Number(1); %>" class="btn btn-vcodes p-2">
+    <i class="fal fa-arrow-right"></i>
+</a>
+  <% } %></div>
+      
+      
+   <% } else { %>
+      <div class="alert alert-danger" role="alert">
+       <span style="color: #fff!important;" class="is-size-5"><i class="fad fa-star"></i>&nbsp;<strong>Nooo..</strong></span><br>
+       I couldn't find a review :( But you can be the first.
+      </div>
+   <% } %>
+      
+  <% } %>
+      
+    </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+<%- include('../../parts/foot') %>

@@ -1,0 +1,113 @@
+<%- include('../../parts/head', {bot, user, path}) %>
+<%- include('../../parts/edit-head') %>
+<style>
+.form-control {
+	background-color: var(--form-input);
+	color: var(--input-color);
+	border: none;
+}
+
+.form-control:focus {
+	background-color: var(--form-input);
+	color: var(--input-color);
+	border: 3px solid var(--button-green);
+}
+
+label {
+	color: var(--label-color)!important;
+}
+
+input[type="text"]:disabled {
+	background-color: var(--input-disabled);
+	color: gray;
+	border: none;
+	cursor: not-allowed;
+}
+</style>
+<div style="background-color: var(--form-background);" class="container p-4">
+   <br><br>
+   <form method="POST">
+      <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+               <label><i class="fab fa-discord"></i> Server Invite<span style="color: rgb(175, 22, 22)">*</span></label>
+               <input type="text" name="link" id="link" class="form-control" value="<%= data.link ? data.link : '' %>" />
+               <label>Create one for me</label>
+               <input type="checkbox" id="createForMe" name="createForMe">
+            </div>
+            <div class="form-group">
+               <label><i class="fad fa-tags"></i> Tags<span style="color: rgb(175, 22, 22)">*</span></label>
+               <select name="tags" translate="no" id="tags" multiple required>
+                  <% config.website.servers.tags.map(a => {%>
+                  <% if(data.tags.includes(a.name)) { %>
+                  <option value="<%= a.name %>" translate="no" selected><%= a.name %></option>
+                  <% } else { %>
+                  <option value="<%= a.name %>" translate="no"><%= a.name %></option>
+                  <% } %>
+                  <% }); %>
+               </select>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label><i class="fad fa-text"></i> Short Description<span style="color: rgb(175, 22, 22)">*</span></label>
+               <input name="shortDesc" id="shortDesc" class="form-control" value="<%= data.shortDesc %>" maxlength="300" required="required">
+            </div>
+            <div class="form-group">
+               <label>
+                  <i class="fad fa-texts"></i> Long Description<span style="color: rgb(175, 22, 22)">*</span>
+                  <p class="text-muted">(Html supported but markdown not supported)</p>
+               </label>
+               <textarea name="longDesc" id="longDesc" class="form-control" minlength="300" required="required" style="width: 100%; height: 300px;"><%= data.longDesc %></textarea>
+            </div>
+         </div>
+      </div>
+      <p class="text-muted"></p>
+      <p class="text-muted">Spaces with <span style="color: rgb(175, 22, 22)">*</span> next to it are required.</p>
+      <button type="button" name="btnSubmit" onclick="clickOnEdit()" id="myButton" class="btn btn-vcodes"><i class="fal fa-paper-plane"></i> Submit</button>
+   </form>
+</div>
+</div></div>
+
+<script>
+function clickOnEdit() {
+    $("#myButton").attr("disabled", true);
+    $("#myButton").html('<i class="p-2 fad fa-spinner fa-w-16 fa-pulse fa-lg"></i>');
+    setTimeout(() => {
+        $.post("/server/<%= req.params.guildID %>/edit", {
+                wallpaper: $('#background').val(),
+                tags: $('#tags').val(),
+                longDesc: $('#longDesc').val(),
+                shortDesc: $('#shortDesc').val(),
+                link: $('#link').val(),
+                autoCreate: $('#createForMe').prop("checked")
+            })
+            .done(function(data) {
+                if (data.error) {
+                  Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        closeOnConfirm: false,
+                        text: data.message,
+                        footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+                    })
+                    $("#myButton").html('<i class="fal fa-paper-plane"></i>&nbsp;Submit');
+                    $("#myButton").attr("disabled", false);
+                    return;
+                } else {
+                  Swal.fire({
+                        icon: 'success',
+                        title: 'Nice...',
+                        closeOnConfirm: false,
+                        text: data.message,
+                        footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+                    })
+                    $("#myButton").html('<i class="fal fa-paper-plane"></i>&nbsp;Submit');
+                    $("#myButton").attr("disabled", false);
+                    return;
+                }
+            })
+   })
+}
+</script>
+<%- include('../../parts/foot') %>

@@ -1,0 +1,58 @@
+<%- include('../static/head.ejs', { bot,user,path})  %>
+<div id="content" class="main-content">
+    <br><br><br><br><br><br>
+    <div class="container">
+
+<div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-6 col-12 layout-spacing">
+        <p>Maintence Mode</p>
+        <form action="/admin/maintence" method="POST">
+        
+        <div class="form-row mb-4">
+            <div class="form-group col-md-4">
+                <label for="inputEmail4">Reason<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="reason" name="reason" placeholder="" required>
+            </div>  
+        </div>
+
+      <button type="submit" name="ban" class="btn btn-primary mt-3"><i class="fa fa-server"></i> Open Maintence</button>
+    </form>
+    <form action="/admin/unmaintence" method="POST">
+     
+        <button type="submit" name="unban" class="btn btn-danger mt-3"><i class="fa fa-server"></i> Close Maintence</button>
+      </form>
+    </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('success') && urlParams.get('success')){
+    Swal.fire({
+     icon: 'success',
+     title: 'Succesfull...',
+     closeOnConfirm: false,
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/admin/maintence';
+  }
+})
+    }
+    if(urlParams.has('error') && urlParams.get('error')){
+    Swal.fire({
+     icon: 'error',
+     title: 'Oops...',
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/admin/maintence';
+  }    
+})
+    }
+   </script>
+        <%- include('../static/foot.ejs', { bot,user,path}) %>
+    </div>

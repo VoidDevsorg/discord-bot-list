@@ -1,0 +1,51 @@
+<%- include('parts/head', {bot, user, path}) %>
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+<style>
+  .partner-ownerName {
+    color: #fff;
+    padding: 5px;
+  }
+  .partner-ownerName:hover {
+    color: #ccc;
+  }
+</style>
+<div class="container">
+<br><br><br><br>
+<p class="has-text-white title is-large"><i class="fal fa-handshake bodyIcon"></i>&nbsp;Partners</p>
+<p class="content has-text-white" style="margin-top: -20px;">Join our <a class="bodyIcon" href="/dc">discord server</a> to partner with us.</p>
+<div class="columns is-multiline is-desktop is-variable is-7 mt-3 pt-5">
+<% if(db.has(`partners`) === true) { %>
+  <% db.get(`partners`).map(a => { %>
+        <div class="col-md-6 col-lg-4 pb-3">
+          <div data-aos="fade-down">
+        <div style="border: none;" class="card vcodes-card-custom bg-vcodes">
+          <div class="vcodes-card-custom-img" style="background-image: url(https://i.hizliresim.com/2sdunq.png);"></div>
+          <div class="vcodes-card-custom-avatar">
+            <img class="img-fluid" onerror="imgError(this);" src="<%=a.icon%>" alt="Avatar" />
+          </div>
+          <div class="card-body">
+           <div class="is-pulled-right mt-vcodes mt-1">
+                <a data-tooltip="Owner" href="/user/<%= a.ownerID%>"data-tooltip-location="left" class="badge badge-stats mb-vcodes mt-1 w-100"><span><i class="fad fa-user-crown"></i>&nbsp;&nbsp;<%= bot.users.cache.get(a.ownerID) ? bot.users.cache.get(a.ownerID).username : "undefined" %>#<%= bot.users.cache.get(a.ownerID) ? bot.users.cache.get(a.ownerID).discriminator : "0000" %></span></a>
+              </div>
+            <h4 translate="no" class="card-title"><%= a.serverName %>
+              <span data-tooltip="Verified Server" data-tooltip-location="top"><i class="fad fa-badge-check bodyIcon"></i></span>
+            </h4>
+            <p translate="no" class="card-text vCodesbotDesc"><%= a.description %></p>
+          </div>
+          <div class="card-footer">
+            <a href="<%= a.website %>" class="btn btn-vcodes btn-block"><i class="fal fa-arrow-right"></i>&nbsp;Visit</a>
+          </div>
+        </div>
+          </div>
+      </div>
+  <% }) %>
+<% } else { %>
+      <div class="alert alert-danger" role="alert">
+       <span style="color: #fff!important;" class="is-size-5"><i class="fad fa-partner"></i>&nbsp;<strong>Oops..</strong></span><br>
+       We don't have any partners :(
+      </div>
+<% } %>
+</div>
+</div>
+<%- include('parts/foot') %>

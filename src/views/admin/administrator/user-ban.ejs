@@ -1,0 +1,104 @@
+<%- include('../static/head.ejs', { bot,user,path})  %>
+<div id="content" class="main-content">
+    <br><br><br><br><br><br>
+    <div class="container">
+
+<div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-6 col-12 layout-spacing">
+        <p>Ban</p>
+        <form action="/admin/userban" method="POST">
+        
+        <div class="form-row mb-4">
+            <div class="form-group col-md-4">
+                <label for="inputEmail4">User ID<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="userID" name="userID" placeholder="" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputEmail4">Reason<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="reason" name="reason" placeholder="" required>
+            </div>  
+        </div>
+
+      <button type="submit" name="ban" class="btn btn-primary mt-3"><i class="fa fa-ban"></i> Ban</button>
+    </form>
+    </div>
+    <div class="col-lg-6 col-md-8 col-sm-6 col-12 layout-spacing">
+    <p>Unban</p>
+    <form action="/admin/userunban" method="POST">
+     
+        <div class="form-row mb-4">
+            <div class="form-group col-md-4">
+                <label for="inputEmail4">User ID<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="userID" name="userID" placeholder="" required>
+            </div>
+            
+        </div>
+
+      <button type="submit" name="unban" class="btn btn-primary mt-3"><i class="fa fa-ban"></i> UnBan</button>
+    </form>
+    </div>
+</div>
+
+<div class="row layout-top-spacing" id="cancel-row">
+                
+    <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+        <div class="widget-content widget-content-area br-6">
+            <table id="default-ordering" class="table table-hover" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Reason</th>
+                        <th>Authorized</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                <% bandata.map(a => { %>
+                    <tr>
+                        <td><%= a.user %></td>
+                        <td><%= a.sebep %></td>
+                        <td><%= a.yetkili %></td>
+                    </tr>
+                <% }) %>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>User</th>
+                        <th>Reason</th>
+                        <th>Authorized</th>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('success') && urlParams.get('success')){
+    Swal.fire({
+     icon: 'success',
+     title: 'Succesfull...',
+     closeOnConfirm: false,
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/admin/userban';
+  }
+})
+    }
+    if(urlParams.has('error') && urlParams.get('error')){
+    Swal.fire({
+     icon: 'error',
+     title: 'Oops...',
+     text: urlParams.get('message'),
+     footer: 'Copyright 2021 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = '/admin/userban';
+  }    
+})
+    }
+   </script>
+</div></div></div>
+<%- include('../static/foot.ejs') %>
