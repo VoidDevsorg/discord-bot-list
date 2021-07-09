@@ -1,7 +1,3 @@
-# Where are the new updates?
-> As you know, our server has 780 members, we will not share any current updates in the source code on github without 1000 members to increase the server. If you want so much, you can support by inviting people.
-- https://discord.gg/z7dBzygse4
-
 # vCodes.xyz
 **Discord Server:** [https://discord.gg/z7dBzygse4](https://discord.gg/z7dBzygse4)<br>
 **NPM:** [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
@@ -14,8 +10,11 @@
 <a>- You have the permission to shoot and share videos, but you have to mention us, our server, in the video.</a><br>
 <a>- You have the permission to share in writing, but you have to mention us, our server, in the article.</a><br>
 <a>- You can't speak in a "we did it" way.</a><br>
-<a>- You cannot sell it.</a>
+<a>- You cannot sell it.</a><br>
+<a>- Don't touch this part on footer;</a><br>
+<img width="512" src="https://img.devsforum.net/tr/img/f1B3C3.png">
 
+<br><br>
 > # Demo
 <a href="https://vcodes.xyz">vcodes.xyz</a>
 
