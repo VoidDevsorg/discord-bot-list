@@ -35,7 +35,7 @@ app.post("/add", global.checkAuth, async (req,res) => {
     }
     if (!member) return res.send({ error: true, message: "You can only add servers with ADMINISTRATOR authorization." });
     if (!member.permissions.has("ADMINISTRATOR")) return res.send({ error: true, message: "You can only add servers with ADMINISTRATOR authorization." });
-    await sdata.findOneAndUpdate({
+    await db.findOneAndUpdate({
         id: req.params.guildID
     }, {
         $set: {
@@ -58,7 +58,7 @@ app.post("/add", global.checkAuth, async (req,res) => {
       let inviteURL = fetchinvite
         .array()
         .find(a => a.inviter.id === client.user.id).url;
-    await sdata.findOneAndUpdate({
+    await db.findOneAndUpdate({
         id: req.params.guildID
     }, {
         $set: {
@@ -68,7 +68,7 @@ app.post("/add", global.checkAuth, async (req,res) => {
     })
 
     } else {
-    await sdata.findOneAndUpdate({
+    await db.findOneAndUpdate({
         id: req.params.guildID
     }, {
         $set: {
