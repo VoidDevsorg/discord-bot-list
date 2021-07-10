@@ -21,7 +21,6 @@
 
   // MODELS
   const banSchema = require("./database/models/site-ban.js");
-  const maintenceSchema = require('./database/models/maintence.js');
 
   module.exports = async (client) => {
 
