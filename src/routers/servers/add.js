@@ -35,19 +35,21 @@ app.post("/add", global.checkAuth, async (req,res) => {
     }
     if (!member) return res.send({ error: true, message: "You can only add servers with ADMINISTRATOR authorization." });
     if (!member.permissions.has("ADMINISTRATOR")) return res.send({ error: true, message: "You can only add servers with ADMINISTRATOR authorization." });
-    await db.findOneAndUpdate({
-        id: req.params.guildID
+    await db.updateOne({
+            id: guildID
     }, {
-        $set: {
-    		name: guild.name,
-    		icon: guild.iconURL({ dynamic: true }),
-    		ownerID: guild.owner.id ? guild.owner.id : req.user.id,
-    		longDesc: req.body.longDesc,
-    		shortDesc: req.body.shortDesc,
-    		tags: req.body.tags,
-    		votes: 0
-        }
+        $set:
+            {
+                name: guild.name,
+                icon: guild.iconURL({ dynamic: true }),
+                ownerID: guild.owner.id ? guild.owner.id : req.user.id,
+                longDesc: req.body.longDesc,
+                shortDesc: req.body.shortDesc,
+                tags: req.body.tags,
+                votes: 0
+            }
     }, { upsert: true })
+
     if(autoCreate === "true") {
     guild.fetchInvites().then(async fetchinvite => {
       fetchinvite.array().find(a => a.inviter.id === client.user.id)
@@ -58,7 +60,7 @@ app.post("/add", global.checkAuth, async (req,res) => {
       let inviteURL = fetchinvite
         .array()
         .find(a => a.inviter.id === client.user.id).url;
-    await db.findOneAndUpdate({
+    await db.updateOne({
         id: req.params.guildID
     }, {
         $set: {
@@ -68,7 +70,7 @@ app.post("/add", global.checkAuth, async (req,res) => {
     })
 
     } else {
-    await db.findOneAndUpdate({
+    await db.updateOne({
         id: req.params.guildID
     }, {
         $set: {
