@@ -95,30 +95,6 @@
       req.session.backURL = req.url;
       res.redirect("/login");
     }
-    
-    app.use(async(req, res, next) => {
-      const d = await maintenceSchema.findOne({server: config.server.id });
-      if(d) {
-          if(req.isAuthenticated()) {
-              let usercheck = client.guilds.cache.get(config.server.id).members.cache.get(req.user.id);
-              if(usercheck) {
-                  if(usercheck.roles.cache.get(roles.yonetici)) {
-                  next();
-                  } else {
-                      res.redirect('/error?code=200&message=Our website is temporarily unavailable.') 
-                  }
-              } else {
-                  res.redirect('/error?code=200&message=Our website is temporarily unavailable.') 
-              }
-          } else {
-              res.redirect('/error?code=200&message=Our website is temporarily unavailable.') 
-          }
-      } else {
-          next();
-      }
-    })
-    
-
    app.get("/login", (req, res, next) => {
       if (req.session.backURL) {
         req.session.backURL = req.session.backURL; 
@@ -285,7 +261,6 @@
     console.log('\x1b[36m%s\x1b[0m', "[vcodes.xyz]: Admin Panel system routers loading...");
     sleep(500);
     app.use("/", require('./routers/admin/index.js'))
-    app.use("/", require('./routers/admin/maintence.js'))
     app.use("/", require('./routers/admin/ban.js'))
     app.use("/", require('./routers/admin/partner.js'))
     app.use("/", require('./routers/admin/botlist/confirm.js'))
