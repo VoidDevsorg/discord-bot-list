@@ -2,6 +2,7 @@ const app = require('express').Router();
 const maintenceSchema = require("../../database/models/maintence.js");
 const channels = global.config.server.channels,
 	  roles = global.config.server.roles;
+
 const client = global.client;
 
 console.log("[vcodes.xyz]: Admin/Maintence router loaded.");
