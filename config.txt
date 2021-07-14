@@ -1,12 +1,12 @@
 
         module.exports = {
             bot: {
-                token: "",
+                token: "", // Bot List Bot Token
                 prefix: "",
                 owners: [""],
                 mongourl: "",
                 servers: {
-                    token: "",
+                    token: "", // Server List Bot Token
                     prefix: ""
                 }
             },
