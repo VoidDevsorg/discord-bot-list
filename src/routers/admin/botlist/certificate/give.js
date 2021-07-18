@@ -6,6 +6,9 @@ const appsdata = require("../../../../database/models/botlist/certificate-apps.j
 let sitedatalari = require("../../../../database/models/analytics-site.js");
 
 console.log("[vcodes.xyz]: Admin/Botlist/Certificate Give router loaded.");
+const roles = global.config.server.roles;
+const channels = global.config.server.channels;
+const client = global.Client;
 
 app.get("/admin/certificate/give/:botID", global.checkAuth, async (req, res) => {
     await botsdata.findOneAndUpdate({
