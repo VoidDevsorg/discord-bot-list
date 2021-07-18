@@ -6,7 +6,9 @@ const appsdata = require("../../../../database/models/botlist/certificate-apps.j
 let sitedatalari = require("../../../../database/models/analytics-site.js");
 
 console.log("[vcodes.xyz]: Admin/Botlist/Certificate Decline router loaded.");
-
+const client = global.Client;
+const channels = global.config.server.channels,
+      roles = global.config.server.roles;
 app.post("/admin/certificate/delete/:botID", global.checkAuth, async (req, res) => {
     let rBody = req.body;
     await botsdata.findOneAndUpdate({
