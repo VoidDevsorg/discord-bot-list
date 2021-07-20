@@ -1,4 +1,5 @@
-### **vCodes is a [Void Development](https://voiddevs.org) project.**
+### **vCodes are getting stronger along with <img width="128" href="https://kayizer.com" src="https://kayizer.com/assets/img/logo.png">**
+## Sponsor: https://kayizer.com
 
 # vCodes.xyz
 **Discord Server:** [https://discord.gg/z7dBzygse4](https://discord.gg/z7dBzygse4)<br>
@@ -14,7 +15,7 @@
 <a>- You can't speak in a "we did it" way.</a><br>
 <a>- You cannot sell it.</a><br>
 <a>- Don't touch this part on footer;</a><br>
-<img width="512" src="https://img.devsforum.net/tr/img/f1B3C3.png">
+<img width="512" src="https://i.imgur.com/BJumYzA.png">
 
 <br><br>
 > # Demo
