@@ -83,16 +83,16 @@
             </li>
             <% } %>
             <% } %>
-        <li class="nav-item dropdown" style="font-family: Arial, FontAwesome; z-index: 999999999; width: 350px;">
+	   <li class="nav-item dropdown"style="font-family: Arial, FontAwesome; z-index: 999999999; width: 350px;">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fal fa-ellipsis-h"></i>&nbsp;More
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#"><i class="fal fa-handshake"></i>&nbsp;Partners</a>
+          <a class="dropdown-item" href="#"><i class="fal fa-handshake"></i>&nbsp;Partners</a>
             <a class="dropdown-item" href="/certification"><i class="fal fa-badge-check"></i>&nbsp;Certification</a>
             <a class="dropdown-item" href="/codes/categories"><i class="fal fa-code"></i>&nbsp;Code Share</a>
             <a class="dropdown-item" href="/uptime/links"><i class="fal fa-sync-alt"></i>&nbsp;Uptime</a>
-            <% if(user) { %>
+	    <% if(user) { %>
                 <% 
                 let guild = bot.guilds.cache.get(config.server.id).members.cache.get(user.id);
                 if(guild) {
@@ -102,8 +102,10 @@
 
                 <% }} %>
             <% } %>
+            
             </div>
         </li>
+
           </ul>
           <ul class="navbar-nav ml-auto">
             <% 
