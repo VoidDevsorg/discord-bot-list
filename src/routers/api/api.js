@@ -77,24 +77,26 @@ app.post("/api/bots/stats", async (req, res) => {
     if (!botdata) return res.json({
         "error": "You entered an invalid bot token."
     })
-    if (botdata) {
-        await botsdata.updateOne({
-            botID: botdata.botID
-        }, {
-            $set: {
-                serverCount: req.header('serverCount')
-            }
-        })
-        if (req.header('shardCount')) {
-            await botsdata.updateOne({
-                botID: botdata.botID
-            }, {
-                $set: {
-                    shardCount: req.header('shardCount')
-                }
-            })
-        }
+   
+    if(!req.header('serverCount'))return res.json({"error": "You need to enter a serverCount")})
+    
+    await botsdata.updateOne({
+      botID: botdata.botID
+    }, {
+      $set: {
+        serverCount: req.header('serverCount')
+      }
+    })
+    if (req.header('shardCount')) {
+      await botsdata.updateOne({
+          botID: botdata.botID
+      }, {
+          $set: {
+              shardCount: req.header('shardCount')
+          }
+      })
     }
+    res.json({status:true});
 });
 
 app.post("/api/search", async (req, res) => {
