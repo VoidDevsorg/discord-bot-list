@@ -18,10 +18,9 @@
   app.use(referrerPolicy({ policy: "strict-origin" }))
   const rateLimit = require("express-rate-limit");
   var MongoStore = require('rate-limit-mongo');
-
+  const roles = config.server.roles;
   // MODELS
   const banSchema = require("./database/models/site-ban.js");
-
   module.exports = async (client) => {
 
     const apiLimiter = rateLimit({
@@ -94,6 +93,7 @@
       req.session.backURL = req.url;
       res.redirect("/login");
     }
+
    app.get("/login", (req, res, next) => {
       if (req.session.backURL) {
         req.session.backURL = req.session.backURL; 
@@ -160,7 +160,7 @@
     io.on('connection', socket => {
         io.emit("userCount", io.engine.clientsCount);
     });
-    http.listen(3000, () => { console.log("[vcodes.xyz]: Website running on 3000 port.")});
+    http.listen(80, () => { console.log("[vcodes.xyz]: Website running on 80 port.")});
 
     //------------------- Routers -------------------//
 
@@ -269,6 +269,7 @@
     app.use("/", require('./routers/admin/botlist/certificate/decline.js'))
     app.use("/", require('./routers/admin/codeshare/index.js'))
     app.use("/", require('./routers/admin/codeshare/edit.js'))
+    app.use("/", require('./routers/admin/codeshare/delete.js'))
     app.use("/", require('./routers/admin/codeshare/add.js'))
     app.use("/", require('./routers/admin/uptime/index.js'))
 
