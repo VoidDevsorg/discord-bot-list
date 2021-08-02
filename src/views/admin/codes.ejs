@@ -51,7 +51,7 @@
             </div>
         </div>
         <script>
-            function deletequest(uptimecode) {
+            function deletequest(code) {
 Swal.fire({
   title: 'Are you sure?',
   text: "Are you sure you want to permanently delete the link you selected?",
@@ -62,11 +62,11 @@ Swal.fire({
   reverseButtons: true
 }).then((result) => {
   if (result.isConfirmed) {
-    window.location.href = '/admin/deletecode/'+uptimecode;
+    window.location.href = '/admin/deletecode/'+code;
   } else {
     Swal.fire(
       'Canceled..',
-      'Link deletion from the uptime system has been canceled.',
+      'Code deletion from the code share system has been canceled.',
       'error'
     )
   }
