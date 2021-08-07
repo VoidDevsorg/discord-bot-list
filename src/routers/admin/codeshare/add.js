@@ -4,7 +4,7 @@ const codesSchema = require("../../../database/models/codes.js");
 const client = global.Client;
 const channels = global.config.server.channels,
 	  roles = global.config.server.roles;
-         function makeidd(length) {
+         function makeid(length) {
       var result           = '';
       var characters       = '123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
       var charactersLength = characters.length;
