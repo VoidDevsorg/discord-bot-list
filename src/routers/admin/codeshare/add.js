@@ -1,9 +1,18 @@
+const Discord = require('discord.js);
 const app = require('express').Router();
 const codesSchema = require("../../../database/models/codes.js");
 const client = global.Client;
 const channels = global.config.server.channels,
 	  roles = global.config.server.roles;
-
+         function makeidd(length) {
+      var result           = '';
+      var characters       = '123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+      var charactersLength = characters.length;
+      for ( var i = 0; i < length; i++ ) {
+         result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      }
+      return result;
+   }
 console.log("[vcodes.xyz]: Admin/CodeShare/Add router loaded.");
 
 app.post("/admin/addcode", global.checkAuth, async (req, res) => {
