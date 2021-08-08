@@ -27,6 +27,18 @@ app.get("/bot-rules", async (req,res) => {
     })
 })
 
+app.get("/bugreport", async (req,res) => {
+    res.render("botlist/bugreport.ejs", {
+        bot: global.Client,
+        path: req.path,
+        config: global.config,
+        user: req.isAuthenticated() ? req.user : null,
+        req: req,
+        roles:global.config.server.roles,
+        channels: global.config.server.channels
+    })
+})
+
 app.get("/dc", async (req,res) => {
     res.redirect(global.config.server.invite)
 })
@@ -50,3 +62,15 @@ app.get("/sitemap.xml", async function(req, res) {
 });
 
 module.exports = app;
+
+app.get("/bugreport", async (req,res) => {
+    res.render("botlist/bugreport.ejs", {
+        bot: global.Client,
+        path: req.path,
+        config: global.config,
+        user: req.isAuthenticated() ? req.user : null,
+        req: req,
+        roles:global.config.server.roles,
+        channels: global.config.server.channels
+    })
+})
