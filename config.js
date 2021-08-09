@@ -1,10 +1,10 @@
 
         module.exports = {
             bot: {
-                token: "", // Bot List Bot Token
+                token: "", // Bot List Bot Token from https://discord.com/developers/applications
                 prefix: "",
                 owners: [""],
-                mongourl: "",
+                mongourl: "",  //https://mongodb.com/cloud/atlas/register
                 servers: {
                     token: "", // Server List Bot Token
                     prefix: ""
@@ -12,7 +12,7 @@
             },
         
             website: {
-                callback: "",
+                callback: "", //example : https://vcodes.xyz avoid / at last. 
                 secret: "",
                 clientID: "", // Bot client id.
                 tags: [ "Moderation", "Fun", "Minecraft","Economy","Guard","NSFW","Anime","Invite","Music","Logging", "Web Dashboard", "Reddit", "Youtube", "Twitch", "Crypto", "Leveling", "Game", "Roleplay", "Utility", "Turkish" ],
