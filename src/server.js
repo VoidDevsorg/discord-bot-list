@@ -15,6 +15,7 @@ const MemoryStore = require("memorystore")(session);
 const fetch = require("node-fetch");
 const cookieParser = require('cookie-parser');
 const referrerPolicy = require('referrer-policy');
+const MongoStore = require('connect-mongo')(session); //stores cookiees to keep login!!! (also can keep it for 1 month!)
 app.use(referrerPolicy({
     policy: "strict-origin"
 }))
@@ -52,6 +53,10 @@ module.exports = async (client) => {
         secret: "#@%#&^$^$%@$^$&%#$%@#$%$^%&$%^#$%@#$%#E%#%@$FEErfgr3g#%GT%536c53cc6%5%tv%4y4hrgrggrgrgf4n",
         resave: false,
         saveUninitialized: false,
+        store: new MongoStore({
+    mongooseConnection: 'MONGO DB URL GOES HERE',
+    autoRemove: 'enabled'
+  })
     }));
 
     app.use(passport.initialize());
