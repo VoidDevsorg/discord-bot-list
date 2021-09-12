@@ -2,7 +2,7 @@
 ## Sponsor: https://kayizer.com
 
 # vCodes.xyz
-**Discord Server:** [https://discord.gg/z7dBzygse4](https://discord.gg/z7dBzygse4)<br>
+**Discord Server:** [https://discord.gg/8ZBYQAS4Q9](https://discord.gg/8ZBYQAS4Q9)<br>
 **NPM:** [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
 <br>
 > # Developers
