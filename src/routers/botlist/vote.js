@@ -62,7 +62,7 @@ const Hook = new webhook.Webhook(botdata.dcwebhook);
 const msg = new webhook.MessageBuilder()
 .setName("Vcodes Votes Manager")
 .setAvatar(client.user.displayAvatarURL())
-.setAuthor("Vote Logs", global.client.user.displayAvatarURL(), "https://vcodes.xyz")
+.setAuthor("Vote Logs", client.user.displayAvatarURL(), "https://vcodes.xyz")
 .setColor("#800080")
 .addField(`\`${botdata.username}\` just got upvoted!`, `**VoterID:** ${req.user.id}\n**VoterTag:** ${req.user.username}#${req.user.discriminator}\n**Total Votes:** ${botdata.votes + 1}`)
 Hook.send(msg);
@@ -80,7 +80,7 @@ Hook.send(msg);
   },
   body:  JSON.stringify({
      "user": `${req.user.username}`,
-     "bot": `${votedbot.username}`,
+     "bot": `${botdata.username}`,
      "votes": `${botdata.votes + 1}`,
       "test": "no"
      }), // Replace this number with the server count
