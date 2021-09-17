@@ -27,6 +27,8 @@ analytics_visitors: Number,
 analytics_invites: Number,
 country: Object,
 rates: Object,
+webhook: String,
+dcwebhook: String,
 });
 
 module.exports = mongoose.model("bots", hm);

@@ -7,7 +7,7 @@ global.config = config;
 const fs = require("fs");
 client.htmll = require('cheerio');
 const request = require("request");
-
+const db = require("quick.db");
 /*=======================================================================================*/
 
 
@@ -77,6 +77,287 @@ client.on('guildMemberRemove', async member => {
         })
     })
 /*=======================================================================================*/
+
+client.on('presenceUpdate', async(oldPresence, newPresence) => 
+{
+  
+   var botdata = await botsdata.findOne({ botID: newPresence.userID });
+      if(!botdata)
+      {
+        return
+      }
+
+    if(newPresence.guild.id == config.server.id)
+    {
+     if(botdata.status == "UnApproved")
+
+     {
+       return;
+     }
+
+  if (newPresence.status === 'offline') {
+   
+    var uptimerate = db.fetch(`rate_${newPresence.userID}`);
+  
+if(!uptimerate)
+      {
+             var uptimerate = "99";
+             db.set(`rate_${newPresence.userID}`, 99)
+      }
+      
+      var timetest = db.fetch(`timefr_${newPresence.userID}`)
+      var timetest = Date.now() - timetest;
+      let breh = db.fetch(`lastoffline`)
+     
+      if(timetest > 60000)
+      {
+      
+         db.set(`presence_${newPresence.userID}`, "offline")
+          db.set(`timefr_${newPresence.userID}`, Date.now())
+       db.add(`offlinechecks_${newPresence.userID}`, 1)
+        
+      
+      let emb = new Discord.MessageEmbed()
+      	.setAuthor(" Uptime Logs")
+      	.setTitle("Downtime Alert!")
+       	.addField(`Bot`, `\`${newPresence.user.tag}\``, true)
+       	.addField(`Uptime Rate`, `**${uptimerate}%**`, true)
+        .setColor("#FF0000")
+        db.add(`checks_${newPresence.userID}`, 1)
+      if(client.users.cache.get(botdata.ownerID)) {
+          client.channels.cache.get(config.channels.botlog).send(`<@${botdata.ownerID}>`, emb) 
+      } else {
+          client.channels.cache.get(config.channels.botlog).send(emb) 
+      }
+      }
+      
+      
+    
+    
+      
+      
+  }
+  if (newPresence.status === 'online' || newPresence.status === "dnd" || newPresence.status === "afk") {
+    let check = db.fetch(`presence_${newPresence.userID}`);
+    if(check === "offline")
+    {
+
+      var uptimerate = db.fetch(`rate_${newPresence.userID}`);
+   
+   if(!uptimerate)
+      {
+             var uptimerate = "99";
+      }
+        
+        db.set(`presence_${newPresence.userID}`, "online")
+        
+        let to2 = db.fetch(`timefr_${newPresence.userID}`);
+        var timeleft = await ms(Date.now() - to2);
+        var hour = timeleft.hours;
+       var minutes = timeleft.minutes;
+       var seconds = timeleft.seconds;
+      
+       db.set(`lastoffline`, newPresence.userID);
+       let emb = new Discord.MessageEmbed()
+        .setAuthor(" Uptime Logs")
+        .setTitle("Uptime Alert!")
+       	.addField(`Bot`, `\`${newPresence.user.tag}\``, true)
+       	.addField(`Uptime Rate`, `**${uptimerate}%**`, true)
+       	.addField(`Downtime`, `\`${hour}\`h \`${minutes}\`m \`${seconds}\`s`, false)
+        .setColor("#00FF00")
+         db.add(`checks_${newPresence.userID}`, 1)
+       if(client.users.cache.get(botdata.ownerID)) {
+           client.channels.cache.get(config.channels.botlog).send(`<@${botdata.ownerID}>`, emb) 
+       } else {
+           client.channels.cache.get(config.channels.botlog).send(emb) 
+       }
+       db.set(`timefr_${newPresence.userID}`, Date.now())
+    }
+    }
+    
+    }
+    
+
+})
+client.on('ready',async () => {
+    setInterval(async() => {
+             var botdata = await botsdata.find();
+        botdata.forEach(rnxd => {
+            
+        
+         let chekb = db.fetch(`timefr_${rnxd.botID}`);
+        if(!chekb)
+            {
+                db.set(`timefr_${rnxd.botID}`, Date.now());
+            }
+            
+    })
+        
+    }, 5000)
+      setInterval(async() => {
+          
+         
+         let target = db.fetch(`targetv`);
+         if(!target) return;
+               var botdata = await botsdata.find();
+        botdata.forEach(rnxd => {
+        
+        
+        if(rnxd.votes === target)
+            {
+                db.delete(`targetv`);
+                client.channels.cache.get("876784483565715466").send(`:tada: :tada: <@${rnxd.botID}> has Reached the Vote Target of ${target} Owner of Bot: <@${rnxd.ownerID}> :tada: :tada:`);
+            }
+            
+            
+    })
+        
+            
+    
+        
+    }, 20000)
+    setInterval(async() =>{
+      
+      var botdata = await botsdata.find();
+      if(!botdata)
+      {
+        return
+      }
+      botdata.forEach(bot => {
+        
+           db.add(`checks_${bot.botID}`, 1);
+           var check = db.fetch(`presence_${bot.botID}`);
+           if(check === "offline")
+           {
+           
+             db.add(`offlinechecks_${bot.botID}`, 1)
+             
+           }
+        
+      })
+    }, 120000);
+    // random bots
+    setInterval(async() => {
+      var botdata = await botsdata.find();
+        botdata.forEach(async(bot) =>{
+            if(client.users.cache.get(bot.botID))
+                {
+                    if(bot.status === "UnApproved")
+                        {
+return; }
+             if(client.users.cache.get(bot.botID).presence.status === "offline")
+                 {
+                      var timetest = db.fetch(`timefr_${bot.botID}`)
+      var timetest = Date.now() - timetest;
+      let breh = db.fetch(`lastoffline`)
+     
+      if(timetest > 60000)
+      {
+      
+        
+        if(breh === bot.botID)
+      {
+        return;
+      }
+                      let check = db.fetch(`presence_${bot.botID}`);
+    if(check === "offline")
+    { return; }
+                           db.set(`lastoffline`, bot.botID);
+                   db.set(`presence_${bot.botID}`, "offline");
+                     db.set(`timefr_${bot.botID}`, Date.now())
+       db.add(`offlinechecks_${bot.botID}`, 1)
+                 }
+                 } else {
+                       let check = db.fetch(`presence_${bot.botID}`);
+                     if(check === "offline")
+                         {
+                             
+                      db.set(`presence_${bot.botID}`, "Online");
+                               let to2 = db.fetch(`timefr_${bot.botID}`);
+        var timeleft = await ms(Date.now() - to2);
+        var hour = timeleft.hours;
+       var minutes = timeleft.minutes;
+       var seconds = timeleft.seconds;
+                     db.delete(`timefr_${bot.botID}`);
+                    
+                           
+                              db.set(`timefr_${bot.botID}`, Date.now())
+                              var uptimerate = db.fetch(`rate_${bot.botID}`);
+                              let emb = new Discord.MessageEmbed()
+        .setAuthor("Uptime Logs")
+        .setTitle("Uptime Alert!")
+       	.addField(`Bot`, `\`${bot.username}\``, true)
+       	.addField(`Uptime Rate`, `**${uptimerate}%**`, true)
+       	.addField(`Downtime`, `\`${hour}\`h \`${minutes}\`m \`${seconds}\`s`, false)
+        .setColor("#00FF00")
+         db.add(`checks_${bot.botID}`, 1)
+       if(client.users.cache.get(bot.ownerID)) {
+           client.channels.cache.get(config.channels.botlog).send(`<@${bot.ownerID}>`, emb) 
+       } else {
+           client.channels.cache.get(config.channels.botlog).send(emb) 
+       }
+                         }
+                     
+                 }
+                }
+        })
+       
+    
+    }, 5000)
+   
+    setInterval(async() =>{
+      
+      var botdata = await botsdata.find();
+      if(!botdata)
+      {
+        return
+      }
+      botdata.forEach(async (bot) => {
+        var checking = db.fetch(`rate_${bot.botID}`);
+        if(checking)
+        {
+      
+           var check = db.fetch(`presence_${bot.botID}`);
+           db.add(`checks_${bot.botID}`, 1)
+           if(check === "offline")
+           {
+             if(checking < 40)
+             {
+               let done = db.fetch(`don_${bot.botID}`);
+               if(done == "yes")
+               {
+                 return;
+               }
+                let declineembed = new Discord.MessageEmbed()
+             .setTitle("Bot Deleted")
+             .setDescription(`Reason: Bot Uptime was Gone Under 50%\n Moderator: ${client.user.username}\n Bot: <@${bot.botID}>\n Owner: <@${bot.ownerID}>`)
+             .setFooter("Embed Logs of Administration")
+               client.channels.cache.get(config.channels.botlog).send(declineembed)
+               if(client.guilds.cache.get(config.server.id).members.fetch(bot.ownerID))
+               {
+               client.users.cache.get(bot.ownerID).send(`Your bot named **<@${bot.botID}>** has been deleted.\nReason: **Uptime was gone under 50%**\nAuthorized: **${client.user.username}**`)
+               
+                  await botsdata.deleteOne({ botID: bot.botID, ownerID: bot.ownerID, botid: bot.botID })
+                  db.set(`don_${bot.botID}`, "yes");
+             }
+              let guild = client.guilds.cache.get(config.server.id);
+        var bot1 = guild.member(bot.botID)
+        bot1.kick()
+             } 
+            db.add(`offlinechecks_${bot.botID}`, 1)
+             
+             db.set(`rate_${bot.botID}`, checking - 1)
+           }
+        }
+      })
+    }, 7200000);
+    
+
+ 
+})
+/*=======================================================================================*/
+
+
 
 
 /*=======================================================================================*/

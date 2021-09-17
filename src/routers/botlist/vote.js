@@ -54,6 +54,39 @@ app.post("/bot/:botID/vote", global.checkAuth, async (req, res) => {
             votes: 1
         }
     })
+      if(botdata.dcwebhook)
+      {
+      const webhook = require("webhook-discord");
+ 
+const Hook = new webhook.Webhook(botdata.dcwebhook);
+const msg = new webhook.MessageBuilder()
+.setName("Vcodes Votes Manager")
+.setAvatar(client.user.displayAvatarURL())
+.setAuthor("Vote Logs", client.user.displayAvatarURL(), "https://vcodes.xyz")
+.setColor("#800080")
+.addField(`\`${botdata.username}\` just got upvoted!`, `**VoterID:** ${req.user.id}\n**VoterTag:** ${req.user.username}#${req.user.discriminator}\n**Total Votes:** ${botdata.votes + 1}`)
+Hook.send(msg);
+      }
+      if(botdata.webhook)
+      { 
+        
+        const fetch = require("node-fetch");
+     
+          var requestOptions = {
+  method: 'POST', // Choose the appropriate method
+  headers: {
+     "authorization": `${botdata.token}`,
+    'Content-Type': 'application/json'
+  },
+  body:  JSON.stringify({
+     "user": `${req.user.username}`,
+     "bot": `${botdata.username}`,
+     "votes": `${botdata.votes + 1}`,
+      "test": "no"
+     }), // Replace this number with the server count
+};
+          await fetch(botdata.webhook, requestOptions) 
+      }
     client.channels.cache.get(channels.votes).send(`**${req.user.username}** voted **${botdata.username}** **\`(${botdata.votes + 1} votes)\`**`)
     if(botdata.votes+1 >= 100) {
     client.channels.cache.get(channels.votes).send(`:tada: The bot named **${botdata.username}** has reached 100 votes!`)
