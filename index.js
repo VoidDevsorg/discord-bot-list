@@ -8,6 +8,8 @@ const fs = require("fs");
 client.htmll = require('cheerio');
 const request = require("request");
 const db = require("quick.db");
+const botsdata = require('./src/database/models/botlist/bots.js');
+const ms = require('parse-ms');
 /*=======================================================================================*/
 
 
@@ -125,9 +127,9 @@ if(!uptimerate)
         .setColor("#FF0000")
         db.add(`checks_${newPresence.userID}`, 1)
       if(client.users.cache.get(botdata.ownerID)) {
-          client.channels.cache.get(config.channels.botlog).send(`<@${botdata.ownerID}>`, emb) 
+          client.channels.cache.get(config.server.channels.botlog).send(`<@${botdata.ownerID}>`, emb) 
       } else {
-          client.channels.cache.get(config.channels.botlog).send(emb) 
+          client.channels.cache.get(config.server.channels.botlog).send(emb) 
       }
       }
       
@@ -167,9 +169,9 @@ if(!uptimerate)
         .setColor("#00FF00")
          db.add(`checks_${newPresence.userID}`, 1)
        if(client.users.cache.get(botdata.ownerID)) {
-           client.channels.cache.get(config.channels.botlog).send(`<@${botdata.ownerID}>`, emb) 
+           client.channels.cache.get(config.server.channels.botlog).send(`<@${botdata.ownerID}>`, emb) 
        } else {
-           client.channels.cache.get(config.channels.botlog).send(emb) 
+           client.channels.cache.get(config.server.channels.botlog).send(emb) 
        }
        db.set(`timefr_${newPresence.userID}`, Date.now())
     }
@@ -292,9 +294,9 @@ return; }
         .setColor("#00FF00")
          db.add(`checks_${bot.botID}`, 1)
        if(client.users.cache.get(bot.ownerID)) {
-           client.channels.cache.get(config.channels.botlog).send(`<@${bot.ownerID}>`, emb) 
+           client.channels.cache.get(config.server.channels.botlog).send(`<@${bot.ownerID}>`, emb) 
        } else {
-           client.channels.cache.get(config.channels.botlog).send(emb) 
+           client.channels.cache.get(config.server.channels.botlog).send(emb) 
        }
                          }
                      
