@@ -1,4 +1,4 @@
-const Discord = require('discord.js);
+const Discord = require('discord.js')
 const app = require('express').Router();
 const codesSchema = require("../../../database/models/codes.js");
 const client = global.Client;
