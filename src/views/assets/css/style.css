@@ -113,7 +113,7 @@ body {
     color: #fff;
     background-clip: border-box;
     border: none!important;
-    border-radius: .25rem;
+    border-radius: 1.25rem;
 }
 .card-header {
     background-color: var(--bg-card);
