@@ -1,3 +1,7 @@
+// This is not your configuration file, This is purely an example!
+// You may delete this file if you wish as it serves no purpose, It's just there for if you get stuck with anything.
+// Your actual configuration file is "config.js"
+
 
         module.exports = {
             bot: {
