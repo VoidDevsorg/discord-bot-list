@@ -8,6 +8,7 @@
 <br><br>
 > # Extra Terms of use
 <a>- You have the permission to shoot and share videos, but you have to mention us, our server, in the video.</a><br>
+<a>- You cannot use our branding anywhere on your site & claim it as your own.</a><br>
 <a>- You have the permission to share in writing, but you have to mention us, our server, in the article.</a><br>
 <a>- You can't speak in a "we did it" way.</a><br>
 <a>- You cannot sell it.</a><br>
