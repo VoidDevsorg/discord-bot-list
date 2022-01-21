@@ -1,6 +1,3 @@
-### **vCodes are getting stronger along with <img width="128" href="https://kayizer.com" src="https://kayizer.com/assets/img/logo.png">**
-## Sponsor: https://kayizer.com
-
 # vCodes.xyz
 **Discord Server:** [https://discord.gg/8ZBYQAS4Q9](https://discord.gg/8ZBYQAS4Q9)<br>
 **NPM:** [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
@@ -17,9 +14,6 @@
 <a>- Don't touch this part on footer;</a><br>
 <img width="512" src="https://img.devsforum.net/tr/img/f1B3C3.png">
 
-<br><br>
-> # Demo (New Site)
-<a href="https://vcodes.xyz">vcodes.xyz</a>
 <br>
 > # 💨 Run the projects
 [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/vcodes-xyz/vcodes)<br>
