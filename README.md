@@ -1,6 +1,6 @@
 # vCodes.xyz
 **Discord Server:** [https://discord.gg/8ZBYQAS4Q9](https://discord.gg/8ZBYQAS4Q9)<br>
-**NPM:**  ![NPM Logo](https://cdn.changelog.com/uploads/icons/topics/kOe/icon_large.png?v=63682389470) [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
+**NPM:**  ![NPM Logo](https://i.ibb.co/FVKfrJ5/npm-1.png) [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
 <br>
 > # Developers
 <a href="https://github.com/iClaudette">👤 Claudette</a><br>
