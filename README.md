@@ -6,12 +6,12 @@
 <a href="https://github.com/iClaudette">👤 Claudette</a><br>
 <a href="https://github.com/tunarjs">👤 Tunar</a>
 <br><br>
-> # Extra Terms of use
-<a>- You have the permission to shoot and share videos, but you have to mention us, our server, in the video.</a><br>
+> # Extra Terms of Use
+<a>- You have the permission to shoot and share videos, but you have to mention us and our server in the video.</a><br>
 <a>- You cannot use our branding anywhere on your site & claim it as your own.</a><br>
 <a>- You have the permission to share in writing, but you have to mention us, our server, in the article.</a><br>
 <a>- You can't speak in a "we did it" way.</a><br>
-<a>- You cannot sell it.</a><br>
+<a>- You cannot sell this</a><br>
 <a>- Don't touch this part on footer;</a><br>
 <img width="512" src="https://img.devsforum.net/tr/img/f1B3C3.png">
 
