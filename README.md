@@ -16,8 +16,8 @@
 <img width="512" src="https://img.devsforum.net/tr/img/f1B3C3.png">
 
 > # Contributors
-[EliteNover](https://github.com/EliteNover "Hi! :)")
-[clqu](https://github.com/clqu)
+<a href="https://github.com/EliteNover">EliteNover</a><br>
+<a href="https://github.com/clqu">clqu</a>
 
 > # 💨 Run the projects
 [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/vcodes-xyz/vcodes)<br>
