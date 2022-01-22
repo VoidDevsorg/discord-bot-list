@@ -3,7 +3,7 @@
 **NPM Module:** [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
 <br>
 > # Developers
-<a href="https://github.com/iClaudette">👤 Claudette</a><br>
+<a href="https://github.com/clqu">👤 clqu</a>
 <a href="https://github.com/tunarjs">👤 Tunar</a>
 <br><br>
 > # Extra Terms of use
