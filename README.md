@@ -1,6 +1,6 @@
 # vCodes.xyz
 **Discord Server:** [https://discord.gg/8ZBYQAS4Q9](https://discord.gg/8ZBYQAS4Q9)<br>
-**NPM:** [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
+**NPM Module:** [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
 <br>
 > # Developers
 <a href="https://github.com/iClaudette">👤 Claudette</a><br>
@@ -15,8 +15,11 @@
 <a>- Don't touch this part on footer;</a><br>
 <img width="512" src="https://img.devsforum.net/tr/img/f1B3C3.png">
 
-
-> # 💨 Run the projects
+> # Contributors
+<a href="https://github.com/EliteNover">👤 EliteNover</a><br>
+<a href="https://github.com/clqu">👤 clqu</a>
+<br><br>
+> # 💨 Quick Start
 [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/vcodes-xyz/vcodes)<br>
-[![Run on Repl.it](https://repl.it/badge/github/vcodes-xyz/bot-list)](https://repl.it/github/vcodes-xyz/vcodes)<br>
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/vcodes-xyz/vcodes)
+[![Run on Replit](https://repl.it/badge/github/vcodes-xyz/bot-list)](https://repl.it/github/vcodes-xyz/vcodes)<br>
+[![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/vcodes-xyz/vcodes)

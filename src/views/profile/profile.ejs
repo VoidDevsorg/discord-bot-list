@@ -83,7 +83,7 @@
     <p class="content has-text-white" style="margin-top: -20px;">They are ranked according to the votes they received.</p>
     <% if(botdata.filter(a => (member.id === a.ownerID || a.coowners.includes(member.id))).length <= 0) { %>
       <div class="alert alert-danger" role="alert">
-       <span style="color: #fff!important;" class="is-size-5"><i class="fad fa-robot"></i>&nbsp;<strong>Oops..</strong></span><br>
+       <span style="color: #fff!important;" class="is-size-5"><i class="fad fa-robot"></i>&nbsp;<strong>Error</strong></span><br>
        <strong><%=member.username%></strong> does not have any bots in the system.
       </div>
       <% } %>
@@ -201,7 +201,7 @@ var urlParams = new URLSearchParams(window.location.search);
     if(urlParams.has('success') && urlParams.get('success')){
     Swal.fire({
      icon: 'success',
-     title: 'Successful...',
+     title: 'Successful',
      closeOnConfirm: false,
      text: urlParams.get('message'),
      footer: 'Copyright 2022 &copy vCodes.xyz - All right reserved.'

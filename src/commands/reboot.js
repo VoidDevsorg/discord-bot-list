@@ -1,3 +1,5 @@
+// This may crash your server if you are using Replit.
+
 const Discord = require('discord.js');
 const fetch = require("node-fetch");
 exports.run = (client, message, args) => {
