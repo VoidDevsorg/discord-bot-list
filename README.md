@@ -19,7 +19,7 @@
 <a href="https://github.com/EliteNover">👤 EliteNover</a><br>
 <a href="https://github.com/clqu">👤 clqu</a>
 
-> # 💨 Run the projects
+> # 💨 Quick Start
 [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/vcodes-xyz/vcodes)<br>
 [![Run on Replit](https://repl.it/badge/github/vcodes-xyz/bot-list)](https://repl.it/github/vcodes-xyz/vcodes)<br>
 [![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/vcodes-xyz/vcodes)
