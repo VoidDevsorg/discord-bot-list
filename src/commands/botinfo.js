@@ -17,7 +17,7 @@ module.exports.run = async (client,message,args) => {
    const embed = new Discord.MessageEmbed()
    .setThumbnail(b.avatar)
    .setAuthor(b.username+"#"+b.discrim, b.avatar)
-   .setDescription("**[Vote for the bot named "+b.username+"#"+b.discrim+" in vCodes.](https://vcodes.xyz/bot/"+b.botID+"/vote)**")
+   .setDescription("**[Vote for "+b.username+"#"+b.discrim+" on the vCodes website.](https://vcodes.xyz/bot/"+b.botID+"/vote)**")
    .addField("ID", b.botID, true)
    .addField("Username", b.username, true)
    .addField("Discriminator", b.discrim, true)
@@ -27,7 +27,7 @@ module.exports.run = async (client,message,args) => {
    .setColor("#7289da")
    .addField("Server Count", `${b.serverCount || "N/A"}`, true)
    .addField("Owner(s)", `<@${b.ownerID}>\n${coowner.replace("<@>", "")}`, true)
-   .addField("Links", `[Invite](https://discord.com/oauth2/authorize?client_id=${b.botID}&scope=bot&permissions=8)${website}${discord}${github}`, true)
+   .addField("Links", `[Invite](https://discord.com/oauth2/authorize?client_id=${b.botID}&scope=bot applications.commands&permissions=8)${website}${discord}${github}`, true)
    message.channel.send(embed)
 };
 exports.conf = {
