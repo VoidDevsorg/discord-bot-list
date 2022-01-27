@@ -31,8 +31,8 @@
                                 <td><%= b.username %></td>
                                 <td><%= b.ownerName %></td>
                                 <td><%= b.prefix %></td>
-                                <td><button onclick="newtab('https://discord.com/api/oauth2/authorize?client_id=<%= b.botID %>&permissions=0&scope=bot')" class="btn btn-primary btn-sm">Perm 0</button>
-                                    <button onclick="newtab('https://discord.com/api/oauth2/authorize?client_id=<%= b.botID %>&permissions=8&scope=bot')" class="btn btn-info btn-sm">Perm 8</button> </td>
+                                <td><button onclick="newtab('https://discord.com/api/oauth2/authorize?client_id=<%= b.botID %>&permissions=0&scope=bot applications.commands')" class="btn btn-primary btn-sm">Perm 0</button>
+                                    <button onclick="newtab('https://discord.com/api/oauth2/authorize?client_id=<%= b.botID %>&permissions=8&scope=bot applications.commands')" class="btn btn-info btn-sm">Perm 8</button> </td>
                                 <td class="text-center">
                                     <button onclick="newtab('/admin/confirm/<%= b.botID %>')" class="btn btn-success btn-sm">Confirm</button>
                                     <button onclick="newtab('/admin/decline/<%= b.botID %>')" class="btn btn-danger btn-sm">Delete</button>
