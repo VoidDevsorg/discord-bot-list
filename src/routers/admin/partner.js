@@ -7,8 +7,7 @@ const client = global.Client;
 
 app.get("/admin/partners", global.checkAuth, async (req, res) => {
     if (!config.bot.owners.includes(req.user.id)) return res.redirect('../admin');
-    const Database = require("void.db");
-    const db = new Database(path.join(__dirname, '../../database/json/partners.json'));
+    const Database = require("quick.db");
 	res.render("admin/administrator/partners.ejs", {
 	    bot: global.Client,
 	    path: req.path,
@@ -17,14 +16,13 @@ app.get("/admin/partners", global.checkAuth, async (req, res) => {
 	    req: req,
 	    roles:global.config.server.roles,
 	    channels: global.config.server.channels,
-	    db: db
+	    db: Database
 	 })
 });
 app.post("/admin/partners", global.checkAuth, async (req, res) => {
     if (!config.bot.owners.includes(req.user.id)) return res.redirect('../admin');
-    const Database = require("void.db");
-    const db = new Database(path.join(__dirname, '../../database/json/partners.json'));
-    db.push(`partners`, {
+    const Database = require("quick.db");
+    Database.push(`partners`, {
         code: createID(36),
         icon: req.body.icon,
         ownerID: req.body.ownerID,
