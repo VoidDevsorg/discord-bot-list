@@ -25,9 +25,11 @@
 <a>- Don't remove this part from `src/views/parts/meta.ejs`;</a><br>
 <img width="512" src="https://i.postimg.cc/6Qr2Vg5x/image-2022-01-27-172642.png">
 
-> # Contributors
-<a href="https://github.com/EliteNover">👤 EliteNover</a><br>
-<a href="https://github.com/clqu">👤 clqu</a>
+## Contributors ✨
+<a href="https://github.com/vcodes-xyz/vcodes/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=vcodes-xyz/vcodes"/>
+</a>
+
 <br><br>
 > # 💨 Quick Start
 [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/vcodes-xyz/vcodes)<br>
