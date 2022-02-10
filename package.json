@@ -50,8 +50,8 @@
     "sweetalert": "^2.1.2",
     "sweetalert2": "10.15.6",
     "vcodes.js": "1.0.1-renewed",
-    "void.db": "^2.0.4",
-    "void.nsfw": "^1.0.8-beta"
+    "qucik.db": "^7.1.3"
+    
   },
   "engines": {
     "node": "12.x"
@@ -62,5 +62,5 @@
   "keywords": [
     "vcodes.xyz"
   ],
-  "author": "claudette.xyz & voiddevs.org"
+  "author": "clqu.live & voiddevs.org"
 }
