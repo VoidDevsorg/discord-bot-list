@@ -246,7 +246,7 @@
           if(client.guilds.cache.get(config.server.id).members.cache.get(req.user.id).roles.cache.get(global.config.server.roles.administrator) || client.guilds.cache.get(config.server.id).members.cache.get(req.user.id).roles.cache.get(global.config.server.roles.moderator) || req.user.id === "714451348212678658") {
               next();
               } else {
-              res.redirect("/error?code=403&message=You is not competent to do this.")
+              res.redirect("/error?code=403&message=You do not have permission to go to this page")
           }
         } else {
           req.session.backURL = req.url;

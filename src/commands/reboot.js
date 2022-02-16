@@ -5,7 +5,7 @@ const fetch = require("node-fetch");
 exports.run = (client, message, args) => {
     if(!global.config.bot.owners.includes(message.author.id)) return  message.reply('You dont have permission to use this command')
 	message.channel.send("vCodes: The bot is now rebooting").then(msg => {
-		console.log(`BOT: Restarting due to reboot command used`);
+		console.log(`BOT: Restarting from Reboot Command`);
 		process.exit(1);
 	})
 };
