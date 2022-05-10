@@ -34,7 +34,9 @@
 <a>- You can't speak in a "we did it" way.</a><br>
 <a>- You cannot sell this</a><br>
 <a>- Don't touch this part on footer;</a><br>
-<img width="512" src="https://img.devsforum.net/tr/img/f1B3C3.png"><br><br>
+```
+Developed by Void Development
+```
 <a>- Don't remove this part from `src/views/parts/meta.ejs`;</a><br>
 <img width="512" src="https://i.postimg.cc/6Qr2Vg5x/image-2022-01-27-172642.png">
 
