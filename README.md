@@ -1,10 +1,6 @@
-> # **⚠️ Warning!**
-> 
-> Starting from 23/01/2022, We will be requiring users to have the following code in their `meta.ejs` file located at `src/views/parts/meta.ejs`. This code will come preinstalled on this vCodes Instance. This warning is only for users who already have it installed.
-```
-<meta name="publisher" content="2022, Void Development" />
-<meta name="author" content="Void Development", "contact@voiddevs.org">
-```
+> # **⚠️ New vCodes Update, Upcoming!**<br>
+> Our fantastic team are currently working on a brand new version of vCodes (Benedict) built on Next.js, Whilst that's happening there will be **NO NEW UPDATES** happening to v4 of vCodes (Benedict). [Join our Discord Server](https://discord.gg/8ZBYQAS4Q9) to be notified of when v5 of vCodes (Benedict) releases!
+
 # vCodes.xyz
 **Discord Server:** [https://discord.gg/8ZBYQAS4Q9](https://discord.gg/8ZBYQAS4Q9)<br>
 **NPM Module:** [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
