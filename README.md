@@ -1,7 +1,7 @@
 > # **⚠️ New vCodes Update, Upcoming!**<br>
 > Our fantastic team are currently working on a brand new version of vCodes (Benedict) built on Next.js, Whilst that's happening there will be **NO NEW UPDATES** happening to v4 of vCodes (Benedict). [Join our Discord Server](https://discord.gg/8ZBYQAS4Q9) to be notified of when v5 of vCodes (Benedict) releases!
 
-# vCodes.xyz
+# Benedict (Formerly vCodes.xyz)
 **Discord Server:** [https://discord.gg/8ZBYQAS4Q9](https://discord.gg/8ZBYQAS4Q9)<br>
 **NPM Module:** [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
 <br>
@@ -38,13 +38,13 @@ Developed by Void Development
 
 
 <br><br>
-## 💨 Quick Start
-[![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/vcodes-xyz/vcodes)<br>
-[![Run on Replit](https://repl.it/badge/github/vcodes-xyz/bot-list)](https://repl.it/github/vcodes-xyz/vcodes)<br>
-[![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/vcodes-xyz/vcodes)
+## 💨 Quick Setup
+[![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/vcodes-xyz/benedict)<br>
+[![Run on Replit](https://repl.it/badge/github/vcodes-xyz/bot-list)](https://repl.it/github/vcodes-xyz/benedict)<br>
+[![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/vcodes-xyz/benedict)
 
 <br><br>
 ## Contributors ✨
-<a href="https://github.com/vcodes-xyz/vcodes/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=vcodes-xyz/vcodes"/>
+<a href="https://github.com/vcodes-xyz/benedict/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=vcodes-xyz/benedict"/>
 </a>
