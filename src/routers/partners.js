@@ -1,5 +1,5 @@
 const app = require('express').Router();
-const Database = require("void.db");
+const Database = require("quick.db");
 const path = require("path")
 const db = new Database(path.join(__dirname, '../database/json/partners.json'));
 
