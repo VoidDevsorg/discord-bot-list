@@ -149,7 +149,7 @@
                     botlist: {
                         developer: "",
                         certified_developer: "",
-                        bot: "",
+                        bot: "", // This is not your Bot ID, This is the Role ID Approved Bots get when they join your server
                         certified_bot: "",
                     }
                 },
