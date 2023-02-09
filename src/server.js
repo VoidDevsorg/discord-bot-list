@@ -219,8 +219,8 @@ module.exports = async (client) => {
   io.on("connection", (socket) => {
     io.emit("userCount", io.engine.clientsCount);
   });
-  http.listen(80, () => {
-    console.log("[vcodes.xyz]: Website running on 80 port.");
+  http.listen(3000, () => {
+    console.log("[vcodes.xyz]: Website running on port 3000.");
   });
 
   //------------------- Routers -------------------//
