@@ -11,7 +11,7 @@ app.get("/partners", async (req,res) => {
         config: global.config,
         user: req.isAuthenticated() ? req.user : null,
         req: req,
-        db: db,
+        db: Database,
         roles: global.config.server.roles
     })
 })

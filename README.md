@@ -13,8 +13,8 @@
         <br />
         <sub><b>clqu</b></sub></a><br />
      </td>
-      <td align="center"><a href="https://github.com/tunarjs">
-        <img src="https://github.com/tunarjs.png?size=100" width="100px;" alt=""/>
+      <td align="center"><a href="https://github.com/tunardev">
+        <img src="https://github.com/tunardev.png?size=100" width="100px;" alt=""/>
         <br />
         <sub><b>Tunar</b></sub></a><br />
      </td>
