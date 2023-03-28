@@ -7,7 +7,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "format": "prettier . --write",
-		"pretest": "prettier . --check"
+    "pretest": "prettier . --check"
   },
   "dependencies": {
     "axios": "^0.21.1",

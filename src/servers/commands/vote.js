@@ -104,13 +104,11 @@ exports.run = async (client, message, args) => {
               guild: message.guild.id,
             });
             if (findUserr)
-              return msg
-                .delete()
-                .then(
-                  await msgError("You can vote only once every 30 minutes.", {
-                    channel: message.channel,
-                  })
-                );
+              return msg.delete().then(
+                await msgError("You can vote only once every 30 minutes.", {
+                  channel: message.channel,
+                })
+              );
             msg
               .delete()
               .then(
