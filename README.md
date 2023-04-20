@@ -1,7 +1,3 @@
-> # **⚠️ New vCodes Update, Upcoming!**<br>
->
-> Our fantastic team are currently working on a brand new version of vCodes (Benedict) built on Next.js, Whilst that's happening there will be **NO NEW UPDATES** happening to v4 of vCodes (Benedict). [Join our Discord Server](https://discord.gg/8ZBYQAS4Q9) to be notified of when v5 of vCodes (Benedict) releases!
-
 # Benedict (Formerly vCodes.xyz)
 
 **Discord Server:** [https://discord.gg/8ZBYQAS4Q9](https://discord.gg/8ZBYQAS4Q9)<br>
@@ -17,8 +13,8 @@
         <br />
         <sub><b>clqu</b></sub></a><br />
      </td>
-      <td align="center"><a href="https://github.com/tunarjs">
-        <img src="https://github.com/tunarjs.png?size=100" width="100px;" alt=""/>
+      <td align="center"><a href="https://github.com/tunardev">
+        <img src="https://github.com/tunardev.png?size=100" width="100px;" alt=""/>
         <br />
         <sub><b>Tunar</b></sub></a><br />
      </td>

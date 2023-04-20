@@ -117,7 +117,7 @@ input[type="text"]:disabled {
      title: 'Successful...',
      closeOnConfirm: false,
      text: urlParams.get('message'),
-     footer: 'Copyright 2022 &copy vCodes.xyz - All right reserved.'
+     footer: 'Copyright 2023 &copy vCodes.xyz - All right reserved.'
     }).then((result) => {
   if (result.isConfirmed) {
     window.location.href = '/user/<%=req.params.userID%>';
@@ -129,7 +129,7 @@ input[type="text"]:disabled {
      icon: 'error',
      title: 'Oops...',
      text: urlParams.get('message'),
-     footer: 'Copyright 2022 &copy vCodes.xyz - All right reserved.'
+     footer: 'Copyright 2023 &copy vCodes.xyz - All right reserved.'
     }).then((result) => {
   if (result.isConfirmed) {
     window.location.href = '/user/<%=req.params.userID%>/edit';
