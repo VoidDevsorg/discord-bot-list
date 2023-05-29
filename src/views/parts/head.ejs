@@ -117,7 +117,7 @@
                 <div class="dropdown-menu dropdown-menu-right" style="max-width:220px!important;">
             <% languages.map(x => { %>
                 <a href="#" translate="no" onclick="doGTranslate('en|<%= x.code %>')" title="vcodes" class="dropdown-item">
-                <img src="https://www.countryflags.io/<%= x.flag %>/flat/32.png">
+                <img src="https://flagcdn.com/<%= x.flag %>.svg" width="20" height="20" class="mr-1">
                     &nbsp;<%= x.name %>
                 </a>
                 <% }) %>

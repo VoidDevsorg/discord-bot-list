@@ -4,6 +4,7 @@ const client = global.Client;
 
 console.log("[vcodes.xyz]: Botlist/Bot view router loaded.");
 app.get("/bot/:botID", async (req, res, next) => {
+  try {
   let botdata = await botsdata.findOne({
     botID: req.params.botID,
   });
@@ -13,16 +14,13 @@ app.get("/bot/:botID", async (req, res, next) => {
     );
   if (botdata.status != "Approved") {
     if (!req.user) return res.redirect("/");
-    if (
-      req.user.id == botdata.ownerID ||
-      botdata.coowners.includes(req.user.id)
-    ) {
+    if (req.user.id == botdata.ownerID || botdata.coowners.includes(req.user.id)) {
       let coowner = new Array();
       botdata.coowners.map((a) => {
         client.users.fetch(a).then((b) => coowner.push(b));
       });
-      client.users.fetch(botdata.ownerID).then((aowner) => {
-        client.users.fetch(req.params.botID).then((abot) => {
+      await client.users.cache.get(botdata.ownerID).then(async (aowner) => {
+        await client.users.cache.get(req.params.botID).then((abot) => {
           res.render("botlist/bot/bot.ejs", {
             bot: global.Client,
             path: req.path,
@@ -36,8 +34,8 @@ app.get("/bot/:botID", async (req, res, next) => {
             abot: abot,
             botdata: botdata,
           });
-        });
-      });
+        }).catch((e) => { console.log("") });
+      }).catch((e) => { console.log("") });
     } else {
       res.redirect(
         "/error?code=404&message=To edit this bot, you must be one of its owners."
@@ -128,6 +126,9 @@ app.get("/bot/:botID", async (req, res, next) => {
       });
     });
   }
+} catch (error) {
+  console.log("");
+}
 });
 app.get("/bot/:botID/invite", global.checkAuth, async (req, res) => {
   await botsdata.updateOne(

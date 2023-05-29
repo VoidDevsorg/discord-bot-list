@@ -109,7 +109,9 @@ app.post("/addbot", global.checkAuth, async (req, res) => {
   client.users.fetch(rBody["botID"]).then((a) => {
     client.channels.cache
       .get(channels.botlog)
-      .send(`<@${req.user.id}> added **${a.tag}**`);
+      .send({
+        content: `<@${req.user.id}> added **${a.tag}**`
+      });
     res.redirect(
       `?success=true&message=Your bot has been successfully added to the system.&botID=${rBody["botID"]}`
     );

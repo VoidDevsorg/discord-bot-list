@@ -1,5 +1,6 @@
 const app = require("express").Router();
 const botsdata = require("../../database/models/botlist/bots.js");
+const reportappsdata = require("../../database/models/botlist/report-apps.js");
 const codesSchema = require("../../database/models/codes.js");
 const uptimedata = require("../../database/models/uptime.js");
 const appsdata = require("../../database/models/botlist/certificate-apps.js");

@@ -19,14 +19,14 @@ app.post("/admin/decline/:botID", global.checkAuth, async (req, res) => {
   client.users.fetch(botdata.ownerID).then((sahip) => {
     client.channels.cache
       .get(channels.botlog)
-      .send(
-        `<@${botdata.ownerID}>'s bot named **${botdata.username}** has been declined. `
-      );
+      .send({
+        content: `<@${botdata.ownerID}>'s bot named **${botdata.username}** has been declined. `
+     });
     client.users.cache
       .get(botdata.ownerID)
-      .send(
-        `Your bot named **${botdata.username}** has been declined.\nReason: **${rBody["reason"]}**\nAuthorized: **${req.user.username}**`
-      );
+      .send({
+        content: `Your bot named **${botdata.username}** has been declined.\nReason: **${rBody["reason"]}**\nAuthorized: **${req.user.username}**`
+      });
   });
   await botsdata.deleteOne({
     botID: req.params.botID,

@@ -69,7 +69,9 @@ app.post("/bot/:botID/edit", global.checkAuth, async (req, res) => {
   client.users.fetch(req.params.botID).then((a) => {
     client.channels.cache
       .get(channels.botlog)
-      .send(`<@${req.user.id}> edited **${a.tag}**`);
+      .send({
+        content: `<@${req.user.id}> edited **${a.tag}**`
+      });
     res.redirect(
       `?success=true&message=Your bot has been successfully edited.&botID=${req.params.botID}`
     );

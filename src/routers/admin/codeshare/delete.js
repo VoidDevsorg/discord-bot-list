@@ -13,16 +13,20 @@ app.post("/admin/deletecode/:code", global.checkAuth, async (req, res) => {
   if (!kodDataFind) return res.redirect("/admin/codes");
   client.channels.cache
     .get(channels.codelog)
-    .send(
-      new Discord.MessageEmbed()
+    .send({
+      embeds: [
+        new Discord.EmbedBuilder()
         .setTitle("Code deleted!")
-        .setColor("GREEN")
+        .setColor("#00ff00")
         .setFooter(config.footer)
         .setDescription(
           `The user named **[${req.user.username}](https://vcodes.xyz/user/${req.user.id})** deleted the code named **${kodDataFind.codeName}**.`
         )
-        .addField("Code Category", kodDataFind.codeCategory, true)
-    );
+        .addFields([
+          { name: "Code Category", value: kodDataFind.codeCategory, inline: true },
+        ])
+        ]
+    });
   await codesSchema.deleteOne({
     code: kod,
   });

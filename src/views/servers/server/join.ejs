@@ -2,9 +2,6 @@
 <title>Join | <%= data.name %> | Discord Servers</title>
 <head>
     <meta name="og:title" content="<%= data.name %>">
-    <meta name="og:description" content="
-🟢 <%= bot.guilds.cache.get(data.id).members.cache.filter(a => a.presence.status != "dnd").size %> onlineᅠᅠᅠᅠ⚫ <%= bot.guilds.cache.get(data.id).memberCount %> members
-">
     <meta property="og:image" content="<%= data.icon %>">
 </head>
 <div class="container px-3 mt-2 pt-5">

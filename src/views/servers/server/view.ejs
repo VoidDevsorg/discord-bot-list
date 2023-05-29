@@ -3,9 +3,6 @@
 <head>
     <meta property="og:site_name" content="Powered by vCodes.xyz">
     <meta property="og:title" content="<%= sdb.name %>">
-    <meta property="og:description" content="<%= sdb.shortDesc %>
-    ­
-🟢 <%= global.clientSL.guilds.cache.get(sdb.id).members.cache.filter(a => a.presence.status != 'dnd').size %> onlineᅠᅠᅠᅠ⚫ <%= global.clientSL.guilds.cache.get(sdb.id).memberCount %> members">
     <meta property="og:image" content="<%= sdb.icon %>">
 </head>
 
@@ -113,7 +110,7 @@
              <div class="h6 mt-4">
                 <i class="fal fa-user-crown"></i> Owners
               </div>
-              <% guildGet.members.cache.filter(a => !a.user.bot && a.permissions.has('ADMINISTRATOR')).map(admin => { %>
+              <% guildGet.members.cache.filter(a => !a.user.bot && a.permissions.has('Administrator')).map(admin => { %>
               <a style="text-decoration: none;margin-bottom: -5px;" href="/user/<%= admin.user.id %>" class="is-flex mt-1">
                 <div class="box-2-p ownerIMG"  style="background: url(<%= admin.user.avatarURL({dynamic:true}) || '../../img/undefined_avatar.png' %>) center center no-repeat; background-size: 100%;"></div>
                 <p translate="no" class="box-2"><%= admin.user.tag %>
@@ -132,6 +129,14 @@
                     <a translate="no" style="margin: 5px;" href="/servers/tag/<%=a%>" class="btn btn-sm btn-tag"><%=a%></a>
                 <% }) %>
               </div>
+
+              <div class="h6 mt-4">
+                <i class="fad fa-backspace is-size-6 mt-1"></i> Report
+              </div>
+              <a href="/server/<%= sdb.id %>/report" class="is-flex mt-1" style="margin-bottom: -55px;">
+                  <div style="background: rgb(209, 25, 25);" class="box-2-p"><i class="fad fa-backspace is-size-6 mt-1"></i></div>
+                  <p style="background: rgb(255, 0, 0);" class="box-2">Report</p>
+                </a>
               <br><br>
             </div>
           </div>

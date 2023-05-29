@@ -1,6 +1,6 @@
 # Benedict (Formerly vCodes.xyz)
 
-**Discord Server:** [https://discord.gg/8ZBYQAS4Q9](https://discord.gg/8ZBYQAS4Q9)<br>
+**Discord Server:** [https://discord.gg/27Fs46hHX3](https://discord.gg/27Fs46hHX3)<br>
 **NPM Module:** [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
 <br>
 

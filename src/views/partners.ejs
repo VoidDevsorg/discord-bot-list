@@ -15,8 +15,8 @@
 <p class="has-text-white title is-large"><i class="fal fa-handshake bodyIcon"></i>&nbsp;Partners</p>
 <p class="content has-text-white" style="margin-top: -20px;">Join our <a class="bodyIcon" href="/dc">discord server</a> to partner with us.</p>
 <div class="columns is-multiline is-desktop is-variable is-7 mt-3 pt-5">
-<% if(db.has(`partners`) === true) { %>
-  <% db.get(`partners`).map(a => { %>
+<% if (partners.length > 0) { %>
+  <% partners.forEach(a => { %>
         <div class="col-md-6 col-lg-4 pb-3">
           <div data-aos="fade-down">
         <div style="border: none;" class="card vcodes-card-custom bg-vcodes">
