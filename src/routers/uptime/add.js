@@ -31,20 +31,19 @@ app.post("/add", global.checkAuth, async (req, res) => {
         message: "This link already exists in the system.",
       });
     client.users.fetch(req.user.id).then((a) => {
-      client.channels.cache.get(channels.uptimelog).send(
-        new Discord.MessageEmbed()
-          .setAuthor(
-            a.username,
-            a.avatarURL({
-              dynamic: true,
-            })
-          )
+      client.channels.cache.get(channels.uptimelog).send({
+        embeds: [
+          new Discord.EmbedBuilder()
+          .setAuthor({ name: a.username, iconURL: a.avatarURL({ dynamic: true }) })
           .setDescription("New link added uptime system.")
-          .setThumbnail(client.user.avatarURL)
-          .setColor("GREEN")
-          .addField("User;", `${a.tag} \`(${a.id})\``, true)
-          .addField("Uptime Limit;", `${dd.length + 1}/10`, true)
-      );
+          .setThumbnail(client.user.avatarURL({ dynamic: true }))
+          .setColor("#00ff00")
+          .addFields([
+            { name: "User;", value: `${a.tag} \`(${a.id})\``, inline: true },
+            { name: "Uptime Limit;", value: `${dd.length + 1}/10`, inline: true }
+          ])
+        ]
+      });
       new uptimedata({
         server: config.serverID,
         userName: a.username,

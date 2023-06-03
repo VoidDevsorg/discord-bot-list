@@ -141,18 +141,22 @@ module.exports = async (client) => {
       let banned = await banSchema.findOne({ user: req.user.id });
       if (banned) {
         client.users.fetch(req.user.id).then(async (a) => {
-          client.channels.cache.get(channels.login).send(
-            new Discord.MessageEmbed()
-              .setAuthor(a.username, a.avatarURL({ dynamic: true }))
+          client.channels.cache.get(channels.login).send({
+            embeds: [
+              new Discord.EmbedBuilder()
+              .setAuthor({ name: a.username, iconURL: a.avatarURL({ dynamic: true }) })
               .setThumbnail(a.avatarURL({ dynamic: true }))
-              .setColor("RED")
+              .setColor("#ff0000")
               .setDescription(
                 `[**${a.username}**#${a.discriminator}](https://vcodes.xyz/user/${a.id}) isimli kullanıcı **siteye** giriş yapmaya çalıştı fakat siteden engellendiği için giriş yapamadı.`
               )
-              .addField("Username", a.username)
-              .addField("User ID", a.id)
-              .addField("User Discriminator", a.discriminator)
-          );
+              .addFields([
+                { name: "Username", value: a ? a.username : "Unknown", inline: true },
+                { name: "User ID", value: a ? a.id : "Unknown", inline: true },
+                { name: "User Discriminator", value: a ? a.discriminator : "Unknown", inline: true }
+              ])
+            ]
+          });
         });
         req.session.destroy(() => {
           res.json({
@@ -174,18 +178,22 @@ module.exports = async (client) => {
         } catch {}
         res.redirect(req.session.backURL || "/");
         client.users.fetch(req.user.id).then(async (a) => {
-          client.channels.cache.get(channels.login).send(
-            new Discord.MessageEmbed()
-              .setAuthor(a.username, a.avatarURL({ dynamic: true }))
+          client.channels.cache.get(channels.login).send({
+            embeds: [
+            new Discord.EmbedBuilder()
+              .setAuthor({ name: a.username, iconURL: a.avatarURL({ dynamic: true }) })
               .setThumbnail(a.avatarURL({ dynamic: true }))
-              .setColor("GREEN")
+              .setColor("#00ff00")
               .setDescription(
                 `[**${a.username}**#${a.discriminator}](https://vcodes.xyz/user/${a.id}) isimli kullanıcı **siteye** giriş yaptı.`
               )
-              .addField("Username", a.username)
-              .addField("User ID", a.id)
-              .addField("User Discriminator", a.discriminator)
-          );
+              .addFields([
+                { name: "Username", value: a ? a.username : "Unknown", inline: true },
+                { name: "User ID", value: a ? a.id : "Unknown", inline: true },
+                { name: "User Discriminator", value: a ? a.discriminator : "Unknown", inline: true }
+              ])
+            ]
+          });
         });
       }
     }
@@ -236,7 +244,7 @@ module.exports = async (client) => {
       [===========================================]
                        vcodes.xyz
         https://github.com/vcodes-xyz/benedict
-                Developed by Claudette
+                Developed by clqu
 
                     Achievements =)
       [===========================================]
@@ -296,6 +304,7 @@ module.exports = async (client) => {
   app.use("/", require("./routers/botlist/bot/edit.js"));
   app.use("/", require("./routers/botlist/bot/analytics.js"));
   app.use("/", require("./routers/botlist/apps/cerificate-app.js"));
+  app.use("/", require("./routers/botlist/apps/report-app.js"));
 
   /* Server List System */
   console.log(" ");
@@ -314,6 +323,7 @@ module.exports = async (client) => {
   app.use("/server", require("./routers/servers/server/join.js"));
   app.use("/server", require("./routers/servers/server/analytics.js"));
   app.use("/server", require("./routers/servers/server/delete.js"));
+  app.use("/server", require("./routers/servers/apps/report-app.js"));
 
   /* Admin Panel */
   app.use(async (req, res, next) => {

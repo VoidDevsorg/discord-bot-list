@@ -1,0 +1,73 @@
+<%- include('../../parts/head', {bot, user, path}) %>
+     <br><br>
+
+<div class="container is-widescreen">
+          <div class="columns is-tablet">
+            <div class="column is-two-thirds">
+              <h1 id="botlistitle">Report</h1>
+              <p class="has-text-white">Fill in the form below to submit a report.</p>
+          </div>
+        </div>
+      </div>
+
+<div class="container">
+  <br><br>
+<div class="container contact-form bg-vote-vcodes">
+  <div class="contact-image">
+      <i></i>
+  </div>
+  <form method="post" class="form-discorddark">
+      <h3></h3>
+     <div class="row">
+          <div class="col-md-6">
+              <div class="form-group">
+              </div>
+              <br>
+              <div class="form-group">
+                  <label>Please include as much information as possible, including proof (e.g. screenshots and user IDs)</label>
+                  <textarea type="text" minlength="100" placeholder="Please include as much information as possible, including proof (e.g. screenshots and user IDs)" id="reason" name="reason" required="required" style="width: 100%;"></textarea>
+            </div>
+          </div>
+      </div>
+      <br><br><br><br>
+      <div class="field">
+  <strong><p style="color:red">Please make sure your report has enough details. If not, we may have to discard your report.</p></strong>
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
+  <label class="form-check-label" for="flexCheckDefault" required>
+    I have provided all the information that I have available.
+  </label>
+</div>
+      <button type="submit" name="btnSubmit" class="btn btn-primary"><i class="fad fa-save"></i> Submit</button>
+  </form>
+</div>
+</div>
+<br><br>
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('success') && urlParams.get('success')){
+    Swal.fire({
+     icon: 'success',
+     title: 'Succesfull...',
+     closeOnConfirm: false,
+     text: urlParams.get('message'),
+     footer: 'Copyright 2023 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = `/bot/${urlParams.get('botID')}`;
+  }
+})
+    }
+    if(urlParams.has('error') && urlParams.get('error')){
+    Swal.fire({
+     icon: 'error',
+     title: 'Oops...',
+     text: urlParams.get('message'),
+     footer: 'Copyright 2023 &copy vCodes.xyz - All right reserved.'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    window.location.href = `/bot/${urlParams.get('botID')}/report`;
+  }    
+})
+    }
+   </script>
+<%- include('../../parts/foot') %>

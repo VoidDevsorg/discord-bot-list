@@ -31,14 +31,15 @@ app.post(
     client.users.fetch(botdata.botID).then((bota) => {
       client.channels.cache
         .get(channels.botlog)
-        .send(
-          `<@${botdata.ownerID}>'s bot named **${bota.tag}** has not been granted a certificate.`
+        .send({
+          content: `<@${botdata.ownerID}>'s bot named **${bota.tag}** has not been granted a certificate.`
+        }
         );
       client.users.cache
         .get(botdata.ownerID)
-        .send(
-          `Your bot named **${bota.tag}** certificate application has been declined.\nReason: **${rBody["reason"]}**`
-        );
+        .send({
+          content: `Your bot named **${bota.tag}** certificate application has been declined.\nReason: **${rBody["reason"]}**`
+      });
     });
     await appsdata.deleteOne({
       botID: req.params.botID,

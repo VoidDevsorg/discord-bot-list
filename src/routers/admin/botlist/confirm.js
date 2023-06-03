@@ -34,12 +34,14 @@ app.get("/admin/confirm/:botID", global.checkAuth, async (req, res) => {
   client.users.fetch(req.params.botID).then((bota) => {
     client.channels.cache
       .get(channels.botlog)
-      .send(
-        `<@${botdata.ownerID}>'s bot named **${bota.tag}** has been approved. `
-      );
+      .send({
+          content: `<@${botdata.ownerID}>'s bot named **${bota.tag}** has been approved. `
+      });
     client.users.cache
       .get(botdata.ownerID)
-      .send(`Your bot named **${bota.tag}** has been approved.`);
+      .send({
+        content: `Your bot named **${bota.tag}** has been approved.`
+      });
   });
   let guild = client.guilds.cache.get(config.server.id);
   guild.members.cache.get(botdata.botID).roles.add(roles.botlist.bot);

@@ -51,18 +51,22 @@ app.post("/admin/addcode", global.checkAuth, async (req, res) => {
   }
   client.channels.cache
     .get(channels.codelog)
-    .send(
-      new Discord.MessageEmbed()
+    .send({
+      embeds: [
+        new Discord.EmbedBuilder()
         .setTitle("New code added!")
-        .setColor("GREEN")
+        .setColor("#00ff00")
         .setFooter(config.footer)
         .setDescription(
           `The user named **[${req.user.username}](https://vcodes.xyz/user/${req.user.id})** added the code named **${rBody["codename"]}** to the system.`
         )
-        .addField("Code Link", `https://vcodes.xyz/code/${kod}`, true)
-        .addField("Code Description", rBody["codedesc"], true)
-        .addField("Code Category", rBody["category"], true)
-    );
+        .addFields([
+          { name: "Code Link", value: `https://vcodes.xyz/code/${kod}`, inline: true },
+          { name: "Code Description", value: rBody["codedesc"], inline: true },
+          { name: "Code Category", value: rBody["category"], inline: true },
+        ])
+      ]
+    });
   res.redirect("/code/" + kod);
 });
 

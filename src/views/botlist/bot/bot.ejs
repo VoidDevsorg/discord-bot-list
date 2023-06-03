@@ -125,10 +125,6 @@
                 <p class="box-2">Shards:&nbsp;<%= botdata.shardCount || "N/A"%> </p>
               </div>
               <% } %>
-              <div class="is-flex mt-1">
-                <div class="box-2-p"><i class="mt-1 fad fa-circle status-<%= bot.users.cache.get(botdata.botID).presence.status %>"></i></div>
-                <p class="box-2">Status:&nbsp;<%= bot.users.cache.get(botdata.botID).presence.status.toUpperCase() %></p>
-              </div>
              <div class="h6 mt-4">
                 <i class="fal fa-user-crown"></i> Owners
               </div>
@@ -178,6 +174,14 @@
                     <a translate="no" style="margin: 5px;" href="/tag/<%=a%>" class="btn btn-sm btn-tag"><%=a%></a>
                 <% }) %>
               </div>
+
+              <div class="h6 mt-4">
+                <i class="fad fa-backspace is-size-6 mt-1"></i> Report
+              </div>
+              <a href="/bot/<%= botdata.botID %>/report" class="is-flex mt-1" style="margin-bottom: -55px;">
+                  <div style="background: rgb(209, 25, 25);" class="box-2-p"><i class="fad fa-backspace is-size-6 mt-1"></i></div>
+                  <p style="background: rgb(255, 0, 0);" class="box-2">Report</p>
+                </a>
               <br><br>
               <% if(botdata.support) {%>
                 <a href="<%= botdata.support %>" class="is-flex mt-1">

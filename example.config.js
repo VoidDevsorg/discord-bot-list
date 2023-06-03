@@ -1,17 +1,15 @@
 module.exports = {
   bot: {
     token: "", // Bot List Bot Token from https://discord.com/developers/applications
-    prefix: "",
     owners: [""],
     mongourl: "", //https://mongodb.com/cloud/atlas/register
     servers: {
-      token: "", // Server List Bot Token
-      prefix: "",
+      token: "" // Server List Bot Token
     },
   },
 
   website: {
-    callback: "", //example : https://vcodes.xyz avoid / at last.
+    callback: "", //example : https://vcodes.xyz/callback avoid / at last.
     secret: "",
     clientID: "", // Bot client id.
     tags: [
@@ -145,7 +143,7 @@ module.exports = {
 
   server: {
     id: "",
-    invite: "https://discord.gg/z7dBzygse4",
+    invite: "",
     roles: {
       administrator: "",
       moderator: "",
@@ -180,6 +178,7 @@ module.exports = {
       uptimelog: "",
       botlog: "",
       votes: "",
+      reportlog: ""
     },
   },
 };

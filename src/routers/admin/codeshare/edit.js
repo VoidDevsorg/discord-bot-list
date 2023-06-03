@@ -26,18 +26,22 @@ app.post("/admin/editcode/:code", global.checkAuth, async (req, res) => {
   );
   client.channels.cache
     .get(channels.codelog)
-    .send(
-      new Discord.MessageEmbed()
+    .send({
+      embeds: [
+        new Discord.EmbedBuilder()
         .setTitle("Code edited!")
-        .setColor("GREEN")
+        .setColor("#00ff00")
         .setFooter(config.footer)
         .setDescription(
           `The user named **[${req.user.username}](https://vcodes.xyz/user/${req.user.id})** edited the code named **${rBody["codename"]}**.`
         )
-        .addField("Code Link", `https://vcodes.xyz/code/${kod}`, true)
-        .addField("Code Description", rBody["codedesc"], true)
-        .addField("Code Category", rBody["category"], true)
-    );
+        .addFields([
+          { name: "Code Link", value: `https://vcodes.xyz/code/${kod}`, inline: true },
+          { name: "Code Description", value: rBody["codedesc"], inline: true },
+          { name: "Code Category", value: rBody["category"], inline: true },
+        ])
+      ]
+    });
   res.redirect("/code/" + kod);
 });
 

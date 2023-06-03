@@ -43,10 +43,10 @@ app.post("/certification/apply", global.checkAuth, async (req, res) => {
       rBody["bot"]
   );
   client.channels.cache
-    .get(channels.botlog)
-    .send(
-      `User **${req.user.username}** requested a certificate for her bot named **${botdata.username}**.`
-    );
+    .get(global.config.server.channels.botlog)
+    .send({
+      content: `User **${req.user.username}** requested a certificate for her bot named **${botdata.username}**.`
+   });
 });
 
 module.exports = app;

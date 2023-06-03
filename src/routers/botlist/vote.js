@@ -112,17 +112,15 @@ app.post("/bot/:botID/vote", global.checkAuth, async (req, res) => {
   }
   client.channels.cache
     .get(channels.votes)
-    .send(
-      `**${req.user.username}** voted **${botdata.username}** **\`(${
-        botdata.votes + 1
-      } votes)\`**`
-    );
+    .send({
+      content: `**${req.user.username}** voted **${botdata.username}** **\`(${botdata.votes + 1} votes)\`**`
+    });
   if (botdata.votes + 1 >= 100) {
     client.channels.cache
       .get(channels.votes)
-      .send(
-        `:tada: The bot named **${botdata.username}** has reached 100 votes!`
-      );
+      .send({
+        content: `:tada: The bot named **${botdata.username}** has reached 100 votes!`
+      });
   }
   return res.redirect(
     `/bot/${req.params.botID}/vote?success=true&message=You voted successfully. You can vote again after 12 hours.`

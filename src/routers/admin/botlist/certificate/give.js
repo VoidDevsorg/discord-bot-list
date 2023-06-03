@@ -32,12 +32,14 @@ app.get(
     client.users.fetch(botdata.botID).then((bota) => {
       client.channels.cache
         .get(channels.botlog)
-        .send(
-          `<@${botdata.ownerID}>'s bot named **${bota.tag}** has been granted a certificate.`
-        );
+        .send({
+          content: `<@${botdata.ownerID}>'s bot named **${bota.tag}** has been granted a certificate.`
+        });
       client.users.cache
         .get(botdata.ownerID)
-        .send(`Your bot named **${bota.tag}** has been certified.`);
+        .send({
+          content: `Your bot named **${bota.tag}** has been certified.`
+        });
     });
     await appsdata.deleteOne({
       botID: req.params.botID,
