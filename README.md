@@ -1,4 +1,4 @@
-# Benedict (Formerly vCodes.xyz)
+# Discord Bot List
 
 **Discord Server:** [https://discord.gg/27Fs46hHX3](https://discord.gg/27Fs46hHX3)<br>
 **NPM Module:** [npmjs.com/package/vcodes.js](https://www.npmjs.com/package/vcodes.js)<br>
